@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bosracskukmxx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a37ub"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ja2xh"]
+
+[node name="MainLevel" type="Node3D"]
+
+[node name="Path" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
+transform = Transform3D(20, 0, 0, 0, 10, 0, 0, 0, 3, 0, -6, 0)
+mesh = SubResource("BoxMesh_a37ub")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 9)
+fov = 90.0
+
+[node name="MainLight" type="DirectionalLight3D" parent="."]
+
+[node name="CharacterForScale" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_ja2xh")

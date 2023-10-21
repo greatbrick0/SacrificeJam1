@@ -1,8 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1697908357
+::res://::1697909207
 icon.svg::CompressedTexture2D::126086896447985490::1697907392::1697907396::1::::<><>::
 README.md::TextFile::-1::1697908206::0::1::::<><>::
 ::res://Art/::1697908277
 ::res://Art/Models/::1697907527
 ::res://Art/Sprites/::1697907537
+::res://Scenes/::1697909177
+main_level.tscn::PackedScene::3407255616410328741::1697909177::0::1::::<><>::
 ::res://Scripts/::1697907544
