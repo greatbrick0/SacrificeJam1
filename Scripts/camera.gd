@@ -11,21 +11,20 @@ func _ready():
 func _process(delta):
 	if(playerRef.velocity.x == 0):
 		MoveTowards(playerRef.global_position.x, delta)
-		print("a")
 	elif(playerRef.velocity.x > 0):
 		MoveTowards(playerRef.global_position.x + leadDistance, delta)
-		print("b")
 	elif(playerRef.velocity.x < 0):
 		MoveTowards(playerRef.global_position.x - leadDistance, delta)
-		print("c")
+	
+	if(global_position.x < bounds.x):
+		global_position.x = bounds.x
+	elif(global_position.x > bounds.y):
+		global_position.x = bounds.y
 
 func MoveTowards(newX: float, delta):
 	if(abs(global_position.x - newX) <= delta * speed):
 		global_position.x = newX
-		print("1")
 	elif(newX > global_position.x):
 		global_position.x += speed * delta
-		print("2")
 	elif(newX < global_position.x):
 		global_position.x -= speed * delta
-		print("3")
