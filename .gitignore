@@ -6,3 +6,7 @@ export_presets.cfg
 
 # Mono-specific ignores
 .mono/
+
+.godot/editor/editor_layout.cfg
+
+.godot/editor/filesystem_update4
