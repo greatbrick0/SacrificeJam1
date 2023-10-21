@@ -8,6 +8,7 @@
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_wxaek")
+speed = Vector2(5, 2)
 gravity = 9.0
 
 [node name="Visuals" type="Node3D" parent="."]
