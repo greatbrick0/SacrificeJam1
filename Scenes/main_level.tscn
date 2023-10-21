@@ -16,7 +16,8 @@ mesh = SubResource("BoxMesh_a37ub")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 9)
 fov = 90.0
 
-[node name="MainLight" type="DirectionalLight3D" parent="."]
-
 [node name="CharacterForScale" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_ja2xh")
+
+[node name="MainLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.984808, -0.111619, 0.133022, 0, 0.766044, 0.642788, -0.173648, -0.633022, 0.754407, 0, 0, 0)

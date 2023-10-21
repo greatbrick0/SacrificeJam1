@@ -1,4 +1,5 @@
+DirectionalLight3D
+LightmapGI
 MeshInstance3D
 Node3D
-DirectionalLight3D
 Camera3D
