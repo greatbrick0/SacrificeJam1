@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bosracskukmxx"]
+[gd_scene load_steps=6 format=3 uid="uid://bosracskukmxx"]
 
 [ext_resource type="PackedScene" uid="uid://r4je3ei2rhwd" path="res://Scenes/player.tscn" id="1_b44tx"]
+[ext_resource type="Script" path="res://Scripts/main_level.gd" id="1_pekt1"]
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="2_v6fr6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a37ub"]
 
@@ -8,6 +10,7 @@
 size = Vector3(20, 1, 4)
 
 [node name="MainLevel" type="Node3D"]
+script = ExtResource("1_pekt1")
 
 [node name="Path" type="Node3D" parent="."]
 
@@ -22,11 +25,13 @@ transform = Transform3D(0.99992, 0.0124074, -0.00258927, -0.0124115, 0.999922, -
 shape = SubResource("BoxShape3D_0dk56")
 
 [node name="Camera" type="Camera3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 9)
 fov = 90.0
+script = ExtResource("2_v6fr6")
 
 [node name="MainLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.984808, -0.111619, 0.133022, 0, 0.766044, 0.642788, -0.173648, -0.633022, 0.754407, 0, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_b44tx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.78254, 0, -0.390048)
+unique_name_in_owner = true
