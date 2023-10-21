@@ -9,7 +9,7 @@
 [node name="Path" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
-transform = Transform3D(20, 0, 0, 0, 10, 0, 0, 0, 3, 0, -6, 0)
+transform = Transform3D(20, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
 mesh = SubResource("BoxMesh_a37ub")
 
 [node name="Camera" type="Camera3D" parent="."]
