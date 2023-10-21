@@ -14,7 +14,9 @@ height = 1.8
 collision_mask = 256
 script = ExtResource("1_wxaek")
 speed = Vector2(5, 2)
-gravity = 9.0
+smallJumpHeight = 6.0
+bigJumpHeight = 12.0
+gravity = 18.0
 
 [node name="Visuals" type="Node3D" parent="."]
 
@@ -27,6 +29,8 @@ mesh = SubResource("CapsuleMesh_c7dkq")
 shape = SubResource("CylinderShape3D_w6clc")
 
 [node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("CapsuleShape3D_1ytnr")

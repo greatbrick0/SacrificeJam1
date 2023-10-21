@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dei8s2ib5kt7m"]
+[gd_scene load_steps=5 format=3 uid="uid://ccpin5551tp2g"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -11,7 +11,7 @@ size = Vector3(3, 1, 2)
 [sub_resource type="BoxMesh" id="BoxMesh_c0o0n"]
 size = Vector3(3, 1, 2)
 
-[node name="RestArea1" type="Node3D"]
+[node name="TollArea" type="Node3D"]
 
 [node name="Path" type="Node3D" parent="."]
 
@@ -20,7 +20,7 @@ transform = Transform3D(20, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
 mesh = SubResource("BoxMesh_02o2l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Path"]
-transform = Transform3D(0.99992, 0.0124074, -0.00258927, -0.0124115, 0.999922, -0.00158532, 0.0025694, 0.00161733, 0.999995, 0, -1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 collision_layer = 256
 collision_mask = 0
 

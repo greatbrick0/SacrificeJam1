@@ -28,3 +28,6 @@ func MoveTowards(newX: float, delta):
 		global_position.x += speed * delta
 	elif(newX < global_position.x):
 		global_position.x -= speed * delta
+
+func TeleportToPlayer():
+	global_position.x = playerRef.global_position.x

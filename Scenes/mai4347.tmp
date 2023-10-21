@@ -13,7 +13,6 @@ size = Vector3(1, 30, 4)
 
 [node name="MainLevel" type="Node3D" node_paths=PackedStringArray("currentLevel")]
 script = ExtResource("1_pekt1")
-cameraBounds = Vector2(0, 0)
 betweenSections = Array[PackedScene]([ExtResource("4_8vdju")])
 currentLevel = NodePath("RestArea1")
 
