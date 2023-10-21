@@ -1,6 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bosracskukmxx"]
+[gd_scene load_steps=5 format=3 uid="uid://bosracskukmxx"]
+
+[ext_resource type="PackedScene" uid="uid://r4je3ei2rhwd" path="res://Scenes/player.tscn" id="1_b44tx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a37ub"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0dk56"]
+size = Vector3(20, 1, 4)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ja2xh"]
 
@@ -12,6 +17,12 @@
 transform = Transform3D(20, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
 mesh = SubResource("BoxMesh_a37ub")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Path"]
+transform = Transform3D(0.99992, 0.0124074, -0.00258927, -0.0124115, 0.999922, -0.00158532, 0.0025694, 0.00161733, 0.999995, 0, -1.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
+shape = SubResource("BoxShape3D_0dk56")
+
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 9)
 fov = 90.0
@@ -21,3 +32,6 @@ mesh = SubResource("CapsuleMesh_ja2xh")
 
 [node name="MainLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.984808, -0.111619, 0.133022, 0, 0.766044, 0.642788, -0.173648, -0.633022, 0.754407, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_b44tx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.78254, 0, -0.390048)
