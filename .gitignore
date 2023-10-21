@@ -7,6 +7,10 @@ export_presets.cfg
 # Mono-specific ignores
 .mono/
 
+<<<<<<< Updated upstream
 .godot/editor/editor_layout.cfg
 
 .godot/editor/filesystem_update4
+=======
+.godot/uid_cache.bin
+>>>>>>> Stashed changes
