@@ -30,7 +30,7 @@ func ChooseSections() -> Array:
 
 
 func _on_level_end_area_entered(area):
-	%Player.global_position = Vector3.ZERO
+	%Player.global_position = Vector3(-5, 0, 0)
 	%Camera.TeleportToPlayer()
 	RemoveCurrentArea()
 	if(betweenLevels):

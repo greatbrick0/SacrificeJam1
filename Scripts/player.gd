@@ -12,6 +12,7 @@ var input_dir: Vector2
 var holdingJump: bool
 var alreadyJumped: bool
 
+@export var blocking: bool = false
 const maxHealth: int = 10
 @export var health: int = 10
 #true is donated, false is equipped [dagger, pendant, shield, boots, sword]
