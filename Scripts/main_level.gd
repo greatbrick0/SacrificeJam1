@@ -21,13 +21,15 @@ func _ready():
 	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_0.tscn"))
 
 func _process(delta):
-	$UI/CoinsLabel.text = str(%Player.coinCount) + "/7"
-	$UI/HealthLabel.text = str(%Player.health) + "/" + str(%Player.maxHealth)
+	$UI/CoinsLabel.text = "$ " + str(%Player.coinCount) + "/7"
+	$UI/HealthLabel.text = str(%Player.health) + "/" + str(%Player.maxHealth) + " HP"
+	for ii in len(%Player.donatedItems):
+		$UI/Items.get_child(ii).get_child(0).visible = !%Player.donatedItems[ii]
 
 func ChooseSections() -> Array:
 	var fullSet = range(5)
-	fullSet.remove_at(randi_range(0, 4))
-	fullSet.remove_at(randi_range(0, 3))
+	while len(fullSet) != 3:
+		fullSet.remove_at(randi_range(0, len(fullSet) -1))
 	return fullSet
 
 
