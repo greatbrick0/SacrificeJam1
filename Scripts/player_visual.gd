@@ -15,9 +15,10 @@ func UpdateItems(items: Array[bool]):
 	$Skeleton2D/Hip/Torso/FrontArm/FrontForearm/SpriteDagger.visible = false
 	$Skeleton2D/Hip/Torso/FrontArm/FrontForearm/SpriteSword.visible = false
 	$Skeleton2D/Hip/Torso/FrontArm/FrontForearm/SpriteRock.visible = false
+
 	if(items[0] and items[4]):
 		$Skeleton2D/Hip/Torso/FrontArm/FrontForearm/SpriteRock.visible = true
 	elif(!items[0]):
 		$Skeleton2D/Hip/Torso/FrontArm/FrontForearm/SpriteDagger.visible = true
 	else:
-		$Skeleton2D/Hip/Torso/FrontArm/FrontForearm/SpriteRock.visible = true
+		$Skeleton2D/Hip/Torso/FrontArm/FrontForearm/SpriteSword.visible = true
