@@ -8,6 +8,7 @@ class_name Player
 @export var gravity: float 
 @export var airBrakeMult: float = 4
 
+var inCutscene: bool = false
 var input_dir: Vector2
 var holdingJump: bool
 var alreadyJumped: bool
@@ -34,7 +35,7 @@ func _physics_process(delta):
 			alreadyJumped = true
 			velocity.y = smallJumpHeight if donatedItems[3] else bigJumpHeight
 	else:
-		velocity.y -= gravity * delta * (airBrakeMult if velocity.y > 0 and !holdingJump and alreadyJumped else 1)
+		velocity.y -= gravity * delta * (airBrakeMult if (velocity.y > 0 and !holdingJump and alreadyJumped) else 1)
 	
 	#moving
 	if(input_dir.x != 0):

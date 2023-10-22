@@ -21,7 +21,7 @@ func _ready():
 	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_0.tscn"))
 
 func _process(delta):
-	$UI/CoinsLabel.text = str(%Player.coinCount) + "/12"
+	$UI/CoinsLabel.text = str(%Player.coinCount) + "/7"
 
 func ChooseSections() -> Array:
 	var fullSet = range(5)
@@ -34,6 +34,7 @@ func _on_level_end_area_entered(area):
 	%Player.global_position = Vector3(-8, 0, 0)
 	%Camera.TeleportToPlayer()
 	RemoveCurrentArea()
+	$UI/CoinsLabel.visible = betweenLevels
 	if(betweenLevels):
 		betweenLevels = false
 		levelId += 1
@@ -54,11 +55,17 @@ func MakeRestArea():
 func MakeCombatArea():
 	currentLevel = Node3D.new()
 	add_child(currentLevel)
+	
 	var buildSections = ChooseSections()
 	for ii in 3:
 		instanceRef = levelSections[levelId][buildSections[ii]].instantiate()
 		currentLevel.add_child(instanceRef)
 		instanceRef.global_position.x += sectionWidth * ii
+	
+	instanceRef = load("res://Scenes/Rest Sections/toll_area.tscn").instantiate()
+	currentLevel.add_child(instanceRef)
+	instanceRef.global_position.x = sectionWidth * 3
+	
 	%LevelEnd.global_position.x = sectionWidth * 3
 
 func UpdateCameraBounds(left: float, right: float):

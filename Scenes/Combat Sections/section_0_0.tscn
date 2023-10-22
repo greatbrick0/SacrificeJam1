@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://nvd2lnx2lwvo"]
+[gd_scene load_steps=6 format=3 uid="uid://nvd2lnx2lwvo"]
+
+[ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_4qbng"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -84,3 +86,11 @@ shape = SubResource("BoxShape3D_mki6f")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform5"]
 mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Coins" type="Node3D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("1_4qbng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -1)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("1_4qbng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1)
