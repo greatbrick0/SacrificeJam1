@@ -1,0 +1,161 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5o5dfj001whg"]
+
+[ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_mtf0b"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
+size = Vector3(30, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mki6f"]
+size = Vector3(3, 1, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c0o0n"]
+size = Vector3(3, 1, 2)
+
+[node name="Section 0 0" type="Node3D"]
+
+[node name="Path" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
+transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+mesh = SubResource("BoxMesh_02o2l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
+transform = Transform3D(1, 2.27374e-12, 0, -9.2632e-10, 1, 0, 2.32831e-10, -1.16415e-10, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_j6a77")
+
+[node name="Platforms" type="Node3D" parent="."]
+
+[node name="Platform1" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42553, 2.12698, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform1"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform1"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Platform2" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99866, 2.07378, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform2"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform2"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Platform3" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28284, 2.16593, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform3"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform3"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Platform4" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.91504, 2.11338, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform4"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform4"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Platform5" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53859, 6.16246, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform5"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform5"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Platform6" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198834, 6.16214, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform6"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform6"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Platform7" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06369, 6.21174, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform7"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform7"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Platform8" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46028, 10.4795, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform8"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform8"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Platform9" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91664, 10.5085, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform9"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform9"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Platform10" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.214446, 14.6742, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform10"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform10"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Coins" type="Node3D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("1_mtf0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240819, 16.3333, 0)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("1_mtf0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0502725, 7.89282, 0)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("1_mtf0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.63314, 3.87626, 0)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("1_mtf0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.08049, 3.92585, 0)
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Ladders" type="Node3D" parent="."]
