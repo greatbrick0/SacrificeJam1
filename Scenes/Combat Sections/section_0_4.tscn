@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0qeqc7ydcex6"]
+
+[ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_wgrcs"]
+[ext_resource type="PackedScene" uid="uid://kuv2y7prb4au" path="res://Scenes/enemy_1.tscn" id="2_snuie"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
+size = Vector3(30, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mki6f"]
+size = Vector3(3, 1, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c0o0n"]
+size = Vector3(3, 1, 2)
+
+[node name="Section 0 0" type="Node3D"]
+
+[node name="Path" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
+transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+mesh = SubResource("BoxMesh_02o2l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
+transform = Transform3D(1, 2.27374e-12, 0, -9.2632e-10, 1, 0, 2.32831e-10, -1.16415e-10, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_j6a77")
+
+[node name="Platforms" type="Node3D" parent="."]
+
+[node name="Platform1" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.24993, 5.61771, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform1"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform1"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Platform2" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71302, 5.16075, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform2"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform2"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Platform3" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.245792, 2.70866, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform3"]
+shape = SubResource("BoxShape3D_mki6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform3"]
+mesh = SubResource("BoxMesh_c0o0n")
+
+[node name="Coins" type="Node3D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("1_wgrcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.09351, 6.88877, 0)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("1_wgrcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81813, 6.75542, 0)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("1_wgrcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.278074, 4.26708, 0)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("1_wgrcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0210624, 0.0261322, 0)
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource("2_snuie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86159, 0, 0.85883)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("2_snuie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.87943, 0, -1.29633)
+
+[node name="Ladders" type="Node3D" parent="."]

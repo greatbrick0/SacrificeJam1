@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 TextureRect
 Panel
 Control
@@ -7,7 +8,10 @@ StaticBody3D
 CPUParticles3D
 Label
 MeshInstance3D
+=======
+>>>>>>> Stashed changes
 Node3D
+MeshInstance3D
 AudioStreamPlayer
 Area3D
 WorldEnvironment

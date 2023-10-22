@@ -15,10 +15,11 @@ var instanceRef: Node3D
 func _ready():
 	%Camera.bounds = cameraBounds
 	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_0.tscn"))
-	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_0.tscn"))
-	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_0.tscn"))
-	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_0.tscn"))
-	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_0.tscn"))
+	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_1.tscn"))
+	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_2.tscn"))
+	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_3.tscn"))
+	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_4.tscn"))
+	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_5.tscn"))
 
 func _process(delta):
 	$UI/CoinsLabel.text = "$ " + str(%Player.coinCount) + "/7"

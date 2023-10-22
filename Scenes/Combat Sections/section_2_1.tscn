@@ -1,16 +1,9 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=9 format=3 uid="uid://nvd2lnx2lwvo"]
+[gd_scene load_steps=9 format=3 uid="uid://cbvlt71j4ljv2"]
 
-[ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_4qbng"]
-[ext_resource type="PackedScene" uid="uid://kuv2y7prb4au" path="res://Scenes/enemy_1.tscn" id="2_j3ojv"]
-[ext_resource type="PackedScene" uid="uid://ccw0gxr2hvtb0" path="res://Scenes/enemy_2.tscn" id="3_7iudm"]
-[ext_resource type="PackedScene" uid="uid://dn067m75da1ns" path="res://Scenes/enemy_3.tscn" id="4_ogh1t"]
-=======
-[gd_scene load_steps=7 format=3 uid="uid://cijm834vatsda"]
-
-[ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_4qbng"]
-[ext_resource type="PackedScene" uid="uid://kuv2y7prb4au" path="res://Scenes/enemy_1.tscn" id="2_7d4m1"]
->>>>>>> Stashed changes
+[ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_4vche"]
+[ext_resource type="PackedScene" uid="uid://kuv2y7prb4au" path="res://Scenes/enemy_1.tscn" id="2_8srj1"]
+[ext_resource type="PackedScene" path="res://Scenes/enemy_3.tscn" id="3_uuxrd"]
+[ext_resource type="PackedScene" path="res://Scenes/ladder.tscn" id="3_vanu4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -99,40 +92,42 @@ mesh = SubResource("BoxMesh_c0o0n")
 
 [node name="Coins" type="Node3D" parent="."]
 
-[node name="Coin" parent="Coins" instance=ExtResource("1_4qbng")]
+[node name="Coin" parent="Coins" instance=ExtResource("1_4vche")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.81916, 12.5622, 1)
 
-[node name="Coin2" parent="Coins" instance=ExtResource("1_4qbng")]
-<<<<<<< Updated upstream
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1)
-
-[node name="Enemy1" parent="." instance=ExtResource("2_j3ojv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.799228, 0, 0.748752)
-
-[node name="Enemy2" parent="." instance=ExtResource("3_7iudm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03212, 0, 0.995315)
-
-[node name="Enemy3" parent="." instance=ExtResource("4_ogh1t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.13649, 0, 0.975366)
-=======
+[node name="Coin2" parent="Coins" instance=ExtResource("1_4vche")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.30793, 5.62715, -1)
 
-[node name="Coin3" parent="Coins" instance=ExtResource("1_4qbng")]
+[node name="Coin3" parent="Coins" instance=ExtResource("1_4vche")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.44781, 9.14985, 1)
 
-[node name="Coin4" parent="Coins" instance=ExtResource("1_4qbng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.62958, 3.78354, 0)
+[node name="Coin4" parent="Coins" instance=ExtResource("1_4vche")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17545, 3.30521, 0)
 
 [node name="Enemies" type="Node3D" parent="."]
 
-[node name="Enemy1" parent="Enemies" instance=ExtResource("2_7d4m1")]
+[node name="Enemy1-1" parent="Enemies" instance=ExtResource("2_8srj1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29384, 0.0135136, -1.04516)
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("2_7d4m1")]
+[node name="Enemy1-2" parent="Enemies" instance=ExtResource("2_8srj1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.42519, 0.00594044, 1.1837)
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("2_7d4m1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04216, 0.0118809, -0.736042)
+[node name="Enemy3-1" parent="Enemies" instance=ExtResource("3_uuxrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.55853, 3.78974, 0)
 
 [node name="Ladders" type="Node3D" parent="."]
->>>>>>> Stashed changes
+
+[node name="Ladder" parent="Ladders" instance=ExtResource("3_vanu4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.83567, -1.17097, -0.952065)
+
+[node name="Ladder2" parent="Ladders" instance=ExtResource("3_vanu4")]
+transform = Transform3D(0.979575, 0.201078, 0, -0.201078, 0.979575, 0, 0, 0, 1, -5.89324, 1.62377, -0.731623)
+
+[node name="Ladder3" parent="Ladders" instance=ExtResource("3_vanu4")]
+transform = Transform3D(1, 0, 0, 0, 0.99863, -0.052336, 0, 0.052336, 0.99863, -3.28212, 4.94549, -0.238422)
+
+[node name="Ladder4" parent="Ladders" instance=ExtResource("3_vanu4")]
+transform = Transform3D(0.948324, -0.317305, 0, 0.317305, 0.948324, 0, 0, 0, 1, -4.90883, 7.9586, 1.05247)
+
+[node name="Ladder5" parent="Ladders" instance=ExtResource("3_vanu4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.02526, -1.01092, 0.0822954)
