@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bosracskukmxx"]
+[gd_scene load_steps=22 format=3 uid="uid://bosracskukmxx"]
 
 [ext_resource type="PackedScene" uid="uid://r4je3ei2rhwd" path="res://Scenes/player.tscn" id="1_b44tx"]
 [ext_resource type="Script" path="res://Scripts/main_level.gd" id="1_pekt1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b2p18n2jk1406" path="res://Scenes/Rest Sections/rest_area_2.tscn" id="3_ad277"]
 [ext_resource type="PackedScene" uid="uid://dei8s2ib5kt7m" path="res://Scenes/Rest Sections/rest_area_1.tscn" id="4_8vdju"]
 [ext_resource type="PackedScene" uid="uid://du3hcgow023h6" path="res://Scenes/Rest Sections/rest_area_4.tscn" id="4_ixfur"]
+[ext_resource type="PackedScene" uid="uid://bbqrix7bd2smh" path="res://Scenes/Rest Sections/anti_climax.tscn" id="5_yi7tu"]
 [ext_resource type="Texture2D" uid="uid://blt28m4v5720w" path="res://Art/Sprites/Item Slot.png" id="6_rrjvr"]
 [ext_resource type="Texture2D" uid="uid://dw1bew7e7hdud" path="res://Art/Sprites/Dagger.png" id="7_beds7"]
 [ext_resource type="Texture2D" uid="uid://3i6y74dr7bbs" path="res://Art/Sprites/Pendant.png" id="8_62sym"]
@@ -35,7 +36,7 @@ size = Vector3(1, 30, 4)
 [node name="MainLevel" type="Node3D" node_paths=PackedStringArray("currentLevel") groups=["Manager"]]
 script = ExtResource("1_pekt1")
 cameraBounds = Vector2(0, 0)
-betweenSections = Array[PackedScene]([ExtResource("3_ad277"), ExtResource("2_ah1ly"), ExtResource("4_ixfur"), ExtResource("4_8vdju"), ExtResource("4_8vdju"), ExtResource("4_8vdju")])
+betweenSections = Array[PackedScene]([ExtResource("3_ad277"), ExtResource("2_ah1ly"), ExtResource("4_ixfur"), ExtResource("5_yi7tu"), ExtResource("4_8vdju"), ExtResource("4_8vdju")])
 currentLevel = NodePath("RestArea1")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
