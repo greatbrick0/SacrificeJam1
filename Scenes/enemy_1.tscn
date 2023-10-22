@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://kuv2y7prb4au"]
+[gd_scene load_steps=6 format=3 uid="uid://kuv2y7prb4au"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy1.gd" id="1_cpwre"]
+[ext_resource type="AudioStream" uid="uid://binv0k8xsejon" path="res://Sounds/Effects/EnemyHit.wav" id="2_3q8rq"]
+[ext_resource type="AudioStream" uid="uid://d3sv3g5hjegma" path="res://Sounds/Effects/EnemyDeath.wav" id="3_077tv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u3p8v"]
 
@@ -16,3 +18,11 @@ mesh = SubResource("CapsuleMesh_u3p8v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_cnqsd")
+
+[node name="Sounds" type="Node3D" parent="."]
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("2_3q8rq")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_077tv")

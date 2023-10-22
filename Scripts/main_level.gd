@@ -5,7 +5,12 @@ extends Node3D
 @export var levelId: int = -1
 var betweenLevels: bool = true
 
-var levelSections: Array[Array] = [[],[],[],[],[],[]]
+var levelSections: Array[Array] = [[preload("res://Scenes/Combat Sections/section_0_1.tscn")],
+[preload("res://Scenes/Combat Sections/section_0_1.tscn")],
+[preload("res://Scenes/Combat Sections/section_1_0.tscn")],
+[preload("res://Scenes/Combat Sections/section_1_0.tscn")],
+[preload("res://Scenes/Combat Sections/section_2_0.tscn")],
+[preload("res://Scenes/Combat Sections/section_2_0.tscn")]]
 @export var sectionWidth: float = 30
 @export var betweenSections: Array[PackedScene]
 
@@ -15,7 +20,6 @@ var instanceRef: Node3D
 func _ready():
 	%Camera.bounds = cameraBounds
 	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_0.tscn"))
-	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_1.tscn"))
 	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_2.tscn"))
 	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_3.tscn"))
 	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_4.tscn"))

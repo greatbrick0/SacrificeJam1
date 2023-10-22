@@ -19,6 +19,10 @@ func TakeDamage(amount: int):
 	health -= amount
 	if(amount <= 0):
 		Die()
+	else:
+		$Sounds/HurtSound.play()
 
 func Die():
-	queue_free()
+	$Sounds/DeathSound.play()
+	$CollisionShape3D.set_deferred("disabled", true)
+	$Visuals.visible = false
