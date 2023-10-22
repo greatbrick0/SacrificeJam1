@@ -1,7 +1,14 @@
+Label
+RichTextLabel
+Container
+CenterContainer
+TextEdit
+BoxContainer
+VBoxContainer
+MarginContainer
 Area3D
 CollisionShape3D
 AudioStreamPlayer
-Label
 Control
 MeshInstance3D
 Timer
@@ -23,8 +30,3 @@ CPUParticles3D
 WorldEnvironment
 CharacterBody3D
 Decal
-Button
-CanvasLayer
-DirectionalLight3D
-LightmapGI
-Camera3D

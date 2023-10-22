@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhmqese2dv6mx"]
+[gd_scene load_steps=3 format=3 uid="uid://dhmqese2dv6mx"]
 
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_gqk4i"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="1_gtdg8"]
 
 [node name="MainMenu" type="CanvasLayer"]
@@ -11,19 +12,48 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gqk4i")
 
-[node name="StartButton" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -30.0
-offset_right = 100.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 400.0
+offset_right = 725.0
+offset_bottom = 500.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
 theme = ExtResource("1_gtdg8")
+theme_override_font_sizes/font_size = 30
 text = "Start"
+
+[node name="QuitButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme = ExtResource("1_gtdg8")
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 50.0
+offset_right = 875.0
+offset_bottom = 200.0
+
+[node name="Label" type="Label" parent="Control/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Purple World
+Poverty"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/StartButton" to="Control" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/QuitButton" to="Control" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/QuitButton" to="Control" method="_on_start_button_pressed"]
