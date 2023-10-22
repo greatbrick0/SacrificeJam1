@@ -2,16 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://r4je3ei2rhwd" path="res://Scenes/player.tscn" id="1_b44tx"]
 [ext_resource type="Script" path="res://Scripts/main_level.gd" id="1_pekt1"]
-[ext_resource type="PackedScene" uid="uid://dbkjcculeg0ua" path="res://Scenes/Rest Sections/rest_area_3.tscn" id="2_ah1ly"]
+[ext_resource type="PackedScene" path="res://Scenes/Rest Sections/rest_area_3.tscn" id="2_ah1ly"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="2_v6fr6"]
 [ext_resource type="PackedScene" uid="uid://b2p18n2jk1406" path="res://Scenes/Rest Sections/rest_area_2.tscn" id="3_ad277"]
 [ext_resource type="PackedScene" uid="uid://dei8s2ib5kt7m" path="res://Scenes/Rest Sections/rest_area_1.tscn" id="4_8vdju"]
-[ext_resource type="Texture2D" uid="uid://bjob6lwftlotk" path="res://Art/Sprites/SmallCircle.png" id="5_v1vdg"]
-[ext_resource type="Texture2D" uid="uid://bi6vjcps1poj2" path="res://Art/Sprites/Item Icons/DaggerTemp.png" id="6_rytry"]
-[ext_resource type="Texture2D" uid="uid://yn46ta136kpi" path="res://Art/Sprites/Item Icons/PendantTemp.png" id="7_4b72k"]
-[ext_resource type="Texture2D" uid="uid://dhjigphrpu7l8" path="res://Art/Sprites/Item Icons/ShieldTemp.png" id="8_0vi3m"]
-[ext_resource type="Texture2D" uid="uid://ca82x12y6280q" path="res://Art/Sprites/Item Icons/BootsTemp.png" id="9_vxhjs"]
-[ext_resource type="Texture2D" uid="uid://c1ycy3uhwcuqc" path="res://Art/Sprites/Item Icons/SwordTemp.png" id="10_yhn13"]
+[ext_resource type="Texture2D" uid="uid://blt28m4v5720w" path="res://Art/Sprites/Item Slot.png" id="6_rrjvr"]
+[ext_resource type="Texture2D" uid="uid://dw1bew7e7hdud" path="res://Art/Sprites/Dagger.png" id="7_beds7"]
+[ext_resource type="Texture2D" uid="uid://3i6y74dr7bbs" path="res://Art/Sprites/Pendant.png" id="8_62sym"]
+[ext_resource type="Texture2D" uid="uid://dixx837rq0wip" path="res://Art/Sprites/Shield.png" id="9_tqs5c"]
+[ext_resource type="Texture2D" uid="uid://ce5k3fa8kpshq" path="res://Art/Sprites/Boots.png" id="10_1oo62"]
+[ext_resource type="Texture2D" uid="uid://cwpj4avv4on6f" path="res://Art/Sprites/Sword.png" id="11_gwbt3"]
 [ext_resource type="Script" path="res://Scripts/MusicManager.gd" id="13_rvbr0"]
 [ext_resource type="AudioStream" uid="uid://bbor6colkvvg7" path="res://Sounds/Music/SacrificeSongSad.wav" id="14_0msh7"]
 [ext_resource type="AudioStream" uid="uid://pruax477aa87" path="res://Sounds/Music/SacrificeSongCombat.wav" id="15_ffyot"]
@@ -127,23 +127,13 @@ offset_right = -150.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_v1vdg")
+texture = ExtResource("6_rrjvr")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Items/Slot1"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -53.5
-offset_top = -63.0
-offset_right = 53.5
-offset_bottom = 63.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("6_rytry")
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 97.0
+texture = ExtResource("7_beds7")
 
 [node name="Slot2" type="TextureRect" parent="UI/Items"]
 layout_mode = 1
@@ -158,23 +148,13 @@ offset_right = -50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_v1vdg")
+texture = ExtResource("6_rrjvr")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Items/Slot2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -55.5
-offset_top = -47.0
-offset_right = 55.5
-offset_bottom = 47.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_4b72k")
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 100.0
+texture = ExtResource("8_62sym")
 
 [node name="Slot3" type="TextureRect" parent="UI/Items"]
 layout_mode = 1
@@ -189,23 +169,13 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_v1vdg")
+texture = ExtResource("6_rrjvr")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Items/Slot3"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.5
-offset_top = -64.0
-offset_right = 60.5
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("8_0vi3m")
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("9_tqs5c")
 
 [node name="Slot4" type="TextureRect" parent="UI/Items"]
 layout_mode = 1
@@ -220,23 +190,15 @@ offset_right = 150.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_v1vdg")
+texture = ExtResource("6_rrjvr")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Items/Slot4"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -68.0
-offset_top = -56.0
-offset_right = 68.0
-offset_bottom = 56.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("9_vxhjs")
+layout_mode = 0
+offset_left = -6.0
+offset_top = 8.0
+offset_right = 94.0
+offset_bottom = 85.0
+texture = ExtResource("10_1oo62")
 
 [node name="Slot5" type="TextureRect" parent="UI/Items"]
 layout_mode = 1
@@ -251,23 +213,13 @@ offset_right = 250.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_v1vdg")
+texture = ExtResource("6_rrjvr")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Items/Slot5"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -99.0
-offset_top = -66.0
-offset_right = 99.0
-offset_bottom = 66.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("10_yhn13")
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("11_gwbt3")
 
 [node name="TollUI" type="Control" parent="UI"]
 visible = false
