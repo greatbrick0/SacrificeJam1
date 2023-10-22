@@ -37,7 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, -8.74295, -1.39256, -4.2355
 [node name="Tree2" parent="." instance=ExtResource("2_yocxv")]
 transform = Transform3D(-0.7, 0, -3.17091e-08, 0, 0.7, 0, 1.05697e-07, 0, -0.21, -1.93747, -1.17644, -0.988492)
 
-[node name="TollPoint" type="Area3D" parent="."]
+[node name="TollPoint" type="Area3D" parent="." groups=["TollBooth"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 10, 0)
 collision_layer = 0
 collision_mask = 2

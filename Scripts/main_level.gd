@@ -118,6 +118,7 @@ func StartToll():
 func EndToll():
 	if(%Player.coinCount >= 7):
 		%Player.coinCount = 0
+		get_tree().get_first_node_in_group("TollBooth").get_child(0).set_deferred("disabled", true)
 	else:
 		%Player.global_position.x -= 0.5
 	%Player.inCutscene = false

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Label
 RichTextLabel
 Container
@@ -10,10 +11,19 @@ Area3D
 CollisionShape3D
 AudioStreamPlayer
 Control
-MeshInstance3D
-Timer
-Node3D
+=======
+RichTextLabel
+Label
+Panel
 AnimationPlayer
+Control
+Timer
+AudioStreamPlayer
+CollisionShape3D
+Area3D
+>>>>>>> Stashed changes
+MeshInstance3D
+Node3D
 Sprite3D
 SubViewport
 Node2D
@@ -23,7 +33,6 @@ Skeleton2D
 Node
 Polygon2D
 TextureRect
-Panel
 HBoxContainer
 StaticBody3D
 CPUParticles3D
