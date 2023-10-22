@@ -1,6 +1,6 @@
-AudioStreamPlayer
-CollisionShape3D
 Area3D
+CollisionShape3D
+AudioStreamPlayer
 Label
 Control
 MeshInstance3D

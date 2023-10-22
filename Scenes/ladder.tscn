@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://byqvcd4ynq3fy"]
+[gd_scene load_steps=3 format=3 uid="uid://byqvcd4ynq3fy"]
 
 [ext_resource type="PackedScene" uid="uid://dw80qjyiq0kty" path="res://Art/Models/Ladder.glb" id="1_rus4u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6jntc"]
+size = Vector3(0.165, 3.115, 1)
 
 [node name="Ladder" type="Node3D"]
 
@@ -8,3 +11,9 @@
 
 [node name="Ladder" parent="Visuals" instance=ExtResource("1_rus4u")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.09153, 0, 2.70031)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035, 1.535, 0)
+shape = SubResource("BoxShape3D_6jntc")
