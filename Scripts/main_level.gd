@@ -26,8 +26,8 @@ func _process(delta):
 	for ii in len(%Player.donatedItems):
 		$UI/Items.get_child(ii).get_child(0).visible = !%Player.donatedItems[ii]
 
-func ChooseSections() -> Array:
-	var fullSet = range(5)
+func ChooseSections(count: int) -> Array:
+	var fullSet = range(count)
 	while len(fullSet) != 3:
 		fullSet.remove_at(randi_range(0, len(fullSet) -1))
 	return fullSet
@@ -62,7 +62,7 @@ func MakeCombatArea():
 	currentLevel = Node3D.new()
 	add_child(currentLevel)
 	
-	var buildSections = ChooseSections()
+	var buildSections = ChooseSections(len(levelSections[levelId]))
 	for ii in 3:
 		instanceRef = levelSections[levelId][buildSections[ii]].instantiate()
 		currentLevel.add_child(instanceRef)
