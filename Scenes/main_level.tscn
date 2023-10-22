@@ -37,6 +37,7 @@ environment = SubResource("Environment_u5x35")
 [node name="Camera" type="Camera3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 9)
+current = true
 fov = 90.0
 script = ExtResource("2_v6fr6")
 

@@ -35,7 +35,7 @@ shape = SubResource("BoxShape3D_j6a77")
 [node name="Platforms" type="Node3D" parent="."]
 
 [node name="Platform1" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.67321, 2.7131, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.67321, 2.09591, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -46,7 +46,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform2" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63258, 2.85016, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63258, 2.23297, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -57,7 +57,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform3" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.245792, 5.81638, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.245792, 4.78343, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -70,10 +70,10 @@ transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 [node name="Coins" type="Node3D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("1_so8ht")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.174958, 7.23987, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.174958, 6.37932, 0)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("1_so8ht")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54758, 4.21266, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54758, 3.6166, 0)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("1_so8ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.278074, -0.209031, 0)
@@ -84,7 +84,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.49619, -0.0561216, 0)
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="Enemy2-1" parent="Enemies" instance=ExtResource("2_kcbmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.64277, 4.33755, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.64277, 3.74149, 0)
 
 [node name="Enemy1-1" parent="Enemies" instance=ExtResource("2_o2j1f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23512, 0, -0.587289)

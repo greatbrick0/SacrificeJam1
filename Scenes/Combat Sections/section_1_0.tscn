@@ -34,7 +34,7 @@ shape = SubResource("BoxShape3D_j6a77")
 [node name="Platforms" type="Node3D" parent="."]
 
 [node name="Platform1" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.579599, 5.61771, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.579599, 4.3804, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -45,7 +45,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform2" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4788, 5.61947, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4788, 4.64623, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -56,7 +56,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform3" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.33877, 2.70866, -0.000980377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.33877, 2.11527, -0.000980377)
 collision_layer = 256
 collision_mask = 0
 
@@ -67,7 +67,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform4" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6488, 10.4763, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.65, 7.40918, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -78,7 +78,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform5" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12536, 10.4773, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12536, 7.28403, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -97,17 +97,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3626, 4.5315, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.72002, 0.450977, 0)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("1_aydw4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.602906, 7.37261, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.602906, 6.43427, 0)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("1_aydw4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.10261, 12.2835, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.10261, 9.65065, 0)
 
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="Enemy2-1" parent="Enemies" instance=ExtResource("2_20t4q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6421, 7.13779, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6421, 6.09705, 0)
 
 [node name="Enemy2-2" parent="Enemies" instance=ExtResource("2_20t4q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5472, 11.9763, 0.0348854)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8804, 8.82337, 0.0348854)
 
 [node name="Ladders" type="Node3D" parent="."]
