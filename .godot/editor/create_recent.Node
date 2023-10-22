@@ -1,4 +1,5 @@
-<<<<<<< Updated upstream
+Button
+Control
 Label
 RichTextLabel
 Container
@@ -10,18 +11,14 @@ MarginContainer
 Area3D
 CollisionShape3D
 AudioStreamPlayer
-Control
-=======
 RichTextLabel
 Label
 Panel
 AnimationPlayer
-Control
 Timer
 AudioStreamPlayer
 CollisionShape3D
 Area3D
->>>>>>> Stashed changes
 MeshInstance3D
 Node3D
 Sprite3D
@@ -33,9 +30,3 @@ Skeleton2D
 Node
 Polygon2D
 TextureRect
-HBoxContainer
-StaticBody3D
-CPUParticles3D
-WorldEnvironment
-CharacterBody3D
-Decal

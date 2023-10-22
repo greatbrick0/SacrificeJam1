@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dei8s2ib5kt7m"]
+[gd_scene load_steps=10 format=3 uid="uid://dei8s2ib5kt7m"]
 
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="1_5w3g0"]
 [ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="1_b3n7s"]
 [ext_resource type="PackedScene" uid="uid://cn5qqi6pw675g" path="res://Art/Models/PlatformA.glb" id="1_xvgpj"]
+[ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_05qar"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -44,3 +45,144 @@ transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Tree" parent="." instance=ExtResource("1_5w3g0")]
 transform = Transform3D(1.29557, -0.0265001, -0.0484784, 0.0287127, 1.59591, 0.0407783, 0.103305, -0.111227, 0.596646, -6.66692, -1.85343, -6.552)
+
+[node name="DialoguePoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 10, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialoguePoint"]
+shape = SubResource("BoxShape3D_1h6gl")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Dialogue" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YouPanel" type="Panel" parent="Dialogue"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -174.0
+offset_right = 700.0
+offset_bottom = -14.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Dialogue/YouPanel"]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 26
+text = "You"
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="Dialogue/YouPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -100.0
+offset_right = -30.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Hi"
+
+[node name="StrangerPanel" type="Panel" parent="Dialogue"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 452.0
+offset_top = -139.0
+offset_right = 1052.0
+offset_bottom = 21.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Dialogue/StrangerPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_bottom = 39.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 26
+text = "Stranger"
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="Dialogue/StrangerPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -100.0
+offset_right = -30.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "Hi"
+
+[node name="Choices" type="Control" parent="Dialogue"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftButton" type="Button" parent="Dialogue/Choices"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -40.0
+offset_right = -60.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_05qar")
+text = "Give Dagger
+[A]"
+
+[node name="RightButton" type="Button" parent="Dialogue/Choices"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = -40.0
+offset_right = 240.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_05qar")
+text = "Leave
+[D]"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="area_entered" from="DialoguePoint" to="." method="_on_dialogue_point_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Dialogue/Choices/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="Dialogue/Choices/RightButton" to="." method="_on_right_button_pressed"]
