@@ -37,6 +37,7 @@ func _process(delta):
 	
 	speedMult = 1
 	$Visuals/Sprite3D.flip_h = facingLeft
+	$Attacks.rotation.y = int(facingLeft) * PI
 	if(attacking):
 		%"Player Visual".PlayAnim("Attack", false)
 		speedMult = 0.3
@@ -112,6 +113,7 @@ func Lose():
 
 func _on_attack_animator_animation_finished(anim_name):
 	attacking = false
+	$Attacks/DamageArea/Sword.disabled = true
 
 func _on_attack_cooldown_timeout():
 	canAttack = true
@@ -120,6 +122,7 @@ func StartAttack():
 	canAttack = false
 	attacking = true
 	$Attacks/AttackCooldown.start()
+	$Attacks/DamageArea/Sword.disabled = false
 	
 	if(donatedItems[0] and donatedItems[4]):
 		$Attacks/AttackAnimator.play("Rock")
@@ -127,3 +130,6 @@ func StartAttack():
 		$Attacks/AttackAnimator.play("Dagger")
 	else:
 		$Attacks/AttackAnimator.play("Sword")
+
+func _on_damage_area_body_entered(body):
+	body.TakeDamage(4)
