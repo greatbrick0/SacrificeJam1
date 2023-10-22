@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5o5dfj001whg"]
+[gd_scene load_steps=8 format=3 uid="uid://c5o5dfj001whg"]
 
+[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="1_cmv2d"]
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_mtf0b"]
+[ext_resource type="PackedScene" uid="uid://kuv2y7prb4au" path="res://Scenes/enemy_1.tscn" id="3_4ri5c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -19,6 +21,7 @@ size = Vector3(3, 1, 2)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
 transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+material_override = ExtResource("1_cmv2d")
 mesh = SubResource("BoxMesh_02o2l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Path"]
@@ -110,7 +113,7 @@ shape = SubResource("BoxShape3D_mki6f")
 mesh = SubResource("BoxMesh_c0o0n")
 
 [node name="Platform8" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46028, 10.4795, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46028, 9.22335, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -121,7 +124,7 @@ shape = SubResource("BoxShape3D_mki6f")
 mesh = SubResource("BoxMesh_c0o0n")
 
 [node name="Platform9" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91664, 10.5085, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91664, 9.25235, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -132,7 +135,7 @@ shape = SubResource("BoxShape3D_mki6f")
 mesh = SubResource("BoxMesh_c0o0n")
 
 [node name="Platform10" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.214446, 14.6742, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.214446, 12.0861, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -145,7 +148,7 @@ mesh = SubResource("BoxMesh_c0o0n")
 [node name="Coins" type="Node3D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("1_mtf0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240819, 16.3333, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240819, 13.4882, 0)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("1_mtf0b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0502725, 7.89282, 0)
@@ -157,5 +160,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.63314, 3.87626, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.08049, 3.92585, 0)
 
 [node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource("3_4ri5c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.728, 0, 0.176)
 
 [node name="Ladders" type="Node3D" parent="."]

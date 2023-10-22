@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://55mp0nf4ot3f"]
+[gd_scene load_steps=8 format=3 uid="uid://55mp0nf4ot3f"]
 
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_hf8bh"]
+[ext_resource type="Material" uid="uid://bx7jm1bdlu1fv" path="res://Art/Rock.tres" id="1_pueny"]
 [ext_resource type="PackedScene" uid="uid://byqvcd4ynq3fy" path="res://Scenes/ladder.tscn" id="2_hrhci"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
@@ -20,6 +21,7 @@ size = Vector3(3, 1, 2)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
 transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+material_override = ExtResource("1_pueny")
 mesh = SubResource("BoxMesh_02o2l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Path"]

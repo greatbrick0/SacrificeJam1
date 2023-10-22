@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbvlt71j4ljv2"]
+[gd_scene load_steps=10 format=3 uid="uid://cbvlt71j4ljv2"]
 
+[ext_resource type="Material" uid="uid://bx7jm1bdlu1fv" path="res://Art/Rock.tres" id="1_00b1s"]
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_4vche"]
 [ext_resource type="PackedScene" uid="uid://kuv2y7prb4au" path="res://Scenes/enemy_1.tscn" id="2_8srj1"]
-[ext_resource type="PackedScene" path="res://Scenes/enemy_3.tscn" id="3_uuxrd"]
-[ext_resource type="PackedScene" path="res://Scenes/ladder.tscn" id="3_vanu4"]
+[ext_resource type="PackedScene" uid="uid://dn067m75da1ns" path="res://Scenes/enemy_3.tscn" id="3_uuxrd"]
+[ext_resource type="PackedScene" uid="uid://byqvcd4ynq3fy" path="res://Scenes/ladder.tscn" id="3_vanu4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -22,6 +23,7 @@ size = Vector3(3, 1, 2)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
 transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+material_override = ExtResource("1_00b1s")
 mesh = SubResource("BoxMesh_02o2l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Path"]

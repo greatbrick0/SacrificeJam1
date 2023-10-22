@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bh117rvevi20u"]
+[gd_scene load_steps=8 format=3 uid="uid://bh117rvevi20u"]
 
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_ej8sl"]
-[ext_resource type="PackedScene" path="res://Scenes/enemy_2.tscn" id="2_75oa0"]
+[ext_resource type="Material" uid="uid://bvwewxdpfhf1t" path="res://Art/Sand.tres" id="1_ppqcv"]
+[ext_resource type="PackedScene" uid="uid://ccw0gxr2hvtb0" path="res://Scenes/enemy_2.tscn" id="2_75oa0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -20,6 +21,7 @@ size = Vector3(3, 1, 2)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
 transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+material_override = ExtResource("1_ppqcv")
 mesh = SubResource("BoxMesh_02o2l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Path"]

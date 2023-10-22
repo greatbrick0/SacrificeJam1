@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://e51p54mvacw2"]
+[gd_scene load_steps=7 format=3 uid="uid://e51p54mvacw2"]
 
+[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="1_pvtp4"]
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_so8ht"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
@@ -19,6 +20,7 @@ size = Vector3(3, 1, 2)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
 transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+material_override = ExtResource("1_pvtp4")
 mesh = SubResource("BoxMesh_02o2l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Path"]
@@ -99,7 +101,7 @@ shape = SubResource("BoxShape3D_mki6f")
 mesh = SubResource("BoxMesh_c0o0n")
 
 [node name="Platform7" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9369, 12.5164, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9369, 9.88306, 1)
 collision_layer = 256
 collision_mask = 0
 
@@ -121,7 +123,7 @@ shape = SubResource("BoxShape3D_mki6f")
 mesh = SubResource("BoxMesh_c0o0n")
 
 [node name="Platform9" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7266, 12.6235, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7266, 9.99016, -1)
 collision_layer = 256
 collision_mask = 0
 
@@ -134,10 +136,10 @@ mesh = SubResource("BoxMesh_c0o0n")
 [node name="Coins" type="Node3D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("1_so8ht")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.97542, 14.0506, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.97542, 11.1917, 1)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("1_so8ht")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7647, 14.1935, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7647, 11.3346, -1)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("1_so8ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96756, 8.49628, 0)
