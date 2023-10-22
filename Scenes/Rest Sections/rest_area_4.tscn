@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbkjcculeg0ua"]
+[gd_scene load_steps=9 format=3 uid="uid://du3hcgow023h6"]
 
-[ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_btqlt"]
-[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="2_hwe72"]
-[ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="3_7c5bb"]
-[ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="4_4n78b"]
-[ext_resource type="Texture2D" uid="uid://bijmbs1oqyewd" path="res://Art/Sprites/Nun.png" id="5_5hvso"]
+[ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_p2ctn"]
+[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="2_6gqb5"]
+[ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="3_ljmp6"]
+[ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="4_vq87b"]
+[ext_resource type="Texture2D" uid="uid://cu02k3amkv36g" path="res://Art/Sprites/JumpyKid.png" id="5_cbn5h"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -14,24 +14,24 @@ size = Vector3(30, 1, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7lrr"]
 size = Vector3(0.2, 30, 4)
 
-[node name="RestArea3" type="Node3D"]
-script = ExtResource("1_btqlt")
-itemIndex = 1
-anims = Array[String](["", "", "", "", "", "", "", ""])
-dialogue = Array[String](["Hey, are you alright?", "It... it's my husband. It was the most awful thing. We were seeking out the SUPREME MURDER MEISTER GOD KING to get out of this cursed place.", "We tried to sneak past one of those things, but it noticed us and attacked. He was able to fend it off but his wounds were too grave. He’s dying.", "That sucks. I wish I could help, but I need to keep moving.", "Wait. That pendant around your neck- is it a Pendant of Protection?", "This thing? Oh yeah, I guess it is.", "It could save his life! Please, can you give it to me?", ""])
-speaking = Array[String](["P", "S", "S", "P", "S", "P", "S", "N"])
+[node name="RestArea4" type="Node3D"]
+script = ExtResource("1_p2ctn")
+itemIndex = 3
+anims = Array[String](["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""])
+dialogue = Array[String](["God. What now?", "YEAAAAAH! WOOOO! I LOVE JUMPING!", "… Hello?", "JUMP JUMP JUMP YEAH MAN I JUST LOVE JUMPING SO MUCH AHA", "Can you move? You’re in the way.", "WOAH! Those are some cool looking boots you have there!", "Uh. Yeah. They’re good boots.", "I bet you could jump really high with those!", "… Okay?", "I want them.", "What? Why?", "So I can jump really high!", "… That’s it?", "Yeah!", ""])
+speaking = Array[String](["P", "S", "P", "S", "P", "S", "P", "S", "P", "S", "P", "S", "P", "S", "14"])
 animsL = Array[String](["", "", ""])
-dialogueL = Array[String](["I guess. Here, take it.", "Thank you so much, we might be able to make it out of here thanks to you.", "Yeah, I’m a pretty cool guy. Alright good luck."])
+dialogueL = Array[String](["I mean yeah, fair enough. Here.", "Awesome!", "Yeah, he’ll probably be fine."])
 speakingL = Array[String](["P", "S", "P"])
-animsR = Array[String](["", ""])
-dialogueR = Array[String](["Sucks to suck bozo but I got places to be. See ya.", "Oh… that’s…"])
-speakingR = Array[String](["P", "S"])
+animsR = Array[String](["", "", "", ""])
+dialogueR = Array[String](["Ew no you smell bro. Go away.", "Please?", "NO. Go away.", "Fine…"])
+speakingR = Array[String](["P", "S", "P", "S"])
 
 [node name="Path" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
 transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
-material_override = ExtResource("2_hwe72")
+material_override = ExtResource("2_6gqb5")
 mesh = SubResource("BoxMesh_02o2l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Path"]
@@ -42,7 +42,7 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
 shape = SubResource("BoxShape3D_j6a77")
 
-[node name="Tree" parent="." instance=ExtResource("3_7c5bb")]
+[node name="Tree" parent="." instance=ExtResource("3_ljmp6")]
 transform = Transform3D(1.29557, -0.0265001, -0.0484784, 0.0287127, 1.59591, 0.0407783, 0.103305, -0.111227, 0.596646, -6.66692, -1.85343, -6.552)
 
 [node name="DialoguePoint" type="Area3D" parent="." groups=["TollBooth"]]
@@ -161,8 +161,8 @@ offset_right = -50.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_4n78b")
-text = "Give Pendant
+theme = ExtResource("4_vq87b")
+text = "Give Boots
 [A]"
 
 [node name="RightButton" type="Button" parent="Dialogue/Choices"]
@@ -178,7 +178,7 @@ offset_right = 250.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_4n78b")
+theme = ExtResource("4_vq87b")
 text = "Leave
 [D]"
 
@@ -187,8 +187,8 @@ text = "Leave
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.231335, -2)
-texture = ExtResource("5_5hvso")
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.0119119, -2)
+texture = ExtResource("5_cbn5h")
 
 [connection signal="area_entered" from="DialoguePoint" to="." method="_on_dialogue_point_area_entered"]
 [connection signal="pressed" from="Dialogue/Choices/LeftButton" to="." method="_on_left_button_pressed"]
