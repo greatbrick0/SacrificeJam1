@@ -1,4 +1,5 @@
 Button
+Control
 Label
 RichTextLabel
 Container
@@ -10,11 +11,9 @@ MarginContainer
 Area3D
 CollisionShape3D
 AudioStreamPlayer
-Control
 RichTextLabel
 Panel
 AnimationPlayer
-Control
 Timer
 AudioStreamPlayer
 CollisionShape3D
