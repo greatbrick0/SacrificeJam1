@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bosracskukmxx"]
+[gd_scene load_steps=9 format=3 uid="uid://bosracskukmxx"]
 
 [ext_resource type="PackedScene" uid="uid://r4je3ei2rhwd" path="res://Scenes/player.tscn" id="1_b44tx"]
 [ext_resource type="Script" path="res://Scripts/main_level.gd" id="1_pekt1"]
@@ -17,6 +17,9 @@ fog_height_density = 0.3
 size = Vector3(1, 30, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lm0at"]
+size = Vector3(1, 6, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1x0r5"]
 size = Vector3(1, 30, 4)
 
 [node name="MainLevel" type="Node3D" node_paths=PackedStringArray("currentLevel")]
@@ -92,5 +95,12 @@ theme_override_font_sizes/font_size = 26
 text = "0/12"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BackWall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+shape = SubResource("BoxShape3D_1x0r5")
 
 [connection signal="area_entered" from="LevelEnd" to="." method="_on_level_end_area_entered"]

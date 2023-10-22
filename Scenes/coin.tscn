@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bulmv2xsyh4tc"]
+[gd_scene load_steps=7 format=3 uid="uid://bulmv2xsyh4tc"]
 
 [ext_resource type="Script" path="res://Scripts/Coin.gd" id="1_dea5n"]
 [ext_resource type="AudioStream" uid="uid://dwijlsfo1db3t" path="res://Sounds/Effects/CoinGet.wav" id="2_x456p"]
@@ -6,6 +6,15 @@
 [sub_resource type="SphereMesh" id="SphereMesh_1wi6k"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4dm8y"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hf2ht"]
+radius = 0.2
+height = 0.4
+rings = 4
+
+[sub_resource type="Curve" id="Curve_bxonl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Coin" type="Node3D"]
 script = ExtResource("1_dea5n")
@@ -24,5 +33,20 @@ shape = SubResource("SphereShape3D_4dm8y")
 
 [node name="CollectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_x456p")
+
+[node name="CollectParticles" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("SphereMesh_hf2ht")
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+linear_accel_min = -6.0
+linear_accel_max = -6.0
+scale_amount_curve = SubResource("Curve_bxonl")
 
 [connection signal="area_entered" from="CollectArea" to="." method="_on_collect_area_area_entered"]

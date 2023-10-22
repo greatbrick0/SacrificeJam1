@@ -1,13 +1,13 @@
+CollisionShape3D
+StaticBody3D
+CPUParticles3D
 Label
 MeshInstance3D
 Node3D
 AudioStreamPlayer
-CollisionShape3D
 Area3D
 Control
 WorldEnvironment
-CPUParticles3D
-StaticBody3D
 CharacterBody3D
 Decal
 Button

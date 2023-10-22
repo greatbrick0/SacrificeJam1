@@ -5,3 +5,4 @@ func _on_collect_area_area_entered(area):
 	$CollectArea/CollisionShape3D.set_deferred("disabled", true)
 	$Visuals.visible = false
 	$CollectSound.play()
+	$CollectParticles.emitting = true;

@@ -1,6 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
+@export var depthBounds: Vector2 = Vector2(-1.5, 1.5)
 @export var speed: Vector2 = Vector2(4, 2)
 @export var smallJumpHeight: float = 4.5
 @export var bigJumpHeight: float = 10
@@ -55,6 +56,10 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed.x)
 		velocity.z = move_toward(velocity.z, 0, speed.y)
 	move_and_slide()
+	if(global_position.z < depthBounds.x):
+		global_position.z = depthBounds.x
+	elif(global_position.z > depthBounds.y):
+		global_position.z = depthBounds.y
 	
 	#blocking
 	if(timeBlocking > 0.1):
