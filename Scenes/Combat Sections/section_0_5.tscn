@@ -13,7 +13,7 @@ size = Vector3(30, 1, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mki6f"]
 size = Vector3(3, 1, 2)
 
-[node name="Section 0 0" type="Node3D"]
+[node name="Section 0 1" type="Node3D"]
 
 [node name="Path" type="Node3D" parent="."]
 
@@ -34,7 +34,7 @@ shape = SubResource("BoxShape3D_j6a77")
 [node name="Platforms" type="Node3D" parent="."]
 
 [node name="Platform1" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42553, 2.12698, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42553, 2.52332, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -42,10 +42,10 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_mki6f")
 
 [node name="PlatformA" parent="Platforms/Platform1" instance=ExtResource("2_a5e6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform2" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99866, 2.07378, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99866, 2.47012, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -53,10 +53,10 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_mki6f")
 
 [node name="PlatformA" parent="Platforms/Platform2" instance=ExtResource("2_a5e6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform3" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28284, 2.16593, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28284, 2.56227, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -64,10 +64,10 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_mki6f")
 
 [node name="PlatformA" parent="Platforms/Platform3" instance=ExtResource("2_a5e6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform4" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.91504, 2.11338, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.91504, 2.50972, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -75,7 +75,7 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_mki6f")
 
 [node name="PlatformA" parent="Platforms/Platform4" instance=ExtResource("2_a5e6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform5" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53859, 6.16246, 0)
@@ -86,7 +86,7 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_mki6f")
 
 [node name="PlatformA" parent="Platforms/Platform5" instance=ExtResource("2_a5e6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform6" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198834, 6.16214, 0)
@@ -97,7 +97,7 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_mki6f")
 
 [node name="PlatformA" parent="Platforms/Platform6" instance=ExtResource("2_a5e6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform7" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06369, 6.21174, 0)
@@ -108,7 +108,7 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_mki6f")
 
 [node name="PlatformA" parent="Platforms/Platform7" instance=ExtResource("2_a5e6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform8" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46028, 9.22335, 0)
@@ -119,7 +119,7 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_mki6f")
 
 [node name="PlatformA" parent="Platforms/Platform8" instance=ExtResource("2_a5e6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform9" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91664, 9.25235, 0)
@@ -130,7 +130,7 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_mki6f")
 
 [node name="PlatformA" parent="Platforms/Platform9" instance=ExtResource("2_a5e6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform10" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.214446, 12.0861, 0)
@@ -141,7 +141,7 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_mki6f")
 
 [node name="PlatformA" parent="Platforms/Platform10" instance=ExtResource("2_a5e6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Coins" type="Node3D" parent="."]
 
