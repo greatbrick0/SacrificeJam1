@@ -48,6 +48,7 @@ func Die():
 func _on_damage_area_area_entered(area):
 	if(playerRef.blocking):
 		stunTime += 1.5
+		playerRef.ParrySound()
 	else:
 		playerRef.TakeDamage(1)
 		stunTime += 0.3

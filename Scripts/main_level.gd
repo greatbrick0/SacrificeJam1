@@ -25,6 +25,23 @@ func _ready():
 	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_4.tscn"))
 	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_5.tscn"))
 	
+	levelSections[1].append(load("res://Scenes/Combat Sections/section_0_2.tscn"))
+	levelSections[1].append(load("res://Scenes/Combat Sections/section_0_3.tscn"))
+	levelSections[1].append(load("res://Scenes/Combat Sections/section_0_4.tscn"))
+	levelSections[1].append(load("res://Scenes/Combat Sections/section_0_5.tscn"))
+	
+	levelSections[2].append(load("res://Scenes/Combat Sections/section_1_1.tscn"))
+	levelSections[2].append(load("res://Scenes/Combat Sections/section_1_2.tscn"))
+	levelSections[2].append(load("res://Scenes/Combat Sections/section_1_3.tscn"))
+	levelSections[2].append(load("res://Scenes/Combat Sections/section_0_1.tscn"))
+	levelSections[2].append(load("res://Scenes/Combat Sections/section_0_4.tscn"))
+	
+	levelSections[3].append(load("res://Scenes/Combat Sections/section_1_1.tscn"))
+	levelSections[3].append(load("res://Scenes/Combat Sections/section_1_2.tscn"))
+	levelSections[3].append(load("res://Scenes/Combat Sections/section_1_3.tscn"))
+	levelSections[3].append(load("res://Scenes/Combat Sections/section_0_1.tscn"))
+	levelSections[3].append(load("res://Scenes/Combat Sections/section_0_4.tscn"))
+	
 
 func _process(_delta):
 	$UI/CoinsLabel.text = "$ " + str(%Player.coinCount) + "/7"

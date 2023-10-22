@@ -135,3 +135,6 @@ func StartAttack():
 
 func _on_damage_area_body_entered(body):
 	body.TakeDamage(4)
+
+func ParrySound():
+	$Sounds/Block.play()

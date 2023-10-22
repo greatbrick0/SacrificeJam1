@@ -1,3 +1,4 @@
+AudioStreamPlayer
 CollisionShape3D
 Area3D
 Label
@@ -14,7 +15,6 @@ Bone2D
 Skeleton2D
 Node
 Polygon2D
-AudioStreamPlayer
 TextureRect
 Panel
 HBoxContainer
