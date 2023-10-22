@@ -64,6 +64,9 @@ func _on_level_end_area_entered(_area):
 	if(betweenLevels):
 		betweenLevels = false
 		levelId += 1
+		if(levelId >= len(levelSections)):
+			get_tree().change_scene_to_file("res://Scenes/End Screens/win_screen_3.tscn")
+			return
 		MakeCombatArea()
 		UpdateCameraBounds(0, sectionWidth * 3 - 15)
 	else:
