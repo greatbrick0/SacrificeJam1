@@ -8,7 +8,7 @@ class_name Player
 @export var gravity: float 
 @export var airBrakeMult: float = 4
 
-var inCutscene: bool = false
+@export var inCutscene: bool = false
 var input_dir: Vector2
 var holdingJump: bool
 var alreadyJumped: bool
@@ -28,12 +28,19 @@ func _process(delta):
 	if(Input.is_action_just_released("Parry")): timeBlocking = 0
 
 func _physics_process(delta):
+	if(inCutscene):
+		if(!is_on_floor()):
+			velocity.y -= gravity * delta
+		move_and_slide()
+		return
+	
 	#jumping
 	if(is_on_floor()):
 		alreadyJumped = false
 		if(holdingJump):
 			alreadyJumped = true
 			velocity.y = smallJumpHeight if donatedItems[3] else bigJumpHeight
+			$Sounds/Jump.play()
 	else:
 		velocity.y -= gravity * delta * (airBrakeMult if (velocity.y > 0 and !holdingJump and alreadyJumped) else 1)
 	
@@ -55,3 +62,16 @@ func _physics_process(delta):
 			blocking = true
 		else:
 			blocking = timeBlocking < 0.5
+
+func Heal(amount: int):
+	amount = max(min(maxHealth - health, amount), 0)
+	health += amount
+
+func TakeDamage(amount: int):
+	health -= amount
+	$Sounds/Damage.play()
+	if(health <= 0):
+		Lose()
+
+func Lose():
+	inCutscene = true

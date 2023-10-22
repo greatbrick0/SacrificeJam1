@@ -5,6 +5,7 @@ var aggro: bool = false
 @export var aggroRange: float
 
 @export var health: int = 10
+var stunTime: float = 0
 
 func _ready():
 	playerRef = get_tree().get_first_node_in_group("Player")

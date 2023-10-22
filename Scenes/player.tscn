@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://r4je3ei2rhwd"]
+[gd_scene load_steps=7 format=3 uid="uid://r4je3ei2rhwd"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wxaek"]
+[ext_resource type="AudioStream" uid="uid://bod6po3ec6v3x" path="res://Sounds/Effects/Jump.wav" id="2_najlo"]
+[ext_resource type="AudioStream" uid="uid://cpyxu85ie2hn3" path="res://Sounds/Effects/PlayerHurt.wav" id="3_wackk"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c7dkq"]
 
@@ -34,3 +36,11 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("CapsuleShape3D_1ytnr")
+
+[node name="Sounds" type="Node3D" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("2_najlo")
+
+[node name="Damage" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_wackk")

@@ -43,13 +43,16 @@ func _on_level_end_area_entered(area):
 	else:
 		betweenLevels = true
 		MakeRestArea()
+		%Player.Heal(2)
 		UpdateCameraBounds(0, 0)
+		print(currentLevel)
 
 func RemoveCurrentArea():
 	currentLevel.queue_free()
 
 func MakeRestArea():
 	currentLevel = betweenSections[levelId].instantiate()
+	add_child(currentLevel)
 	%LevelEnd.global_position.x = 15
 
 func MakeCombatArea():
@@ -72,3 +75,4 @@ func UpdateCameraBounds(left: float, right: float):
 	cameraBounds.x = left
 	cameraBounds.y = right
 	%Camera.bounds = cameraBounds
+
