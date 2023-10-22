@@ -6,6 +6,7 @@ extends Node3D
 var betweenLevels: bool = true
 
 var levelSections: Array[Array] = [[],[],[],[],[],[]]
+@export var sectionWidth: float = 30
 @export var betweenSections: Array[PackedScene]
 
 @export var currentLevel: Node3D
@@ -30,14 +31,14 @@ func ChooseSections() -> Array:
 
 
 func _on_level_end_area_entered(area):
-	%Player.global_position = Vector3(-5, 0, 0)
+	%Player.global_position = Vector3(-8, 0, 0)
 	%Camera.TeleportToPlayer()
 	RemoveCurrentArea()
 	if(betweenLevels):
 		betweenLevels = false
 		levelId += 1
 		MakeCombatArea()
-		UpdateCameraBounds(0, 75)
+		UpdateCameraBounds(0, sectionWidth * 3 - 15)
 	else:
 		betweenLevels = true
 		MakeRestArea()
@@ -48,7 +49,7 @@ func RemoveCurrentArea():
 
 func MakeRestArea():
 	currentLevel = betweenSections[levelId].instantiate()
-	$LevelEnd.global_position.x = 15
+	%LevelEnd.global_position.x = 15
 
 func MakeCombatArea():
 	currentLevel = Node3D.new()
@@ -57,8 +58,8 @@ func MakeCombatArea():
 	for ii in 3:
 		instanceRef = levelSections[levelId][buildSections[ii]].instantiate()
 		currentLevel.add_child(instanceRef)
-		instanceRef.global_position.x += 30 * ii
-	$LevelEnd.global_position.x = 90
+		instanceRef.global_position.x += sectionWidth * ii
+	%LevelEnd.global_position.x = sectionWidth * 3
 
 func UpdateCameraBounds(left: float, right: float):
 	cameraBounds.x = left

@@ -53,6 +53,12 @@ Jump={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="PhysicsBox"
+3d_physics/layer_2="HitBox"
+3d_physics/layer_9="Terrain"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
