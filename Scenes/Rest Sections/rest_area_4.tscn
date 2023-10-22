@@ -17,7 +17,7 @@ size = Vector3(0.2, 30, 4)
 [node name="RestArea4" type="Node3D"]
 script = ExtResource("1_p2ctn")
 itemIndex = 3
-anims = Array[String](["", "", "", "", "", "", "", "", "", "", "", "", "", ""])
+anims = Array[String](["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""])
 dialogue = Array[String](["God. What now?", "YEAAAAAH! WOOOO! I LOVE JUMPING!", "… Hello?", "JUMP JUMP JUMP YEAH MAN I JUST LOVE JUMPING SO MUCH AHA", "Can you move? You’re in the way.", "WOAH! Those are some cool looking boots you have there!", "Uh. Yeah. They’re good boots.", "I bet you could jump really high with those!", "… Okay?", "I want them.", "What? Why?", "So I can jump really high!", "… That’s it?", "Yeah!", ""])
 speaking = Array[String](["P", "S", "P", "S", "P", "S", "P", "S", "P", "S", "P", "S", "P", "S", "14"])
 animsL = Array[String](["", "", ""])
