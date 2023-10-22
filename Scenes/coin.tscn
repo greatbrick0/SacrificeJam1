@@ -1,9 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bulmv2xsyh4tc"]
 
 [ext_resource type="Script" path="res://Scripts/Coin.gd" id="1_dea5n"]
+[ext_resource type="PackedScene" uid="uid://2r31s6f4kyek" path="res://Art/Models/Coin.glb" id="2_b0sco"]
 [ext_resource type="AudioStream" uid="uid://dwijlsfo1db3t" path="res://Sounds/Effects/CoinGet.wav" id="2_x456p"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_1wi6k"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4dm8y"]
 
@@ -21,8 +20,8 @@ script = ExtResource("1_dea5n")
 
 [node name="Visuals" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals"]
-mesh = SubResource("SphereMesh_1wi6k")
+[node name="Coin" parent="Visuals" instance=ExtResource("2_b0sco")]
+transform = Transform3D(0.6, 0, 0, 0, -4.37114e-08, -0.6, 0, 1, -2.62268e-08, 0, 0, 0)
 
 [node name="CollectArea" type="Area3D" parent="."]
 collision_layer = 0
