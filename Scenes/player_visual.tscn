@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://svxohabm70mx"]
+[gd_scene load_steps=14 format=3 uid="uid://svxohabm70mx"]
 
 [ext_resource type="Script" path="res://Scripts/player_visual.gd" id="1_e1lks"]
 [ext_resource type="Texture2D" uid="uid://cs7k6csvaerf1" path="res://Art/Sprites/PlayerSpriteSheet.png" id="1_vnf5r"]
 [ext_resource type="Texture2D" uid="uid://cwpj4avv4on6f" path="res://Art/Sprites/Sword.png" id="2_26s4h"]
 [ext_resource type="Texture2D" uid="uid://dixx837rq0wip" path="res://Art/Sprites/Shield.png" id="3_hshw7"]
+[ext_resource type="Texture2D" uid="uid://bjob6lwftlotk" path="res://Art/Sprites/SmallCircle.png" id="4_mxwli"]
 
 [sub_resource type="Animation" id="Animation_evkxs"]
 resource_name = "Attack"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1501,17 +1503,34 @@ rest = Transform2D(1, 0, 0, 1, -6, -784)
 
 [node name="FrontArm" type="Bone2D" parent="Skeleton2D/Hip/Torso"]
 position = Vector2(450, 30)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 450, 30)
 
 [node name="FrontForearm" type="Bone2D" parent="Skeleton2D/Hip/Torso/FrontArm"]
 position = Vector2(96, 372)
 rest = Transform2D(1, 0, 0, 1, 96, 372)
 
-[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Torso/FrontArm/FrontForearm"]
+[node name="SpriteDagger" type="Sprite2D" parent="Skeleton2D/Hip/Torso/FrontArm/FrontForearm"]
+visible = false
+position = Vector2(595.691, 407.234)
+rotation = 0.694404
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_26s4h")
+
+[node name="SpriteSword" type="Sprite2D" parent="Skeleton2D/Hip/Torso/FrontArm/FrontForearm"]
+visible = false
 position = Vector2(896.833, 386.128)
 rotation = 0.694404
 scale = Vector2(0.351856, 0.351856)
 texture = ExtResource("2_26s4h")
+
+[node name="SpriteRock" type="Sprite2D" parent="Skeleton2D/Hip/Torso/FrontArm/FrontForearm"]
+visible = false
+modulate = Color(0.32549, 0.184314, 0.360784, 1)
+position = Vector2(245.387, 455.035)
+rotation = 0.694404
+scale = Vector2(12.5, 12.5)
+texture = ExtResource("4_mxwli")
 
 [node name="BackArm" type="Bone2D" parent="Skeleton2D/Hip/Torso"]
 position = Vector2(-521, 30)
@@ -1521,7 +1540,7 @@ rest = Transform2D(1, 0, 0, 1, -521, 30)
 position = Vector2(-72, 402)
 rest = Transform2D(1, 0, 0, 1, -72, 402)
 
-[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Hip/Torso/BackArm/BackForearm"]
+[node name="SpriteShield" type="Sprite2D" parent="Skeleton2D/Hip/Torso/BackArm/BackForearm"]
 z_index = 1
 position = Vector2(-60.1442, 559.543)
 scale = Vector2(0.364723, 0.364723)
@@ -1534,7 +1553,7 @@ editor_settings/show_bone_gizmo = false
 
 [node name="FrontCalf" type="Bone2D" parent="Skeleton2D/Hip/FrontLeg"]
 position = Vector2(81, 468)
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 81, 468)
 editor_settings/show_bone_gizmo = false
 
