@@ -1,14 +1,16 @@
 extends Node3D
 
+@export var itemIndex: int = 0;
+
 @export var anims: Array[String] = [""]
 @export var dialogue: Array[String] = [""]
 @export var speaking: Array[String] = ["P"]
 
 @export var animsL: Array[String] = [""]
-@export var dialogueL: Array[String] = [""]
+@export var dialogueL: Array[String] = ["Left"]
 @export var speakingL: Array[String] = ["P"]
 @export var animsR: Array[String] = [""]
-@export var dialogueR: Array[String] = [""]
+@export var dialogueR: Array[String] = ["Right"]
 @export var speakingR: Array[String] = ["P"]
 
 var tracker: int = 0
@@ -22,11 +24,17 @@ func _ready():
 
 func _process(delta):
 	if(active):
-		if(Input.is_action_just_pressed("Jump") and canContinue):
+		if(choicesVisible and canContinue):
+			if(Input.is_action_just_pressed("MoveLeft")):
+				_on_left_button_pressed()
+			elif(Input.is_action_just_pressed("MoveRight")):
+				_on_right_button_pressed()
+		elif(Input.is_action_just_pressed("Jump") and canContinue):
 			Progress()
 
 func Progress():
 	tracker += 1
+	$Dialogue/Choices.visible = false
 	if(tracker >= len(dialogue)):
 		End()
 	else:
@@ -77,6 +85,7 @@ func _on_left_button_pressed():
 	anims.append_array(animsL)
 	dialogue.append_array(dialogueL)
 	speaking.append_array(speakingL)
+	get_tree().get_first_node_in_group("Player").donatedItems[itemIndex] = true
 	Progress()
 
 func _on_right_button_pressed():

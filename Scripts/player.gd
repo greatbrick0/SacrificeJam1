@@ -55,6 +55,7 @@ func _process(delta):
 	else:
 		%"Player Visual".PlayAnim("Idle", true)
 	
+	%"Player Visual".UpdateItems(donatedItems)
 
 func _physics_process(delta):
 	if(inCutscene):

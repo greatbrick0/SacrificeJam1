@@ -55,5 +55,5 @@ Poverty"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/StartButton" to="Control" method="_on_start_button_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/QuitButton" to="Control" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/QuitButton" to="Control" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/QuitButton" to="Control" method="_on_quit_button_pressed"]
