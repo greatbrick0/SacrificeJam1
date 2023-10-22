@@ -1,3 +1,6 @@
+CollisionShape3D
+Area3D
+MeshInstance3D
 Timer
 Node3D
 AnimationPlayer
@@ -14,13 +17,9 @@ TextureRect
 Panel
 Control
 HBoxContainer
-CollisionShape3D
 StaticBody3D
 CPUParticles3D
 Label
-MeshInstance3D
-MeshInstance3D
-Area3D
 WorldEnvironment
 CharacterBody3D
 Decal

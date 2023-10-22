@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dei8s2ib5kt7m"]
+[gd_scene load_steps=7 format=3 uid="uid://dei8s2ib5kt7m"]
 
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="1_5w3g0"]
+[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="1_b3n7s"]
 [ext_resource type="PackedScene" uid="uid://cn5qqi6pw675g" path="res://Art/Models/PlatformA.glb" id="1_xvgpj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
@@ -17,6 +18,7 @@ size = Vector3(3, 1, 2)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
 transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+material_override = ExtResource("1_b3n7s")
 mesh = SubResource("BoxMesh_02o2l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Path"]

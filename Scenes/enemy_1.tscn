@@ -1,16 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://kuv2y7prb4au"]
+[gd_scene load_steps=7 format=3 uid="uid://kuv2y7prb4au"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy1.gd" id="1_cpwre"]
 [ext_resource type="AudioStream" uid="uid://binv0k8xsejon" path="res://Sounds/Effects/EnemyHit.wav" id="2_3q8rq"]
 [ext_resource type="PackedScene" uid="uid://c5cw5n6nt6aak" path="res://Art/Models/MeleeEnemy.glb" id="2_ucbl3"]
 [ext_resource type="AudioStream" uid="uid://d3sv3g5hjegma" path="res://Sounds/Effects/EnemyDeath.wav" id="3_077tv"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cnqsd"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wq3wj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_idq8h"]
 
 [node name="Enemy1" type="CharacterBody3D"]
 collision_layer = 33
-collision_mask = 0
+collision_mask = 8448
 script = ExtResource("1_cpwre")
+aggroRange = 16.0
+health = 12
 
 [node name="Visuals" type="Node3D" parent="."]
 
@@ -18,7 +22,7 @@ script = ExtResource("1_cpwre")
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_cnqsd")
+shape = SubResource("CylinderShape3D_wq3wj")
 
 [node name="Sounds" type="Node3D" parent="."]
 
@@ -27,3 +31,12 @@ stream = ExtResource("2_3q8rq")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("3_077tv")
+
+[node name="DamageArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageArea"]
+shape = SubResource("CapsuleShape3D_idq8h")
+
+[connection signal="area_entered" from="DamageArea" to="." method="_on_damage_area_area_entered"]

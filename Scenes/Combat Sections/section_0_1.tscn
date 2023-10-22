@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bep7ee62g6egk"]
+[gd_scene load_steps=8 format=3 uid="uid://bep7ee62g6egk"]
 
+[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="1_73upw"]
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_pm5hg"]
+[ext_resource type="PackedScene" uid="uid://cn5qqi6pw675g" path="res://Art/Models/PlatformA.glb" id="2_dkjd4"]
 [ext_resource type="PackedScene" uid="uid://kuv2y7prb4au" path="res://Scenes/enemy_1.tscn" id="2_yfulo"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
@@ -8,10 +10,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
 size = Vector3(30, 1, 4)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mki6f"]
-size = Vector3(3, 1, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_c0o0n"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ynmv"]
 size = Vector3(3, 1, 2)
 
 [node name="Section 0 0" type="Node3D"]
@@ -20,6 +19,7 @@ size = Vector3(3, 1, 2)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
 transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+material_override = ExtResource("1_73upw")
 mesh = SubResource("BoxMesh_02o2l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Path"]
@@ -33,49 +33,49 @@ shape = SubResource("BoxShape3D_j6a77")
 
 [node name="Platforms" type="Node3D" parent="."]
 
-[node name="Platform1" type="StaticBody3D" parent="Platforms"]
+[node name="Platform5" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.78307, 1.06892, -1)
 collision_layer = 256
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform1"]
-shape = SubResource("BoxShape3D_mki6f")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform5"]
+shape = SubResource("BoxShape3D_6ynmv")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform1"]
-mesh = SubResource("BoxMesh_c0o0n")
+[node name="PlatformA" parent="Platforms/Platform5" instance=ExtResource("2_dkjd4")]
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
-[node name="Platform2" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.34505, 4.17205, -1)
-collision_layer = 256
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform2"]
-shape = SubResource("BoxShape3D_mki6f")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform2"]
-mesh = SubResource("BoxMesh_c0o0n")
-
-[node name="Platform3" type="StaticBody3D" parent="Platforms"]
+[node name="Platform7" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70873, 4.16668, 1)
 collision_layer = 256
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform3"]
-shape = SubResource("BoxShape3D_mki6f")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform7"]
+shape = SubResource("BoxShape3D_6ynmv")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform3"]
-mesh = SubResource("BoxMesh_c0o0n")
+[node name="PlatformA" parent="Platforms/Platform7" instance=ExtResource("2_dkjd4")]
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
-[node name="Platform4" type="StaticBody3D" parent="Platforms"]
+[node name="Platform6" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83887, 1.36459, 1)
 collision_layer = 256
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform4"]
-shape = SubResource("BoxShape3D_mki6f")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform6"]
+shape = SubResource("BoxShape3D_6ynmv")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform4"]
-mesh = SubResource("BoxMesh_c0o0n")
+[node name="PlatformA" parent="Platforms/Platform6" instance=ExtResource("2_dkjd4")]
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
+
+[node name="Platform8" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.34505, 4.17205, -1)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform8"]
+shape = SubResource("BoxShape3D_6ynmv")
+
+[node name="PlatformA" parent="Platforms/Platform8" instance=ExtResource("2_dkjd4")]
+transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Coins" type="Node3D" parent="."]
 

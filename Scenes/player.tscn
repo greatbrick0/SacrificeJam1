@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://r4je3ei2rhwd"]
+[gd_scene load_steps=14 format=3 uid="uid://r4je3ei2rhwd"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wxaek"]
 [ext_resource type="PackedScene" uid="uid://svxohabm70mx" path="res://Scenes/player_visual.tscn" id="2_hbdlw"]
@@ -14,29 +14,84 @@ viewport_path = NodePath("Visuals/SubViewport")
 radius = 0.4
 height = 1.8
 
-[sub_resource type="Animation" id="Animation_mesq1"]
+[sub_resource type="Animation" id="Animation_m665s"]
 resource_name = "Dagger"
 length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attacks/DamageArea/Sword:shape:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.1, 0.7, 0.001]
+}
 
-[sub_resource type="Animation" id="Animation_qp15v"]
+[sub_resource type="Animation" id="Animation_g4rf8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attacks/DamageArea/Sword:shape:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
+
+[sub_resource type="Animation" id="Animation_y0fjj"]
 resource_name = "Sword"
 length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attacks/DamageArea/Sword:shape:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.1, 1.0, 0.001]
+}
 
-[sub_resource type="Animation" id="Animation_88v4k"]
+[sub_resource type="Animation" id="Animation_qnghg"]
 resource_name = "Rock"
 length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attacks/DamageArea/Sword:shape:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.1, 0.5, 0.001]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_adh02"]
 _data = {
-"Dagger": SubResource("Animation_mesq1"),
-"Rock": SubResource("Animation_88v4k"),
-"Sword": SubResource("Animation_qp15v")
+"Dagger": SubResource("Animation_m665s"),
+"RESET": SubResource("Animation_g4rf8"),
+"Rock": SubResource("Animation_qnghg"),
+"Sword": SubResource("Animation_y0fjj")
 }
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nvx2n"]
+radius = 0.1
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 collision_mask = 256
 script = ExtResource("1_wxaek")
-speed = Vector2(5, 2)
+speed = Vector2(7, 2)
 smallJumpHeight = 6.0
 bigJumpHeight = 12.0
 gravity = 18.0
@@ -83,5 +138,16 @@ libraries = {
 [node name="AttackCooldown" type="Timer" parent="Attacks"]
 one_shot = true
 
+[node name="DamageArea" type="Area3D" parent="Attacks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+collision_layer = 8192
+collision_mask = 32
+
+[node name="Sword" type="CollisionShape3D" parent="Attacks/DamageArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+shape = SubResource("SphereShape3D_nvx2n")
+disabled = true
+
 [connection signal="animation_finished" from="Attacks/AttackAnimator" to="." method="_on_attack_animator_animation_finished"]
 [connection signal="timeout" from="Attacks/AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="body_entered" from="Attacks/DamageArea" to="." method="_on_damage_area_body_entered"]
