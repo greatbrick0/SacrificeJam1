@@ -1,18 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://cod3l4aycnuhb"]
+[gd_scene load_steps=8 format=3 uid="uid://b2p18n2jk1406"]
 
 [ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="1_i1eng"]
-[ext_resource type="PackedScene" uid="uid://cn5qqi6pw675g" path="res://Art/Models/PlatformA.glb" id="2_i5jql"]
+[ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_ss5r8"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="3_gntln"]
+[ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_nx6si"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
 size = Vector3(30, 1, 4)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mki6f"]
-size = Vector3(3, 1, 2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_k7lrr"]
+size = Vector3(0.2, 30, 4)
 
 [node name="RestArea1" type="Node3D"]
+script = ExtResource("1_ss5r8")
+anims = Array[String](["", "", "", "", "", "", "", "", "", "", "", "", ""])
+dialogue = Array[String](["Hello?", "Oh, hello!", "Nice to see a friendly face out here. Thought there were only monsters in the purple world.", "Quite so! Though, to tell you the truth, this friendly face might not be around for much longer.", "What do you mean?", "That damned toll collector. I didn’t have enough coins so he took my sword as payment. I cannot survive out here without it", "Wow, dick move.", "Yeah…", "I mean… I do have this dagger…", "Indeed. Do you think you could give it to me? I swear I will return the favour one day.", "But then how would I protect myself?", "What about that giant sword you have on your back?", ""])
+speaking = Array[String](["P", "S", "P", "S", "P", "S", "P", "S", "P", "S", "P", "S", "N"])
+animsL = Array[String](["", "", ""])
+dialogueL = Array[String](["Oh yeah! I forgot I had that. Here you go.", "Most excellent! You will not regret making an ally of me, I guarantee it!", "Whatever you say. Bye."])
+speakingL = Array[String](["P", "S", "P"])
+animsR = Array[String](["", "", ""])
+dialogueR = Array[String](["Nuh uh it’s mine you can’t have it.", "Oh… I see. Well, I wish you luck nevertheless friend.", "Alright. Have fun man."])
+speakingR = Array[String](["P", "S", "P"])
 
 [node name="Path" type="Node3D" parent="."]
 
@@ -29,18 +40,151 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
 shape = SubResource("BoxShape3D_j6a77")
 
-[node name="Platforms" type="Node3D" parent="."]
-
-[node name="Platform2" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -1)
-collision_layer = 256
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform2"]
-shape = SubResource("BoxShape3D_mki6f")
-
-[node name="PlatformA" parent="Platforms/Platform2" instance=ExtResource("2_i5jql")]
-transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
-
 [node name="Tree" parent="." instance=ExtResource("3_gntln")]
 transform = Transform3D(1.29557, -0.0265001, -0.0484784, 0.0287127, 1.59591, 0.0407783, 0.103305, -0.111227, 0.596646, -6.66692, -1.85343, -6.552)
+
+[node name="DialoguePoint" type="Area3D" parent="." groups=["TollBooth"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 10, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialoguePoint"]
+shape = SubResource("BoxShape3D_k7lrr")
+
+[node name="Dialogue" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YouPanel" type="Panel" parent="Dialogue"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -476.0
+offset_top = -245.0
+offset_right = 24.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Dialogue/YouPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "You"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Dialogue/YouPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Hi"
+autowrap_mode = 3
+
+[node name="StrangerPanel" type="Panel" parent="Dialogue"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -173.0
+offset_right = 470.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Dialogue/StrangerPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "Stranger"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Dialogue/StrangerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Hi"
+autowrap_mode = 3
+
+[node name="Choices" type="Control" parent="Dialogue"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftButton" type="Button" parent="Dialogue/Choices"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -40.0
+offset_right = -50.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_nx6si")
+text = "Give Dagger
+[A]"
+
+[node name="RightButton" type="Button" parent="Dialogue/Choices"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_nx6si")
+text = "Leave
+[D]"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="area_entered" from="DialoguePoint" to="." method="_on_dialogue_point_area_entered"]
+[connection signal="pressed" from="Dialogue/Choices/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="Dialogue/Choices/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
