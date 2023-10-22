@@ -20,8 +20,8 @@ var coinCount: int = 0
 @export var blocking: bool = false
 @export var attacking: bool = false
 var canAttack: bool = true
-const maxHealth: int = 10
-@export var health: int = 10
+const maxHealth: int = 5
+@export var health: int = 5
 #true is donated, false is equipped [dagger, pendant, shield, boots, sword]
 @export var donatedItems: Array[bool] = [false, false, false, false, false]
 
@@ -113,6 +113,7 @@ func TakeDamage(amount: int):
 
 func Lose():
 	inCutscene = true
+	get_tree().change_scene_to_file("res://Scenes/End Screens/loss_screen.tscn")
 
 func _on_attack_animator_animation_finished(anim_name):
 	attacking = false
