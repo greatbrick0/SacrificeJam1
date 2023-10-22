@@ -3,6 +3,7 @@ class_name Player
 
 @export var depthBounds: Vector2 = Vector2(-1.5, 1.5)
 @export var speed: Vector2 = Vector2(4, 2)
+var speedMult: float = 1
 @export var smallJumpHeight: float = 4.5
 @export var bigJumpHeight: float = 10
 @export var facingLeft: bool = false
@@ -27,6 +28,23 @@ func _process(delta):
 	input_dir = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
 	if(Input.is_action_pressed("Parry")): timeBlocking += 1.0 * delta
 	if(Input.is_action_just_released("Parry")): timeBlocking = 0
+	
+	speedMult = 1
+	$Visuals/Sprite3D.flip_h = facingLeft
+	if(blocking):
+		if(donatedItems[2]):
+			%"Player Visual".PlayAnim("Parry", false)
+			speedMult = 0
+		else:
+			%"Player Visual".PlayAnim("Block", false)
+			speedMult = 0
+	elif(!is_on_floor()):
+		%"Player Visual".PlayAnim("Air", true)
+	elif(velocity):
+		%"Player Visual".PlayAnim("Walk", true)
+	else:
+		%"Player Visual".PlayAnim("Idle", true)
+	
 
 func _physics_process(delta):
 	if(inCutscene):
@@ -50,11 +68,11 @@ func _physics_process(delta):
 		facingLeft = input_dir.x < 0
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * speed.x
-		velocity.z = direction.z * speed.y
+		velocity.x = direction.x * speed.x * speedMult
+		velocity.z = direction.z * speed.y * speedMult
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed.x)
-		velocity.z = move_toward(velocity.z, 0, speed.y)
+		velocity.x = move_toward(velocity.x, 0, speed.x * speedMult)
+		velocity.z = move_toward(velocity.z, 0, speed.y * speedMult)
 	move_and_slide()
 	if(global_position.z < depthBounds.x):
 		global_position.z = depthBounds.x

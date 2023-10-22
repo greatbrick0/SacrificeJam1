@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://svxohabm70mx"]
+[gd_scene load_steps=13 format=3 uid="uid://svxohabm70mx"]
 
+[ext_resource type="Script" path="res://Scripts/player_visual.gd" id="1_e1lks"]
 [ext_resource type="Texture2D" uid="uid://cs7k6csvaerf1" path="res://Art/Sprites/PlayerSpriteSheet.png" id="1_vnf5r"]
 [ext_resource type="Texture2D" uid="uid://cwpj4avv4on6f" path="res://Art/Sprites/Sword.png" id="2_26s4h"]
 [ext_resource type="Texture2D" uid="uid://dixx837rq0wip" path="res://Art/Sprites/Shield.png" id="3_hshw7"]
@@ -1324,8 +1325,85 @@ tracks/17/keys = {
 "values": [0.0, 0.0, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_6758t"]
+resource_name = "Air"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Hip/Torso/FrontArm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-2.12414, -2.0235, -2.12414]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/Hip/Torso/BackArm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2.35473, 2.08645, 2.35473]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/Hip/FrontLeg:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-1.57518, -1.40409, -1.57518]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/Hip/FrontLeg/FrontCalf:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.45138, 1.45138]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton2D/Hip/BackLeg:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.885245, -0.307702, -0.885245]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton2D/Hip/BackLeg/BackCalf:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.53331, 1.53331]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8dcut"]
 _data = {
+"Air": SubResource("Animation_6758t"),
 "Attack": SubResource("Animation_evkxs"),
 "Block": SubResource("Animation_ddy6g"),
 "Idle": SubResource("Animation_tt1ne"),
@@ -1337,6 +1415,7 @@ _data = {
 [node name="Player Visual" type="Node2D"]
 position = Vector2(164, 132)
 scale = Vector2(0.06, 0.06)
+script = ExtResource("1_e1lks")
 metadata/_edit_horizontal_guides_ = [512.0]
 metadata/_edit_vertical_guides_ = [512.0]
 
@@ -1455,6 +1534,7 @@ editor_settings/show_bone_gizmo = false
 
 [node name="FrontCalf" type="Bone2D" parent="Skeleton2D/Hip/FrontLeg"]
 position = Vector2(81, 468)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, 0, 0, 1, 81, 468)
 editor_settings/show_bone_gizmo = false
 

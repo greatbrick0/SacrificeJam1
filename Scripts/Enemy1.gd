@@ -11,7 +11,7 @@ func _ready():
 	playerRef = get_tree().get_first_node_in_group("Player")
 	aggroRange = sqrt(aggroRange)
 
-func _process(delta):
+func _process(_delta):
 	if(!aggro and global_position.distance_squared_to(playerRef.global_position) <= aggroRange):
 		aggro = true
 
