@@ -324,6 +324,7 @@ strangerMusic = ExtResource("16_rom68")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("16_rom68")
+volume_db = -10.0
 autoplay = true
 
 [connection signal="area_entered" from="LevelEnd" to="." method="_on_level_end_area_entered"]
