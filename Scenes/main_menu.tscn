@@ -57,6 +57,7 @@ horizontal_alignment = 1
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_iw3ue")
+volume_db = -12.0
 autoplay = true
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/StartButton" to="Control" method="_on_start_button_pressed"]
