@@ -22,6 +22,7 @@ func _ready():
 
 func _process(delta):
 	$UI/CoinsLabel.text = str(%Player.coinCount) + "/7"
+	$UI/HealthLabel.text = str(%Player.health) + "/" + str(%Player.maxHealth)
 
 func ChooseSections() -> Array:
 	var fullSet = range(5)
