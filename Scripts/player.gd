@@ -18,23 +18,32 @@ var timeBlocking: float = 0
 
 var coinCount: int = 0
 @export var blocking: bool = false
+@export var attacking: bool = false
+var canAttack: bool = true
 const maxHealth: int = 10
 @export var health: int = 10
 #true is donated, false is equipped [dagger, pendant, shield, boots, sword]
 @export var donatedItems: Array[bool] = [false, false, false, false, false]
+
+func _ready():
+	%"Player Visual".UpdateItems(donatedItems)
 
 func _process(delta):
 	holdingJump = Input.is_action_pressed("Jump")
 	input_dir = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
 	if(Input.is_action_pressed("Parry")): timeBlocking += 1.0 * delta
 	if(Input.is_action_just_released("Parry")): timeBlocking = 0
+	if(Input.is_action_pressed("Ability") and canAttack): StartAttack()
 	
 	speedMult = 1
 	$Visuals/Sprite3D.flip_h = facingLeft
-	if(blocking):
+	if(attacking):
+		%"Player Visual".PlayAnim("Attack", false)
+		speedMult = 0.3
+	elif(blocking):
 		if(donatedItems[2]):
 			%"Player Visual".PlayAnim("Parry", false)
-			speedMult = 0
+			speedMult = 0.6
 		else:
 			%"Player Visual".PlayAnim("Block", false)
 			speedMult = 0
@@ -100,3 +109,21 @@ func TakeDamage(amount: int):
 
 func Lose():
 	inCutscene = true
+
+func _on_attack_animator_animation_finished(anim_name):
+	attacking = false
+
+func _on_attack_cooldown_timeout():
+	canAttack = true
+
+func StartAttack():
+	canAttack = false
+	attacking = true
+	$Attacks/AttackCooldown.start()
+	
+	if(donatedItems[0] and donatedItems[4]):
+		$Attacks/AttackAnimator.play("Rock")
+	elif(!donatedItems[0]):
+		$Attacks/AttackAnimator.play("Dagger")
+	else:
+		$Attacks/AttackAnimator.play("Sword")

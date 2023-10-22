@@ -1,44 +1,62 @@
 ea4bc82a6ad023ab7ee23ee620429895
-<<<<<<< Updated upstream
-::res://::1697954706
+::res://::1697971232
+export_presets.cfg::TextFile::-1::1697964673::0::1::::<><>::
 README.md::TextFile::-1::1697908206::0::1::::<><>::
-::res://Art/::1697957837
-BaseTheme.tres::Theme::3929544917435207214::1697954778::0::1::::<><>::
-::res://Art/Models/::1697954927
-Bridge.glb::PackedScene::3150379183708371639::1697954804::1697954886::1::::<><>::
-Ladder.glb::PackedScene::8773088084692945038::1697954804::1697954886::1::::<><>::
-PlatformA.glb::PackedScene::5748228180677083386::1697954804::1697954886::1::::<><>::uid://do8ri48o5euhj
-PlatformA_Grass Platform Base Color.png::CompressedTexture2D::8211078377956064711::1697954886::1697954886::1::::<><>::
-Tree.glb::PackedScene::289978426998115907::1697954804::1697954886::1::::<><>::
-::res://Art/Sprites/::1697957854
+::res://Art/::1697969552
+BaseTheme.tres::Theme::3929544917435207214::1697969552::0::1::::<><>::
+::res://Art/Models/::1697977143
+Bridge.glb::PackedScene::3150379183708371639::1697954804::1697969147::1::::<><>::
+Ladder.glb::PackedScene::8773088084692945038::1697954804::1697969147::1::::<><>::
+MeleeEnemy.glb::PackedScene::6884025511003060370::1697977143::1697977152::1::::<><>::
+PlatformA.glb::PackedScene::5748228180677083386::1697954804::1697969147::1::::<><>::
+PlatformA_Grass Platform Base Color.png::CompressedTexture2D::8211078377956064711::1697954886::1697969147::1::::<><>::
+Tree.glb::PackedScene::289978426998115907::1697954804::1697969147::1::::<><>::
+::res://Art/Sprites/::1697969322
 icon.svg::CompressedTexture2D::126086896447985490::1697907392::1697912222::1::::<><>::
+PlayerSpriteSheet.png::CompressedTexture2D::6102963304346915016::1697969322::1697969322::1::::<><>::
+Shield.png::CompressedTexture2D::7769710431441764575::1697969322::1697969322::1::::<><>::
 SmallCircle.png::CompressedTexture2D::3047138253591613040::1697929341::1697929354::1::::<><>::
-::res://Art/Sprites/Item Icons/::1697957995
-BootsTemp.png::CompressedTexture2D::4842647673784481646::1697957981::1697957998::1::::<><>::
-DaggerTemp.png::CompressedTexture2D::3013218401238407965::1697957920::1697957998::1::::<><>::
-PendantTemp.png::CompressedTexture2D::1713186309680455206::1697957945::1697957998::1::::<><>::
-ShieldTemp.png::CompressedTexture2D::7669660606494782727::1697957962::1697957998::1::::<><>::
-SwordTemp.png::CompressedTexture2D::6647462163009171138::1697957995::1697957998::1::::<><>::
-::res://Scenes/::1697957775
-coin.tscn::PackedScene::3813673271844781108::1697957775::0::1::::<><>::res://Scripts/Coin.gd<>uid://dwijlsfo1db3t::::res://Sounds/Effects/CoinGet.wav
-enemy_1.tscn::PackedScene::744500575443513984::1697957775::0::1::::<><>::res://Scripts/Enemy1.gd
-enemy_2.tscn::PackedScene::4960165240369859519::1697954804::0::1::::<><>::res://Scripts/Enemy1.gd
-enemy_3.tscn::PackedScene::8125266515486980900::1697954804::0::1::::<><>::res://Scripts/Enemy1.gd
-ladder.tscn::PackedScene::4105261806984602690::1697954936::0::1::::<><>::
-main_level.tscn::PackedScene::3407255616410328741::1697957775::0::1::::<><>::uid://r4je3ei2rhwd::::res://Scenes/player.tscn<>res://Scripts/main_level.gd<>res://Scripts/camera.gd<>uid://dei8s2ib5kt7m::::res://Scenes/Rest Sections/rest_area_1.tscn<>uid://bjob6lwftlotk::::res://Art/Sprites/SmallCircle.png
-main_menu.tscn::PackedScene::7676336057485277539::1697957775::0::1::::<><>::uid://bv8rbbpyb8qig::::res://Art/BaseTheme.tres
-player.tscn::PackedScene::1253632370058064963::1697957775::0::1::::<><>::res://Scripts/player.gd<>uid://bod6po3ec6v3x::::res://Sounds/Effects/Jump.wav<>uid://cpyxu85ie2hn3::::res://Sounds/Effects/PlayerHurt.wav
-::res://Scenes/Combat Sections/::1697957775
-section_0_0.tscn::PackedScene::956037866464271192::1697957775::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn
-::res://Scenes/Rest Sections/::1697957775
-rest_area_1.tscn::PackedScene::7458569683290323176::1697957775::0::1::::<><>::
-toll_area.tscn::PackedScene::4944695295679268176::1697957775::0::1::::<><>::
-::res://Scripts/::1697957430
+Sword.png::CompressedTexture2D::6348559868126308087::1697969322::1697969322::1::::<><>::
+::res://Art/Sprites/Item Icons/::1697969147
+BootsTemp.png::CompressedTexture2D::4842647673784481646::1697969147::1697969147::1::::<><>::
+DaggerTemp.png::CompressedTexture2D::3013218401238407965::1697969147::1697969147::1::::<><>::
+PendantTemp.png::CompressedTexture2D::1713186309680455206::1697969147::1697969147::1::::<><>::
+ShieldTemp.png::CompressedTexture2D::7669660606494782727::1697969147::1697969147::1::::<><>::
+SwordTemp.png::CompressedTexture2D::6647462163009171138::1697969147::1697969147::1::::<><>::
+::res://Scenes/::1697977143
+coin.tscn::PackedScene::3813673271844781108::1697975629::0::1::::<><>::res://Scripts/Coin.gd<>uid://dwijlsfo1db3t::::res://Sounds/Effects/CoinGet.wav
+enemy_1.tscn::PackedScene::744500575443513984::1697975629::0::1::::<><>::res://Scripts/Enemy1.gd<>uid://binv0k8xsejon::::res://Sounds/Effects/EnemyHit.wav<>uid://d3sv3g5hjegma::::res://Sounds/Effects/EnemyDeath.wav
+enemy_2.tscn::PackedScene::4960165240369859519::1697969147::0::1::::<><>::res://Scripts/Enemy1.gd
+enemy_3.tscn::PackedScene::8125266515486980900::1697969147::0::1::::<><>::res://Scripts/Enemy1.gd
+ladder.tscn::PackedScene::4105261806984602690::1697969147::0::1::::<><>::
+main_level.tscn::PackedScene::3407255616410328741::1697975629::0::1::::<><>::uid://r4je3ei2rhwd::::res://Scenes/player.tscn<>res://Scripts/main_level.gd<>res://Scripts/camera.gd<>uid://dei8s2ib5kt7m::::res://Scenes/Rest Sections/rest_area_1.tscn<>uid://bjob6lwftlotk::::res://Art/Sprites/SmallCircle.png<>uid://bi6vjcps1poj2::::res://Art/Sprites/Item Icons/DaggerTemp.png<>uid://yn46ta136kpi::::res://Art/Sprites/Item Icons/PendantTemp.png<>uid://dhjigphrpu7l8::::res://Art/Sprites/Item Icons/ShieldTemp.png<>uid://ca82x12y6280q::::res://Art/Sprites/Item Icons/BootsTemp.png<>uid://c1ycy3uhwcuqc::::res://Art/Sprites/Item Icons/SwordTemp.png
+main_menu.tscn::PackedScene::7676336057485277539::1697975629::0::1::::<><>::uid://bv8rbbpyb8qig::::res://Art/BaseTheme.tres
+player.tscn::PackedScene::1253632370058064963::1697977143::0::1::::<><>::res://Scripts/player.gd<>uid://svxohabm70mx::::res://Scenes/player_visual.tscn<>uid://bod6po3ec6v3x::::res://Sounds/Effects/Jump.wav<>uid://cpyxu85ie2hn3::::res://Sounds/Effects/PlayerHurt.wav
+player_visual.tscn::PackedScene::1308172977994344947::1697977143::0::1::::<><>::res://Scripts/player_visual.gd<>uid://cs7k6csvaerf1::::res://Art/Sprites/PlayerSpriteSheet.png<>uid://cwpj4avv4on6f::::res://Art/Sprites/Sword.png<>uid://dixx837rq0wip::::res://Art/Sprites/Shield.png<>uid://bjob6lwftlotk::::res://Art/Sprites/SmallCircle.png
+::res://Scenes/Combat Sections/::1697975557
+section_0_1.tscn::PackedScene::2700092070718608862::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn
+section_0_2.tscn::PackedScene::344293756967547935::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn
+section_0_3.tscn::PackedScene::9070512217198211191::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn
+section_0_4.tscn::PackedScene::6560864098650497149::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn
+section_0_5.tscn::PackedScene::6909235109939051148::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn
+section_1_0.tscn::PackedScene::5665288724351361120::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://ccw0gxr2hvtb0::::res://Scenes/enemy_2.tscn
+section_1_1.tscn::PackedScene::1288634676535970200::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn<>res://Scenes/enemy_2.tscn
+section_1_2.tscn::PackedScene::9154045965270377706::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://ccw0gxr2hvtb0::::res://Scenes/enemy_2.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn
+section_1_3.tscn::PackedScene::2933053123529763106::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>res://Scenes/enemy_2.tscn
+section_2_0.tscn::PackedScene::7233953587393400421::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn<>uid://dn067m75da1ns::::res://Scenes/enemy_3.tscn<>uid://byqvcd4ynq3fy::::res://Scenes/ladder.tscn
+section_2_1.tscn::PackedScene::4887085682224349393::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn<>res://Scenes/enemy_3.tscn<>res://Scenes/ladder.tscn
+section_2_2.tscn::PackedScene::6401418471213833482::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>res://Scenes/enemy_3.tscn<>res://Scenes/ladder.tscn
+section_2_3.tscn::PackedScene::2168353366017250857::1697969147::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://byqvcd4ynq3fy::::res://Scenes/ladder.tscn
+::res://Scenes/Rest Sections/::1697975629
+rest_area_1.tscn::PackedScene::7458569683290323176::1697975629::0::1::::<><>::uid://eep5xdbde5p4::::res://Art/Models/Tree.glb<>uid://cn5qqi6pw675g::::res://Art/Models/PlatformA.glb
+toll_area.tscn::PackedScene::4944695295679268176::1697975629::0::1::::<><>::
+::res://Scripts/::1697977143
 camera.gd::GDScript::-1::1697926919::0::1::::<>Camera3D<>::
-Coin.gd::GDScript::-1::1697956250::0::1::::<>Node3D<>::
-Enemy1.gd::GDScript::-1::1697954547::0::1::::<>CharacterBody3D<>::
-main_level.gd::GDScript::-1::1697957430::0::1::::<>Node3D<>::
-player.gd::GDScript::-1::1697956625::0::1::::Player<>CharacterBody3D<>::
+Coin.gd::GDScript::-1::1697975371::0::1::::<>Node3D<>::
+Enemy1.gd::GDScript::-1::1697975376::0::1::::<>CharacterBody3D<>::
+main_level.gd::GDScript::-1::1697975648::0::1::::<>Node3D<>::
+player.gd::GDScript::-1::1697977143::0::1::::Player<>CharacterBody3D<>::
+player_visual.gd::GDScript::-1::1697977143::0::1::::<>Node2D<>::
 ::res://Sounds/::1697954548
 ::res://Sounds/Effects/::1697954548
 Attack.wav::AudioStreamWAV::4978122734733757352::1697954548::1697954548::1::::<><>::
@@ -59,72 +77,3 @@ SacrificeSongCombat.wav::AudioStreamWAV::1089142670577910082::1697954548::169795
 SacrificeSongNPC.wav::AudioStreamWAV::1543708505987951392::1697954548::1697954548::1::::<><>::
 SacrificeSongSad.wav::AudioStreamWAV::2486598491564017000::1697954548::1697954548::1::::<><>::
 SacrificeSongVictory.wav::AudioStreamWAV::7896981174103832089::1697954548::1697954548::1::::<><>::
-=======
-::res://::1697960006
-README.md::TextFile::-1::1697911348::0::1::::<><>::
-::res://Art/::1697950258
-BaseTheme.tres::Theme::3929544917435207214::1697923994::0::1::::<><>::
-::res://Art/Models/::1697955135
-Bridge.glb::PackedScene::8819617407190759432::1697954769::1697955135::1::::<><>::
-Ladder.glb::PackedScene::8113772393946189287::1697954769::1697955135::1::::<><>::
-PlatformA.glb::PackedScene::7794269886067383733::1697954769::1697955135::1::::<><>::uid://d2jd73tck2nmp
-PlatformA_Grass Platform Base Color.png::CompressedTexture2D::9073181025586370387::1697955135::1697955135::1::::<><>::
-Tree.glb::PackedScene::4740525352085018741::1697954769::1697955135::1::::<><>::
-::res://Art/Sprites/::1697950258
-icon.svg::CompressedTexture2D::126086896447985490::1697912261::1697912261::1::::<><>::
-SmallCircle.png::CompressedTexture2D::3047138253591613040::1697950258::1697950258::1::::<><>::
-::res://Scenes/::1697959714
-coin.tscn::PackedScene::3813673271844781108::1697954159::0::1::::<><>::res://Scripts/Coin.gd<>uid://dwijlsfo1db3t
-enemy_1.tscn::PackedScene::744500575443513984::1697950258::0::1::::<><>::res://Scripts/Enemy1.gd
-enemy_2.tscn::PackedScene::-1::1697954878::0::1::::<><>::
-enemy_3.tscn::PackedScene::-1::1697954878::0::1::::<><>::
-ladder.tscn::PackedScene::-1::1697954878::0::1::::<><>::
-main_level.tscn::PackedScene::3407255616410328741::1697959714::0::1::::<><>::uid://r4je3ei2rhwd::::res://Scenes/player.tscn<>res://Scripts/main_level.gd<>res://Scripts/camera.gd<>uid://dei8s2ib5kt7m::::res://Scenes/Rest Sections/rest_area_1.tscn
-main_menu.tscn::PackedScene::7676336057485277539::1697923994::0::1::::<><>::uid://bv8rbbpyb8qig
-player.tscn::PackedScene::1253632370058064963::1697959714::0::1::::<><>::res://Scripts/player.gd<>uid://bod6po3ec6v3x::::res://Sounds/Effects/Jump.wav<>uid://cpyxu85ie2hn3::::res://Sounds/Effects/PlayerHurt.wav
-::res://Scenes/Combat Sections/::1697962303
-section_2_3.tscn::PackedScene::2168353366017250857::1697962353::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn
-section_0_0.tscn::PackedScene::5353720567797101990::1697958500::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn
-section_0_1.tscn::PackedScene::2700092070718608862::1697958500::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn
-section_0_2.tscn::PackedScene::344293756967547935::1697958500::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn
-section_0_3.tscn::PackedScene::9070512217198211191::1697958500::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn
-section_0_4.tscn::PackedScene::6560864098650497149::1697959714::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn
-section_0_5.tscn::PackedScene::6909235109939051148::1697958772::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn
-section_1_0.tscn::PackedScene::5665288724351361120::1697960351::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://ccw0gxr2hvtb0::::res://Scenes/enemy_2.tscn
-section_1_1.tscn::PackedScene::1288634676535970200::1697960913::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn<>res://Scenes/enemy_2.tscn
-section_1_2.tscn::PackedScene::9154045965270377706::1697961358::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://ccw0gxr2hvtb0::::res://Scenes/enemy_2.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn
-section_1_3.tscn::PackedScene::2933053123529763106::1697961551::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>res://Scenes/enemy_2.tscn
-section_2_0.tscn::PackedScene::7233953587393400421::1697961879::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn<>uid://dn067m75da1ns::::res://Scenes/enemy_3.tscn<>uid://byqvcd4ynq3fy::::res://Scenes/ladder.tscn
-section_2_1.tscn::PackedScene::4887085682224349393::1697962093::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>uid://kuv2y7prb4au::::res://Scenes/enemy_1.tscn<>res://Scenes/enemy_3.tscn<>res://Scenes/ladder.tscn
-section_2_2.tscn::PackedScene::6401418471213833482::1697962303::0::1::::<><>::uid://bulmv2xsyh4tc::::res://Scenes/coin.tscn<>res://Scenes/enemy_3.tscn<>res://Scenes/ladder.tscn
-::res://Scenes/Rest Sections/::1697950258
-rest_area_1.tscn::PackedScene::7458569683290323176::1697950258::0::1::::<><>::
-toll_area.tscn::PackedScene::4944695295679268176::1697950258::0::1::::<><>::
-::res://Scripts/::1697959699
-camera.gd::GDScript::-1::1697950258::0::1::::<>Camera3D<>::
-Coin.gd::GDScript::-1::1697954159::0::1::::<>Node3D<>::
-Enemy1.gd::GDScript::-1::1697954159::0::1::::<>CharacterBody3D<>::
-main_level.gd::GDScript::-1::1697959699::0::1::::<>Node3D<>::
-player.gd::GDScript::-1::1697954159::0::1::::Player<>CharacterBody3D<>::
-::res://Sounds/::1697953920
-::res://Sounds/Effects/::1697953920
-Attack.wav::AudioStreamWAV::4978122734733757352::1697953920::1697953920::1::::<><>::
-BossDeath.wav::AudioStreamWAV::7152749725378952736::1697953920::1697953920::1::::<><>::
-BossFire.wav::AudioStreamWAV::6146150478713204181::1697953920::1697953920::1::::<><>::
-CoinGet.wav::AudioStreamWAV::8720498683631631239::1697953920::1697953920::1::::<><>::
-Dialogue.wav::AudioStreamWAV::3594829172441175030::1697953920::1697953920::1::::<><>::
-EnemyDeath.wav::AudioStreamWAV::9163033893409191616::1697953920::1697953920::1::::<><>::
-EnemyHit.wav::AudioStreamWAV::2976088622577139437::1697953920::1697953920::1::::<><>::
-Jump.wav::AudioStreamWAV::3377167420339151291::1697953920::1697953920::1::::<><>::
-LadderClimb.wav::AudioStreamWAV::1492162337511159912::1697953920::1697953920::1::::<><>::
-Parry.wav::AudioStreamWAV::809324128249095627::1697953920::1697953920::1::::<><>::
-Pendant.wav::AudioStreamWAV::4003989790107630905::1697953920::1697953921::1::::<><>::
-PlayerHurt.wav::AudioStreamWAV::5876653074750434826::1697953921::1697953921::1::::<><>::
-::res://Sounds/Music/::1697953921
-SacrificeSong1.wav::AudioStreamWAV::6311055304847462060::1697953921::1697953921::1::::<><>::
-SacrificeSongCombat.wav::AudioStreamWAV::1089142670577910082::1697953921::1697953921::1::::<><>::
-SacrificeSongNPC.wav::AudioStreamWAV::1543708505987951392::1697953921::1697953921::1::::<><>::
-SacrificeSongSad.wav::AudioStreamWAV::2486598491564017000::1697953921::1697953921::1::::<><>::
-SacrificeSongVictory.wav::AudioStreamWAV::7896981174103832089::1697953921::1697953921::1::::<><>::
-::res://Sounds/Sound Effects/::1697952119
->>>>>>> Stashed changes

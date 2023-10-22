@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://r4je3ei2rhwd"]
+[gd_scene load_steps=12 format=3 uid="uid://r4je3ei2rhwd"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wxaek"]
 [ext_resource type="PackedScene" uid="uid://svxohabm70mx" path="res://Scenes/player_visual.tscn" id="2_hbdlw"]
@@ -13,6 +13,25 @@ viewport_path = NodePath("Visuals/SubViewport")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ytnr"]
 radius = 0.4
 height = 1.8
+
+[sub_resource type="Animation" id="Animation_mesq1"]
+resource_name = "Dagger"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_qp15v"]
+resource_name = "Sword"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_88v4k"]
+resource_name = "Rock"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_adh02"]
+_data = {
+"Dagger": SubResource("Animation_mesq1"),
+"Rock": SubResource("Animation_88v4k"),
+"Sword": SubResource("Animation_qp15v")
+}
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 collision_mask = 256
@@ -52,3 +71,17 @@ stream = ExtResource("2_najlo")
 
 [node name="Damage" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("3_wackk")
+
+[node name="Attacks" type="Node3D" parent="."]
+
+[node name="AttackAnimator" type="AnimationPlayer" parent="Attacks"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_adh02")
+}
+
+[node name="AttackCooldown" type="Timer" parent="Attacks"]
+one_shot = true
+
+[connection signal="animation_finished" from="Attacks/AttackAnimator" to="." method="_on_attack_animator_animation_finished"]
+[connection signal="timeout" from="Attacks/AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

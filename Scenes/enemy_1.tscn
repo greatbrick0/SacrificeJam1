@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Enemy1.gd" id="1_cpwre"]
 [ext_resource type="AudioStream" uid="uid://binv0k8xsejon" path="res://Sounds/Effects/EnemyHit.wav" id="2_3q8rq"]
+[ext_resource type="PackedScene" uid="uid://c5cw5n6nt6aak" path="res://Art/Models/MeleeEnemy.glb" id="2_ucbl3"]
 [ext_resource type="AudioStream" uid="uid://d3sv3g5hjegma" path="res://Sounds/Effects/EnemyDeath.wav" id="3_077tv"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_u3p8v"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cnqsd"]
 
@@ -15,8 +14,8 @@ script = ExtResource("1_cpwre")
 
 [node name="Visuals" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals"]
-mesh = SubResource("CapsuleMesh_u3p8v")
+[node name="MeleeEnemy" parent="Visuals" instance=ExtResource("2_ucbl3")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_cnqsd")
