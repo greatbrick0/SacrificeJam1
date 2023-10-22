@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://byqvcd4ynq3fy"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gekuh"]
+height = 3.0
+
+[node name="Ladder" type="Node3D"]
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("CylinderMesh_gekuh")
