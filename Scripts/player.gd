@@ -64,9 +64,11 @@ func _physics_process(delta):
 	#blocking
 	if(timeBlocking > 0.1):
 		if(donatedItems[2]):
-			blocking = true
-		else:
 			blocking = timeBlocking < 0.5
+		else:
+			blocking = true
+	else:
+		blocking = false
 
 func Heal(amount: int):
 	amount = max(min(maxHealth - health, amount), 0)
