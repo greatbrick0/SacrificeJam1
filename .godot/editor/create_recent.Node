@@ -1,3 +1,10 @@
+Sprite2D
+Node2D
+AnimationPlayer
+Bone2D
+Skeleton2D
+Node
+Polygon2D
 AudioStreamPlayer
 Node3D
 MeshInstance3D
