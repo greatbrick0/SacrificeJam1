@@ -39,7 +39,7 @@ func ChooseSections(count: int) -> Array:
 
 
 func _on_level_end_area_entered(area):
-	%Player.global_position = Vector3(-8, 0, 0)
+	%Player.global_position = Vector3(-12, 0, 0)
 	%Camera.TeleportToPlayer()
 	RemoveCurrentArea()
 	$UI/CoinsLabel.visible = betweenLevels

@@ -57,6 +57,7 @@ Jump={
 
 3d_physics/layer_1="PhysicsBox"
 3d_physics/layer_2="HitBox"
+3d_physics/layer_6="EnemyHitBox"
 3d_physics/layer_9="Terrain"
 
 [rendering]
