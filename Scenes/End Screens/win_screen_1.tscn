@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkcrhdoxyo4fa"]
+[gd_scene load_steps=4 format=3 uid="uid://hppjy1dcb6yb"]
 
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="1_m15jv"]
 [ext_resource type="Script" path="res://Scripts/WinButton1.gd" id="2_1fdy1"]
+[ext_resource type="AudioStream" uid="uid://dkrmej4e810xh" path="res://Sounds/Music/SacrificeSongVictory.wav" id="3_0ff1x"]
 
 [node name="win_screen_2" type="Control"]
 layout_mode = 3
@@ -62,5 +63,9 @@ grow_vertical = 0
 theme = ExtResource("1_m15jv")
 text = "Back to Menu"
 script = ExtResource("2_1fdy1")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0ff1x")
+autoplay = true
 
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]

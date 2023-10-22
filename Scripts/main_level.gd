@@ -68,10 +68,15 @@ func _on_level_end_area_entered(_area):
 			get_tree().change_scene_to_file("res://Scenes/End Screens/win_screen_3.tscn")
 			return
 		MakeCombatArea()
+		$MusicManager.PlayCombat()
 		UpdateCameraBounds(0, sectionWidth * 3 - 15)
 	else:
 		betweenLevels = true
 		MakeRestArea()
+		if(levelId == 1):
+			$MusicManager.PlaySad()
+		else:
+			$MusicManager.PlayStranger()
 		%Player.Heal(1)
 		UpdateCameraBounds(0, 0)
 		print(currentLevel)

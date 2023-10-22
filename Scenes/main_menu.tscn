@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhmqese2dv6mx"]
+[gd_scene load_steps=4 format=3 uid="uid://dhmqese2dv6mx"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_gqk4i"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="1_gtdg8"]
+[ext_resource type="AudioStream" uid="uid://cv6efnuba18yi" path="res://Sounds/Music/SacrificeSong1.wav" id="3_iw3ue"]
 
 [node name="MainMenu" type="CanvasLayer"]
 
@@ -53,6 +54,10 @@ theme_override_font_sizes/font_size = 80
 text = "Purple World
 Poverty"
 horizontal_alignment = 1
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_iw3ue")
+autoplay = true
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/StartButton" to="Control" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/QuitButton" to="Control" method="_on_start_button_pressed"]

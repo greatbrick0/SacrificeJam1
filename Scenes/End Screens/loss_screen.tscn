@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8p16tu7y4pd0"]
+[gd_scene load_steps=4 format=3 uid="uid://b8p16tu7y4pd0"]
 
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="1_xq2ob"]
 [ext_resource type="Script" path="res://Scripts/WinButton1.gd" id="2_lftis"]
+[ext_resource type="AudioStream" uid="uid://bbor6colkvvg7" path="res://Sounds/Music/SacrificeSongSad.wav" id="3_n8h38"]
 
 [node name="loss_screen" type="Control"]
 layout_mode = 3
@@ -60,5 +61,9 @@ grow_vertical = 0
 theme = ExtResource("1_xq2ob")
 text = "Back to Menu"
 script = ExtResource("2_lftis")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n8h38")
+autoplay = true
 
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]
