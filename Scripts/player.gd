@@ -13,6 +13,7 @@ var holdingJump: bool
 var alreadyJumped: bool
 var timeBlocking: float = 0
 
+var coinCount: int = 0
 @export var blocking: bool = false
 const maxHealth: int = 10
 @export var health: int = 10

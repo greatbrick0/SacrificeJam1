@@ -1,25 +1,30 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1697927534
+::res://::1697937251
 README.md::TextFile::-1::1697908206::0::1::::<><>::
 ::res://Art/::1697914835
 BaseTheme.tres::Theme::3929544917435207214::1697914835::0::1::::<><>::
 ::res://Art/Models/::1697929129
 ModelsGoHere.txt::TextFile::-1::1697929129::0::1::::<><>::
-::res://Art/Sprites/::1697929341
+::res://Art/Sprites/::1697929354
 icon.svg::CompressedTexture2D::126086896447985490::1697907392::1697912222::1::::<><>::
 SmallCircle.png::CompressedTexture2D::3047138253591613040::1697929341::1697929354::1::::<><>::
-::res://Scenes/::1697929014
-enemy_1.tscn::PackedScene::744500575443513984::1697928920::0::1::::<><>::res://Scripts/Enemy1.gd
-main_level.tscn::PackedScene::3407255616410328741::1697928920::0::1::::<><>::uid://r4je3ei2rhwd::::res://Scenes/player.tscn<>res://Scripts/main_level.gd<>res://Scripts/camera.gd<>uid://dei8s2ib5kt7m::::res://Scenes/Rest Sections/rest_area_1.tscn
-main_menu.tscn::PackedScene::7676336057485277539::1697928920::0::1::::<><>::uid://bv8rbbpyb8qig::::res://Art/BaseTheme.tres
-player.tscn::PackedScene::1253632370058064963::1697929014::0::1::::<><>::res://Scripts/player.gd
-::res://Scenes/Combat Sections/::1697928920
-section_0_0.tscn::PackedScene::956037866464271192::1697928920::0::1::::<><>::
-::res://Scenes/Rest Sections/::1697928920
-rest_area_1.tscn::PackedScene::7458569683290323176::1697928920::0::1::::<><>::
-toll_area.tscn::PackedScene::4944695295679268176::1697928920::0::1::::<><>::
-::res://Scripts/::1697929014
+::res://Scenes/::1697937925
+enemy_1.tscn::PackedScene::744500575443513984::1697937130::0::1::::<><>::res://Scripts/Enemy1.gd
+main_level.tscn::PackedScene::3407255616410328741::1697937130::0::1::::<><>::uid://r4je3ei2rhwd::::res://Scenes/player.tscn<>res://Scripts/main_level.gd<>res://Scripts/camera.gd<>uid://dei8s2ib5kt7m::::res://Scenes/Rest Sections/rest_area_1.tscn
+main_menu.tscn::PackedScene::7676336057485277539::1697937130::0::1::::<><>::uid://bv8rbbpyb8qig::::res://Art/BaseTheme.tres
+player.tscn::PackedScene::1253632370058064963::1697937130::0::1::::<><>::res://Scripts/player.gd
+coin.tscn::PackedScene::3813673271844781108::1697937925::0::1::::<><>::res://Scripts/Coin.gd
+::res://Scenes/Combat Sections/::1697937130
+section_0_0.tscn::PackedScene::956037866464271192::1697937130::0::1::::<><>::
+::res://Scenes/Rest Sections/::1697937130
+rest_area_1.tscn::PackedScene::7458569683290323176::1697937130::0::1::::<><>::
+toll_area.tscn::PackedScene::4944695295679268176::1697937130::0::1::::<><>::
+::res://Scripts/::1697937925
 camera.gd::GDScript::-1::1697926919::0::1::::<>Camera3D<>::
 Enemy1.gd::GDScript::-1::1697924295::0::1::::<>CharacterBody3D<>::
-main_level.gd::GDScript::-1::1697928920::0::1::::<>Node3D<>::
-player.gd::GDScript::-1::1697929014::0::1::::Player<>CharacterBody3D<>::
+main_level.gd::GDScript::-1::1697937130::0::1::::<>Node3D<>::
+player.gd::GDScript::-1::1697937035::0::1::::Player<>CharacterBody3D<>::
+Coin.gd::GDScript::-1::1697937925::0::1::::<>Node3D<>::
+::res://Sounds/::1697937949
+SacrificeSong1.wav::AudioStreamWAV::6311055304847462060::1697937940::1697937940::1::::<><>::
+SacrificeSongCombat.wav::AudioStreamWAV::1089142670577910082::1697937949::1697937950::1::::<><>::

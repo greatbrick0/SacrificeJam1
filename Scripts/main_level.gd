@@ -21,7 +21,7 @@ func _ready():
 	levelSections[0].append(load("res://Scenes/Combat Sections/section_0_0.tscn"))
 
 func _process(delta):
-	pass
+	$UI/CoinsLabel.text = str(%Player.coinCount) + "/12"
 
 func ChooseSections() -> Array:
 	var fullSet = range(5)
