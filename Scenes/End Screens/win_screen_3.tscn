@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://j14x3juptwmn"]
+
+[ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="1_x0vd7"]
+[ext_resource type="Script" path="res://Scripts/WinButton1.gd" id="2_ht5ci"]
+
+[node name="win_screen_3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EscapedText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -404.5
+offset_top = 50.0
+offset_right = 404.5
+offset_bottom = 122.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "You've Escaped the Purple World!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LongText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -354.5
+offset_top = 160.0
+offset_right = 354.5
+offset_bottom = 377.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "You defeated the SUPREME MURDER MEISTER GOD KING and
+made it back to the real world.
+
+You helped some folks get back as well, but
+you didn't help everyone.
+
+You did all you could... Right?"
+horizontal_alignment = 1
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -101.0
+offset_top = -148.0
+offset_right = 97.56
+offset_bottom = -93.345
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_x0vd7")
+text = "Back to Menu"
+script = ExtResource("2_ht5ci")
+
+[connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]

@@ -12,7 +12,6 @@ Area3D
 CollisionShape3D
 AudioStreamPlayer
 RichTextLabel
-Label
 Panel
 AnimationPlayer
 Timer
