@@ -1,23 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccpin5551tp2g"]
+[gd_scene load_steps=7 format=3 uid="uid://ccpin5551tp2g"]
+
+[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="1_a66ia"]
+[ext_resource type="Script" path="res://Scripts/toll_area.gd" id="1_v41kw"]
+[ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="2_yocxv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
 size = Vector3(20, 1, 4)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mki6f"]
-size = Vector3(3, 1, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_c0o0n"]
-size = Vector3(3, 1, 2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_111yn"]
+size = Vector3(0.2, 30, 4)
 
 [node name="TollArea" type="Node3D"]
+script = ExtResource("1_v41kw")
 
 [node name="Path" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
 transform = Transform3D(20, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+material_override = ExtResource("1_a66ia")
 mesh = SubResource("BoxMesh_02o2l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Path"]
@@ -28,26 +31,18 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
 shape = SubResource("BoxShape3D_j6a77")
 
-[node name="Platforms" type="Node3D" parent="."]
+[node name="Tree" parent="." instance=ExtResource("2_yocxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, -8.74295, -1.39256, -4.23551)
 
-[node name="Platform1" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1)
-collision_layer = 256
-collision_mask = 0
+[node name="Tree2" parent="." instance=ExtResource("2_yocxv")]
+transform = Transform3D(-0.7, 0, -3.17091e-08, 0, 0.7, 0, 1.05697e-07, 0, -0.21, -1.93747, -1.17644, -0.988492)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform1"]
-shape = SubResource("BoxShape3D_mki6f")
+[node name="TollPoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 10, 0)
+collision_layer = 0
+collision_mask = 2
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform1"]
-mesh = SubResource("BoxMesh_c0o0n")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TollPoint"]
+shape = SubResource("BoxShape3D_111yn")
 
-[node name="Platform2" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -1)
-collision_layer = 256
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform2"]
-shape = SubResource("BoxShape3D_mki6f")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform2"]
-mesh = SubResource("BoxMesh_c0o0n")
+[connection signal="area_entered" from="TollPoint" to="." method="_on_toll_point_area_entered"]

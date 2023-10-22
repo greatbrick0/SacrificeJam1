@@ -1,5 +1,7 @@
 CollisionShape3D
 Area3D
+Label
+Control
 MeshInstance3D
 Timer
 Node3D
@@ -15,11 +17,9 @@ Polygon2D
 AudioStreamPlayer
 TextureRect
 Panel
-Control
 HBoxContainer
 StaticBody3D
 CPUParticles3D
-Label
 WorldEnvironment
 CharacterBody3D
 Decal

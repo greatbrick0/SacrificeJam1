@@ -4,6 +4,7 @@ extends Node3D
 
 @export var levelId: int = -1
 var betweenLevels: bool = true
+var inToll: bool = false
 
 var levelSections: Array[Array] = [[preload("res://Scenes/Combat Sections/section_0_1.tscn")],
 [preload("res://Scenes/Combat Sections/section_0_1.tscn")],
@@ -30,6 +31,10 @@ func _process(_delta):
 	$UI/HealthLabel.text = str(%Player.health) + "/" + str(%Player.maxHealth) + " HP"
 	for ii in len(%Player.donatedItems):
 		$UI/Items.get_child(ii).get_child(0).visible = !%Player.donatedItems[ii]
+	
+	if(inToll):
+		if(Input.is_action_just_pressed("Jump")):
+			EndToll()
 
 func ChooseSections(count: int) -> Array:
 	var fullSet = range(count)
@@ -84,3 +89,20 @@ func UpdateCameraBounds(left: float, right: float):
 	cameraBounds.y = right
 	%Camera.bounds = cameraBounds
 
+func StartToll():
+	%Player.inCutscene = true
+	$UI/TollUI.visible = true
+	inToll = true
+	if(%Player.coinCount >= 7):
+		$UI/TollUI/Label2.text = "Press [Space] to pay."
+	else:
+		$UI/TollUI/Label2.text = "Collect at least $7. Press [Space] to go back."
+
+func EndToll():
+	if(%Player.coinCount >= 7):
+		%Player.coinCount = 0
+	else:
+		%Player.global_position.x -= 0.5
+	%Player.inCutscene = false
+	inToll = false
+	$UI/TollUI.visible = false

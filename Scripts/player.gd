@@ -58,6 +58,8 @@ func _process(delta):
 
 func _physics_process(delta):
 	if(inCutscene):
+		velocity.x = 0
+		velocity.z = 0
 		if(!is_on_floor()):
 			velocity.y -= gravity * delta
 		move_and_slide()
