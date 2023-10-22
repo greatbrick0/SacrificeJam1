@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_2gcic"]
 [ext_resource type="Material" uid="uid://bx7jm1bdlu1fv" path="res://Art/Rock.tres" id="1_aqfoc"]
 [ext_resource type="PackedScene" uid="uid://dn067m75da1ns" path="res://Scenes/enemy_3.tscn" id="2_6kqss"]
+[ext_resource type="PackedScene" uid="uid://cn5qqi6pw675g" path="res://Art/Models/PlatformA.glb" id="2_mtxn5"]
 [ext_resource type="PackedScene" uid="uid://byqvcd4ynq3fy" path="res://Scenes/ladder.tscn" id="3_2k8cm"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
@@ -11,9 +12,6 @@
 size = Vector3(30, 1, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mki6f"]
-size = Vector3(3, 1, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_c0o0n"]
 size = Vector3(3, 1, 2)
 
 [node name="Section 0 0" type="Node3D"]
@@ -44,8 +42,8 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform1"]
 shape = SubResource("BoxShape3D_mki6f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform1"]
-mesh = SubResource("BoxMesh_c0o0n")
+[node name="PlatformA" parent="Platforms/Platform1" instance=ExtResource("2_mtxn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
 
 [node name="Platform2" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71302, 4.11541, 0)
@@ -55,8 +53,8 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform2"]
 shape = SubResource("BoxShape3D_mki6f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform2"]
-mesh = SubResource("BoxMesh_c0o0n")
+[node name="PlatformA" parent="Platforms/Platform2" instance=ExtResource("2_mtxn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
 
 [node name="Platform3" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.245792, 2.70866, 0)
@@ -66,8 +64,8 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform3"]
 shape = SubResource("BoxShape3D_mki6f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform3"]
-mesh = SubResource("BoxMesh_c0o0n")
+[node name="PlatformA" parent="Platforms/Platform3" instance=ExtResource("2_mtxn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
 
 [node name="Platform4" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9045, 7.66009, 0)
@@ -77,8 +75,8 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform4"]
 shape = SubResource("BoxShape3D_mki6f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform4"]
-mesh = SubResource("BoxMesh_c0o0n")
+[node name="PlatformA" parent="Platforms/Platform4" instance=ExtResource("2_mtxn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
 
 [node name="Platform5" type="StaticBody3D" parent="Platforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0765, 7.8042, 0)
@@ -88,8 +86,8 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform5"]
 shape = SubResource("BoxShape3D_mki6f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform5"]
-mesh = SubResource("BoxMesh_c0o0n")
+[node name="PlatformA" parent="Platforms/Platform5" instance=ExtResource("2_mtxn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56762, -2.42642, 0)
 
 [node name="Coins" type="Node3D" parent="."]
 
