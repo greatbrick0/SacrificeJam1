@@ -5,13 +5,16 @@ extends Node3D
 @export var anims: Array[String] = [""]
 @export var dialogue: Array[String] = [""]
 @export var speaking: Array[String] = ["P"]
+@export var Dialogue: Array[Speech] = [Speech.new()]
 
 @export var animsL: Array[String] = [""]
 @export var dialogueL: Array[String] = ["Left"]
 @export var speakingL: Array[String] = ["P"]
+@export var DialogueL: Array[Speech] = [Speech.new()]
 @export var animsR: Array[String] = [""]
 @export var dialogueR: Array[String] = ["Right"]
 @export var speakingR: Array[String] = ["P"]
+@export var DialogueR: Array[Speech] = [Speech.new()]
 
 var tracker: int = 0
 var active: bool = false

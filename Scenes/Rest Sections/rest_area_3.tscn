@@ -1,10 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbkjcculeg0ua"]
+[gd_scene load_steps=11 format=3 uid="uid://dbkjcculeg0ua"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_btqlt"]
 [ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="2_hwe72"]
+[ext_resource type="Script" path="res://Scripts/speech.gd" id="2_jllgn"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="3_7c5bb"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="4_4n78b"]
 [ext_resource type="Texture2D" uid="uid://bijmbs1oqyewd" path="res://Art/Sprites/Nun.png" id="5_5hvso"]
+
+[sub_resource type="Resource" id="Resource_veh8i"]
+script = ExtResource("2_jllgn")
+text = "Hi"
+anim = ""
+speaker = "P"
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -20,6 +27,7 @@ itemIndex = 1
 anims = Array[String](["", "", "", "", "", "", "", ""])
 dialogue = Array[String](["Hey, are you alright?", "It... it's my husband. It was the most awful thing. We were seeking out the SUPREME MURDER MEISTER GOD KING to get out of this cursed place.", "We tried to sneak past one of those things, but it noticed us and attacked. He was able to fend it off but his wounds were too grave. He’s dying.", "That sucks. I wish I could help, but I need to keep moving.", "Wait. That pendant around your neck- is it a Pendant of Protection?", "This thing? Oh yeah, I guess it is.", "It could save his life! Please, can you give it to me?", ""])
 speaking = Array[String](["P", "S", "S", "P", "S", "P", "S", "N"])
+Dialogue = Array[Object]([SubResource("Resource_veh8i")])
 animsL = Array[String](["", "", ""])
 dialogueL = Array[String](["I guess. Here, take it.", "Thank you so much, we might be able to make it out of here thanks to you.", "Yeah, I’m a pretty cool guy. Alright good luck."])
 speakingL = Array[String](["P", "S", "P"])
