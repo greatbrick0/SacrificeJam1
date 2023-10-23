@@ -1,9 +1,16 @@
+<<<<<<< Updated upstream
 Sprite3D
 MeshInstance3D
 AudioStreamPlayer
+=======
+Control
+TextureRect
+AudioStreamPlayer
+MeshInstance3D
+Sprite3D
+>>>>>>> Stashed changes
 Node3D
 Button
-Control
 Label
 RichTextLabel
 Container
@@ -27,4 +34,3 @@ Bone2D
 Skeleton2D
 Node
 Polygon2D
-TextureRect

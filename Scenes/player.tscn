@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://r4je3ei2rhwd"]
+[gd_scene load_steps=16 format=3 uid="uid://r4je3ei2rhwd"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wxaek"]
 [ext_resource type="PackedScene" uid="uid://svxohabm70mx" path="res://Scenes/player_visual.tscn" id="2_hbdlw"]
 [ext_resource type="AudioStream" uid="uid://bod6po3ec6v3x" path="res://Sounds/Effects/Jump.wav" id="2_najlo"]
 [ext_resource type="AudioStream" uid="uid://cpyxu85ie2hn3" path="res://Sounds/Effects/PlayerHurt.wav" id="3_wackk"]
 [ext_resource type="AudioStream" uid="uid://lsbpkmvxhmn0" path="res://Sounds/Effects/Parry.wav" id="5_numrh"]
+[ext_resource type="AudioStream" uid="uid://bxbtekv3aylw8" path="res://Sounds/Effects/Pendant.wav" id="6_l6v62"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_of44k"]
 viewport_path = NodePath("Visuals/SubViewport")
@@ -130,6 +131,9 @@ stream = ExtResource("3_wackk")
 
 [node name="Block" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("5_numrh")
+
+[node name="Pendant" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6_l6v62")
 
 [node name="Attacks" type="Node3D" parent="."]
 

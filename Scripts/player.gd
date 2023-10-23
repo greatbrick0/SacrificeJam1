@@ -22,6 +22,7 @@ var coinCount: int = 0
 var canAttack: bool = true
 const maxHealth: int = 5
 @export var health: int = 5
+@export var pendantActive: bool = true
 #true is donated, false is equipped [dagger, pendant, shield, boots, sword]
 @export var donatedItems: Array[bool] = [false, false, false, false, false]
 
@@ -56,6 +57,7 @@ func _process(delta):
 		%"Player Visual".PlayAnim("Idle", true)
 	
 	%"Player Visual".UpdateItems(donatedItems)
+	if(donatedItems[1]): pendantActive = false
 
 func _physics_process(delta):
 	if(inCutscene):
@@ -106,10 +108,14 @@ func Heal(amount: int):
 	health += amount
 
 func TakeDamage(amount: int):
-	health -= amount
-	$Sounds/Damage.play()
-	if(health <= 0):
-		Lose()
+	if(pendantActive):
+		pendantActive = false
+		$Sounds/Pendant.play()
+	else:
+		health -= amount
+		$Sounds/Damage.play()
+		if(health <= 0):
+			Lose()
 
 func Lose():
 	inCutscene = true
