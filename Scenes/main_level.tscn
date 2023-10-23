@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bosracskukmxx"]
+[gd_scene load_steps=23 format=3 uid="uid://bosracskukmxx"]
 
 [ext_resource type="PackedScene" uid="uid://r4je3ei2rhwd" path="res://Scenes/player.tscn" id="1_b44tx"]
 [ext_resource type="Script" path="res://Scripts/main_level.gd" id="1_pekt1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://blt28m4v5720w" path="res://Art/Sprites/Item Slot.png" id="6_rrjvr"]
 [ext_resource type="Texture2D" uid="uid://dw1bew7e7hdud" path="res://Art/Sprites/Dagger.png" id="7_beds7"]
 [ext_resource type="Texture2D" uid="uid://3i6y74dr7bbs" path="res://Art/Sprites/Pendant.png" id="8_62sym"]
+[ext_resource type="Texture2D" uid="uid://cods05l4ws3wq" path="res://Art/Sprites/SacrificeGameBackground.png" id="8_x7dm4"]
 [ext_resource type="Texture2D" uid="uid://dixx837rq0wip" path="res://Art/Sprites/Shield.png" id="9_tqs5c"]
 [ext_resource type="Texture2D" uid="uid://ce5k3fa8kpshq" path="res://Art/Sprites/Boots.png" id="10_1oo62"]
 [ext_resource type="Texture2D" uid="uid://cwpj4avv4on6f" path="res://Art/Sprites/Sword.png" id="11_gwbt3"]
@@ -22,8 +23,7 @@
 [sub_resource type="Environment" id="Environment_u5x35"]
 ambient_light_color = Color(0.458824, 0, 1, 1)
 ambient_light_energy = 3.0
-fog_enabled = true
-fog_light_color = Color(0.32549, 0.372549, 0.447059, 1)
+fog_light_color = Color(0.305882, 0.286275, 0.6, 1)
 fog_height = 1.0
 fog_height_density = 0.3
 
@@ -48,6 +48,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 9)
 current = true
 fov = 90.0
 script = ExtResource("2_v6fr6")
+
+[node name="Sprite3D" type="Sprite3D" parent="Camera"]
+transform = Transform3D(3.94, 0, 0, 0, 3.94, 0, 0, 0, 3.94, 0, 0, -15.8617)
+texture = ExtResource("8_x7dm4")
 
 [node name="MainLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.984808, -0.111619, 0.133022, 0, 0.766044, 0.642788, -0.173648, -0.633022, 0.754407, 0, 0, 0)
