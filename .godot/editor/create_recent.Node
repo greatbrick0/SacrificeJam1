@@ -1,14 +1,13 @@
-<<<<<<< Updated upstream
+CollisionShape3D
+Area3D
 Sprite3D
 MeshInstance3D
 AudioStreamPlayer
-=======
 Control
 TextureRect
 AudioStreamPlayer
 MeshInstance3D
 Sprite3D
->>>>>>> Stashed changes
 Node3D
 Button
 Label
@@ -19,18 +18,13 @@ TextEdit
 BoxContainer
 VBoxContainer
 MarginContainer
-Area3D
-CollisionShape3D
 RichTextLabel
 Panel
 AnimationPlayer
 Timer
-CollisionShape3D
-Area3D
 SubViewport
 Node2D
 Sprite2D
 Bone2D
 Skeleton2D
 Node
-Polygon2D

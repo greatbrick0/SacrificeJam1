@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://smhvileo5tuu"]
+[gd_scene load_steps=8 format=3 uid="uid://smhvileo5tuu"]
 
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_1hlub"]
 [ext_resource type="Material" uid="uid://bvwewxdpfhf1t" path="res://Art/Sand.tres" id="1_cpdd0"]
 [ext_resource type="PackedScene" uid="uid://cgasv6mhrhtq4" path="res://Art/Models/rock_platform.glb" id="2_2joxs"]
-[ext_resource type="PackedScene" uid="uid://kuv2y7prb4au" path="res://Scenes/enemy_1.tscn" id="2_cbnb2"]
 [ext_resource type="PackedScene" uid="uid://ccw0gxr2hvtb0" path="res://Scenes/enemy_2.tscn" id="2_glaom"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
@@ -73,23 +72,17 @@ transform = Transform3D(0.446526, 0, 0, 0, 0.446526, 0, 0, 0, 0.446526, 0, -2.28
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.27739, 4.0802, 0)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("1_1hlub")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.715422, 3.89478, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53153, -0.00950098, 0)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("1_1hlub")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.72532, 3.96183, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60839, 3.96183, 0)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("1_1hlub")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40141, -0.282929, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40141, -0.077616, 0)
 
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="Enemy2-1" parent="Enemies" instance=ExtResource("2_glaom")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.873043, 4.00302, 0)
-
-[node name="Enemy2-2" parent="Enemies" instance=ExtResource("2_glaom")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.41158, 3.98505, 0)
-
-[node name="Enemy1-1" parent="Enemies" instance=ExtResource("2_cbnb2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0126, 0.0329604, -0.00692081)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0885705, 4.00302, 0)
 
 [node name="Ladders" type="Node3D" parent="."]

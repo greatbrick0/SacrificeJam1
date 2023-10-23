@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://55mp0nf4ot3f"]
+[gd_scene load_steps=9 format=3 uid="uid://55mp0nf4ot3f"]
 
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_hf8bh"]
 [ext_resource type="Material" uid="uid://bx7jm1bdlu1fv" path="res://Art/Rock.tres" id="1_pueny"]
 [ext_resource type="PackedScene" uid="uid://byqvcd4ynq3fy" path="res://Scenes/ladder.tscn" id="2_hrhci"]
 [ext_resource type="PackedScene" uid="uid://c4fh4ufajv8vl" path="res://Art/Models/rectangle_platform.glb" id="2_ob06n"]
+[ext_resource type="PackedScene" uid="uid://y4l1u25xbch8" path="res://Scenes/bridge.tscn" id="5_ctsvu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -66,71 +67,29 @@ shape = SubResource("BoxShape3D_mki6f")
 [node name="rectangle_platform" parent="Platforms/Platform3/CollisionShape3D" instance=ExtResource("2_ob06n")]
 transform = Transform3D(0.154661, 0, 0, 0, 0.0488592, 0, 0, 0, 0.0910962, 0.0188813, -0.403839, -0.0495659)
 
-[node name="Platform4" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540825, 7.73052, 0)
-collision_layer = 256
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform4"]
-shape = SubResource("BoxShape3D_mki6f")
-
-[node name="rectangle_platform" parent="Platforms/Platform4/CollisionShape3D" instance=ExtResource("2_ob06n")]
-transform = Transform3D(0.154661, 0, 0, 0, 0.0488592, 0, 0, 0, 0.0910962, 0.0188813, -0.403839, -0.0495659)
-
-[node name="Platform5" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6226, 9.50616, 0)
-collision_layer = 256
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform5"]
-shape = SubResource("BoxShape3D_mki6f")
-
-[node name="rectangle_platform" parent="Platforms/Platform5/CollisionShape3D" instance=ExtResource("2_ob06n")]
-transform = Transform3D(0.154661, 0, 0, 0, 0.0488592, 0, 0, 0, 0.0910962, 0.0188813, -0.403839, -0.0495659)
-
-[node name="Platform6" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57685, 12.172, 0.00112915)
-collision_layer = 256
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform6"]
-shape = SubResource("BoxShape3D_mki6f")
-
-[node name="rectangle_platform" parent="Platforms/Platform6/CollisionShape3D" instance=ExtResource("2_ob06n")]
-transform = Transform3D(0.154661, 0, 0, 0, 0.0488592, 0, 0, 0, 0.0910962, 0.0188813, -0.403839, -0.0495659)
-
 [node name="Coins" type="Node3D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("1_hf8bh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55917, 13.8637, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72628, 6.15306, 0)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("1_hf8bh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.391243, 9.21642, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5339, -0.487806, 0)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("1_hf8bh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.563875, 5.57038, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.563875, 4.98487, 0)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("1_hf8bh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58481, -0.231703, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.56586, 2.73829, 0)
 
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="Ladders" type="Node3D" parent="."]
 
-[node name="Ladder" parent="Ladders" instance=ExtResource("2_hrhci")]
-transform = Transform3D(0.528438, 0.848972, 0, -0.848972, 0.528438, 0, 0, 0, 1, -4.79375, 2.14638, 0.478966)
-
-[node name="Ladder2" parent="Ladders" instance=ExtResource("2_hrhci")]
-transform = Transform3D(0.528438, 0.848971, 0, -0.848971, 0.528438, 0, 0, 0, 1, 1.3983, 4.18479, 0.529301)
-
-[node name="Ladder3" parent="Ladders" instance=ExtResource("2_hrhci")]
-transform = Transform3D(0.529919, -0.848048, 0, 0.848048, 0.529919, 0, 0, 0, 1, 3.8083, 5.89362, -0.555727)
-
-[node name="Ladder4" parent="Ladders" instance=ExtResource("2_hrhci")]
-transform = Transform3D(0.350207, -0.936671, 0, 0.936671, 0.350207, 0, 0, 0, 1, -2.19317, 8.41578, -0.654714)
-
-[node name="Ladder5" parent="Ladders" instance=ExtResource("2_hrhci")]
-transform = Transform3D(0.684546, 0.728967, 0, -0.728967, 0.684546, 0, 0, 0, 1, -4.59712, 9.98048, 0.515392)
-
 [node name="Ladder6" parent="Ladders" instance=ExtResource("2_hrhci")]
-transform = Transform3D(0.979223, 0.202787, 0, -0.202787, 0.979223, 0, 0, 0, 1, -8.9454, -0.617712, 0.1636)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.28247, -0.617712, 0.1636)
+
+[node name="bridge" parent="Ladders" instance=ExtResource("5_ctsvu")]
+transform = Transform3D(0.870356, -0.492424, 0, 0.492424, 0.870356, 0, 0, 0, 1, -3.59276, 3.17415, 0)
+
+[node name="bridge2" parent="Ladders" instance=ExtResource("5_ctsvu")]
+transform = Transform3D(0.913545, -0.406737, 0, 0.406737, 0.913545, 0, 0, 0, 1, 2.45966, 4.72239, 0)

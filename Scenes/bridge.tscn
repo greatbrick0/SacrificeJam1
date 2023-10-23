@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://y4l1u25xbch8"]
+
+[ext_resource type="PackedScene" uid="uid://bk5cjxk50xdml" path="res://Art/Models/Bridge.glb" id="1_6egvs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_88cly"]
+size = Vector3(3.725, 0.18, 1.04)
+
+[node name="bridge" type="Node3D"]
+
+[node name="Bridge" parent="." instance=ExtResource("1_6egvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7273, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, 0)
+shape = SubResource("BoxShape3D_88cly")

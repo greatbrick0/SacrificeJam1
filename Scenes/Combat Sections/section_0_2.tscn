@@ -33,7 +33,7 @@ shape = SubResource("BoxShape3D_j6a77")
 [node name="Platforms" type="Node3D" parent="."]
 
 [node name="Platform1" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.78307, 1.06892, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.78307, 1.06892, -0.495598)
 collision_layer = 256
 collision_mask = 0
 
@@ -66,7 +66,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform4" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.36586, 1.36459, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.36586, 1.36459, 0.550698)
 collision_layer = 256
 collision_mask = 0
 
@@ -99,7 +99,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform7" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9369, 9.88306, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9369, 9.88306, 0.588403)
 collision_layer = 256
 collision_mask = 0
 
@@ -121,7 +121,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform9" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7266, 9.99016, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7266, 9.99016, -0.548386)
 collision_layer = 256
 collision_mask = 0
 
@@ -134,10 +134,10 @@ transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 [node name="Coins" type="Node3D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("1_so8ht")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.97542, 11.1917, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.97542, 11.1917, 0.658167)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("1_so8ht")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7647, 11.3346, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7647, 11.3346, -0.46386)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("1_so8ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96756, 8.49628, 0)
