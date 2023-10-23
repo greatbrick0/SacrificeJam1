@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://du3hcgow023h6"]
+[gd_scene load_steps=32 format=3 uid="uid://du3hcgow023h6"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_p2ctn"]
 [ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="2_6gqb5"]
@@ -109,6 +109,12 @@ text = "Awesome!"
 anim = ""
 speaker = "S"
 
+[sub_resource type="Resource" id="Resource_41x4e"]
+script = ExtResource("2_fdcl8")
+text = "Jump away"
+anim = ""
+speaker = "N"
+
 [sub_resource type="Resource" id="Resource_a4kr2"]
 script = ExtResource("2_fdcl8")
 text = "Yeah, he’ll probably be fine.
@@ -153,7 +159,7 @@ size = Vector3(0.2, 30, 4)
 script = ExtResource("1_p2ctn")
 itemIndex = 3
 Dialogue = Array[Object]([SubResource("Resource_yj5cx"), SubResource("Resource_k5son"), SubResource("Resource_6oi1c"), SubResource("Resource_ovs61"), SubResource("Resource_cdc22"), SubResource("Resource_yjft2"), SubResource("Resource_5dqmj"), SubResource("Resource_mom7f"), SubResource("Resource_pobyv"), SubResource("Resource_y1rkp"), SubResource("Resource_xw5fj"), SubResource("Resource_ftlu5"), SubResource("Resource_hlwwh"), SubResource("Resource_ebsri")])
-DialogueL = Array[Object]([SubResource("Resource_7icve"), SubResource("Resource_tw2ub"), SubResource("Resource_a4kr2")])
+DialogueL = Array[Object]([SubResource("Resource_7icve"), SubResource("Resource_tw2ub"), SubResource("Resource_41x4e"), SubResource("Resource_a4kr2")])
 DialogueR = Array[Object]([SubResource("Resource_guk2n"), SubResource("Resource_185c3"), SubResource("Resource_o8d1s"), SubResource("Resource_kgu0l")])
 
 [node name="Path" type="Node3D" parent="."]
