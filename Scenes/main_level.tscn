@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dw1bew7e7hdud" path="res://Art/Sprites/Dagger.png" id="7_beds7"]
 [ext_resource type="Texture2D" uid="uid://3i6y74dr7bbs" path="res://Art/Sprites/Pendant.png" id="8_62sym"]
 [ext_resource type="Texture2D" uid="uid://cods05l4ws3wq" path="res://Art/Sprites/SacrificeGameBackground.png" id="8_x7dm4"]
+[ext_resource type="Texture2D" uid="uid://b5cou0vdbcega" path="res://Art/Sprites/PendantBadge.png" id="9_oopqa"]
 [ext_resource type="Texture2D" uid="uid://dixx837rq0wip" path="res://Art/Sprites/Shield.png" id="9_tqs5c"]
 [ext_resource type="Texture2D" uid="uid://ce5k3fa8kpshq" path="res://Art/Sprites/Boots.png" id="10_1oo62"]
 [ext_resource type="Texture2D" uid="uid://cwpj4avv4on6f" path="res://Art/Sprites/Sword.png" id="11_gwbt3"]
@@ -109,6 +110,31 @@ theme_override_font_sizes/font_size = 26
 text = "0/12 HP"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PendantBadge" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -110.0
+offset_right = 160.0
+offset_bottom = -30.0
+grow_vertical = 0
+
+[node name="PendantBadge" type="TextureRect" parent="UI/PendantBadge"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_oopqa")
 
 [node name="Items" type="Control" parent="UI"]
 layout_mode = 1

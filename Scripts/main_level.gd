@@ -42,6 +42,7 @@ func _ready():
 func _process(_delta):
 	$UI/CoinsLabel.text = "$ " + str(%Player.coinCount) + "/7"
 	$UI/HealthLabel.text = str(%Player.health) + "/" + str(%Player.maxHealth) + " HP"
+	$UI/PendantBadge.visible = %Player.pendantActive
 	for ii in len(%Player.donatedItems):
 		$UI/Items.get_child(ii).get_child(0).visible = !%Player.donatedItems[ii]
 	
@@ -73,11 +74,10 @@ func _on_level_end_area_entered(_area):
 	else:
 		betweenLevels = true
 		MakeRestArea()
-		if(levelId == 1):
-			$MusicManager.PlaySad()
-		else:
-			$MusicManager.PlayStranger()
+		if(levelId == 1): $MusicManager.PlaySad()
+		else: $MusicManager.PlayStranger()
 		%Player.Heal(1)
+		if(!%Player.donatedItems[1]): %Player.pendantActive = true
 		UpdateCameraBounds(0, 0)
 		print(currentLevel)
 
