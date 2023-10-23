@@ -1,10 +1,145 @@
-[gd_scene load_steps=9 format=3 uid="uid://du3hcgow023h6"]
+[gd_scene load_steps=31 format=3 uid="uid://du3hcgow023h6"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_p2ctn"]
 [ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="2_6gqb5"]
+[ext_resource type="Script" path="res://Scripts/speech.gd" id="2_fdcl8"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="3_ljmp6"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="4_vq87b"]
 [ext_resource type="Texture2D" uid="uid://cu02k3amkv36g" path="res://Art/Sprites/JumpyKid.png" id="5_cbn5h"]
+
+[sub_resource type="Resource" id="Resource_yj5cx"]
+script = ExtResource("2_fdcl8")
+text = "God. What now?"
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_k5son"]
+script = ExtResource("2_fdcl8")
+text = "YEAAAAAH! WOOOO! I LOVE JUMPING!"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_6oi1c"]
+script = ExtResource("2_fdcl8")
+text = "… Hello?
+"
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_ovs61"]
+script = ExtResource("2_fdcl8")
+text = "JUMP JUMP JUMP YEAH MAN I JUST LOVE JUMPING SO MUCH AHA
+"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_cdc22"]
+script = ExtResource("2_fdcl8")
+text = "Can you move? You’re in the way.
+"
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_yjft2"]
+script = ExtResource("2_fdcl8")
+text = "WOAH! Those are some cool looking boots you have there!"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_5dqmj"]
+script = ExtResource("2_fdcl8")
+text = "Uh. Yeah. They’re good boots."
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_mom7f"]
+script = ExtResource("2_fdcl8")
+text = "I bet you could jump really high with those!
+"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_pobyv"]
+script = ExtResource("2_fdcl8")
+text = "I want them."
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_y1rkp"]
+script = ExtResource("2_fdcl8")
+text = "What? Why?
+"
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_xw5fj"]
+script = ExtResource("2_fdcl8")
+text = "So I can jump really high!"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_ftlu5"]
+script = ExtResource("2_fdcl8")
+text = "… That’s it?"
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_hlwwh"]
+script = ExtResource("2_fdcl8")
+text = "Yeah!
+"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_ebsri"]
+script = ExtResource("2_fdcl8")
+text = ""
+anim = ""
+speaker = "N"
+
+[sub_resource type="Resource" id="Resource_7icve"]
+script = ExtResource("2_fdcl8")
+text = "I mean yeah, fair enough. Here."
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_tw2ub"]
+script = ExtResource("2_fdcl8")
+text = "Awesome!"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_a4kr2"]
+script = ExtResource("2_fdcl8")
+text = "Yeah, he’ll probably be fine.
+"
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_guk2n"]
+script = ExtResource("2_fdcl8")
+text = "Ew no you smell bro. Go away."
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_185c3"]
+script = ExtResource("2_fdcl8")
+text = "Please?"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_o8d1s"]
+script = ExtResource("2_fdcl8")
+text = "NO. Go away.
+"
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_kgu0l"]
+script = ExtResource("2_fdcl8")
+text = "Fine…"
+anim = ""
+speaker = "S"
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -17,6 +152,9 @@ size = Vector3(0.2, 30, 4)
 [node name="RestArea4" type="Node3D"]
 script = ExtResource("1_p2ctn")
 itemIndex = 3
+Dialogue = Array[Object]([SubResource("Resource_yj5cx"), SubResource("Resource_k5son"), SubResource("Resource_6oi1c"), SubResource("Resource_ovs61"), SubResource("Resource_cdc22"), SubResource("Resource_yjft2"), SubResource("Resource_5dqmj"), SubResource("Resource_mom7f"), SubResource("Resource_pobyv"), SubResource("Resource_y1rkp"), SubResource("Resource_xw5fj"), SubResource("Resource_ftlu5"), SubResource("Resource_hlwwh"), SubResource("Resource_ebsri")])
+DialogueL = Array[Object]([SubResource("Resource_7icve"), SubResource("Resource_tw2ub"), SubResource("Resource_a4kr2")])
+DialogueR = Array[Object]([SubResource("Resource_guk2n"), SubResource("Resource_185c3"), SubResource("Resource_o8d1s"), SubResource("Resource_kgu0l")])
 
 [node name="Path" type="Node3D" parent="."]
 

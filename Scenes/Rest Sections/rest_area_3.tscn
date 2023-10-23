@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbkjcculeg0ua"]
+[gd_scene load_steps=23 format=3 uid="uid://dbkjcculeg0ua"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_btqlt"]
 [ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="2_hwe72"]
@@ -9,9 +9,84 @@
 
 [sub_resource type="Resource" id="Resource_veh8i"]
 script = ExtResource("2_jllgn")
-text = "Hi"
+text = "Damn, what happened to him?"
 anim = ""
 speaker = "P"
+
+[sub_resource type="Resource" id="Resource_mxjtu"]
+script = ExtResource("2_jllgn")
+text = "My husband... it was the most awful thing. We were seeking out the SUPREME MURDER MEISTER GOD KING to get out of this cursed place."
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_fqc6f"]
+script = ExtResource("2_jllgn")
+text = "We tried to sneak past one of those things, but it noticed us and attacked. He was able to fend it off but his wounds were too grave. He’s dying.
+"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_hrxdr"]
+script = ExtResource("2_jllgn")
+text = "That sucks. I wish I could help, but I need to keep moving."
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_ka2v0"]
+script = ExtResource("2_jllgn")
+text = "Wait. That pendant around your neck- is it a Pendant of Protection?"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_3lfrx"]
+script = ExtResource("2_jllgn")
+text = "This thing? Oh yeah, I guess it is."
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_5qbw0"]
+script = ExtResource("2_jllgn")
+text = "It could save his life! Please, can you give it to me?"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_cq7ym"]
+script = ExtResource("2_jllgn")
+text = ""
+anim = ""
+speaker = "N"
+
+[sub_resource type="Resource" id="Resource_q3fyk"]
+script = ExtResource("2_jllgn")
+text = "I guess. Here, take it."
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_2kdmb"]
+script = ExtResource("2_jllgn")
+text = "Thank you so much, we might be able to make it out of here thanks to you.
+"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_8juus"]
+script = ExtResource("2_jllgn")
+text = "Yeah, I’m a pretty cool guy. Alright good luck."
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_hbd0n"]
+script = ExtResource("2_jllgn")
+text = "Sucks to suck bozo but I got places to be. See ya.
+"
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_d6gmy"]
+script = ExtResource("2_jllgn")
+text = "Oh… that’s…"
+anim = ""
+speaker = "S"
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -24,7 +99,9 @@ size = Vector3(0.2, 30, 4)
 [node name="RestArea3" type="Node3D"]
 script = ExtResource("1_btqlt")
 itemIndex = 1
-Dialogue = Array[Object]([SubResource("Resource_veh8i")])
+Dialogue = Array[Object]([SubResource("Resource_veh8i"), SubResource("Resource_mxjtu"), SubResource("Resource_fqc6f"), SubResource("Resource_hrxdr"), SubResource("Resource_ka2v0"), SubResource("Resource_3lfrx"), SubResource("Resource_5qbw0"), SubResource("Resource_cq7ym")])
+DialogueL = Array[Object]([SubResource("Resource_q3fyk"), SubResource("Resource_2kdmb"), SubResource("Resource_8juus")])
+DialogueR = Array[Object]([SubResource("Resource_hbd0n"), SubResource("Resource_d6gmy")])
 
 [node name="Path" type="Node3D" parent="."]
 
