@@ -34,7 +34,7 @@ shape = SubResource("BoxShape3D_j6a77")
 [node name="Platforms" type="Node3D" parent="."]
 
 [node name="Platform1" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.24993, 5.61771, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.24993, 5.61771, 1.36925)
 collision_layer = 256
 collision_mask = 0
 
@@ -45,7 +45,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform2" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71302, 5.16075, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71302, 5.16075, 1.36925)
 collision_layer = 256
 collision_mask = 0
 
@@ -56,7 +56,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 
 [node name="Platform3" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.245792, 2.70866, 0.40814)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.245792, 2.70866, 1.29167)
 collision_layer = 256
 collision_mask = 0
 
@@ -80,13 +80,13 @@ transform = Transform3D(1.6, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.23288, -3.15505, 0)
 [node name="Coins" type="Node3D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("1_wgrcs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.09351, 6.88877, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.09351, 6.88877, 1.44235)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("1_wgrcs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81813, 6.75542, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81813, 6.75542, 1.44235)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("1_wgrcs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.278074, 4.26708, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.278074, 4.26708, 1.3156)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("1_wgrcs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0210624, 0.769854, -1.12281)
