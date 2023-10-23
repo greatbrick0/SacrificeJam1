@@ -72,7 +72,6 @@ collision_mask = 2
 shape = SubResource("BoxShape3D_wt11k")
 
 [node name="RestArea1" parent="." instance=ExtResource("4_8vdju")]
-itemIndex = null
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

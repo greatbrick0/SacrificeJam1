@@ -19,7 +19,6 @@ size = Vector3(0.2, 30, 4)
 
 [node name="RestArea1" type="Node3D"]
 script = ExtResource("1_3kgbd")
-dialogue = Array[String](["Huh. I guess the SUPREME MURDER MEISTER GOD KING forgot to show up. Nice"])
 
 [node name="Path" type="Node3D" parent="."]
 

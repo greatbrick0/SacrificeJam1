@@ -2,18 +2,8 @@ extends Node3D
 
 @export var itemIndex: int = 0;
 
-@export var anims: Array[String] = [""]
-@export var dialogue: Array[String] = [""]
-@export var speaking: Array[String] = ["P"]
 @export var Dialogue: Array[Speech] = [Speech.new()]
-
-@export var animsL: Array[String] = [""]
-@export var dialogueL: Array[String] = ["Left"]
-@export var speakingL: Array[String] = ["P"]
 @export var DialogueL: Array[Speech] = [Speech.new()]
-@export var animsR: Array[String] = [""]
-@export var dialogueR: Array[String] = ["Right"]
-@export var speakingR: Array[String] = ["P"]
 @export var DialogueR: Array[Speech] = [Speech.new()]
 
 var tracker: int = 0
@@ -38,7 +28,7 @@ func _process(delta):
 func Progress():
 	tracker += 1
 	$Dialogue/Choices.visible = false
-	if(tracker >= len(dialogue)):
+	if(tracker >= len(Dialogue)):
 		End()
 	else:
 		canContinue = false
@@ -56,23 +46,23 @@ func _on_timer_timeout():
 	canContinue = true
 
 func Speak():
-	if(anims[tracker] != "" and anims[tracker] != null):
-		$AnimationPlayer.play(anims[tracker])
+	if(Dialogue[tracker].anim != "" and Dialogue[tracker].anim != null):
+		$AnimationPlayer.play(Dialogue[tracker].anim)
 	
-	%YouPanel.get_child(1).text = dialogue[tracker]
-	%StrangerPanel.get_child(1).text = dialogue[tracker]
+	%YouPanel.get_child(1).text = Dialogue[tracker].text
+	%StrangerPanel.get_child(1).text = Dialogue[tracker].text
 	
 	choicesVisible = false
-	if(dialogue[tracker] == ""):
+	if(Dialogue[tracker].text == ""):
 		ShowChoice()
 	
-	if(speaking[tracker] == "P"):
+	if(Dialogue[tracker].speaker == "P"):
 		%YouPanel.visible = true
 		%StrangerPanel.visible = false
-	elif(speaking[tracker] == "S"):
+	elif(Dialogue[tracker].speaker == "S"):
 		%YouPanel.visible = false
 		%StrangerPanel.visible = true
-	elif(speaking[tracker] == "N"):
+	elif(Dialogue[tracker].speaker == "N"):
 		%YouPanel.visible = false
 		%StrangerPanel.visible = false
 
@@ -85,14 +75,10 @@ func End():
 	get_tree().get_first_node_in_group("Player").inCutscene = false
 
 func _on_left_button_pressed():
-	anims.append_array(animsL)
-	dialogue.append_array(dialogueL)
-	speaking.append_array(speakingL)
+	Dialogue.append_array(DialogueL)
 	get_tree().get_first_node_in_group("Player").donatedItems[itemIndex] = true
 	Progress()
 
 func _on_right_button_pressed():
-	anims.append_array(animsR)
-	dialogue.append_array(dialogueR)
-	speaking.append_array(speakingR)
+	Dialogue.append_array(DialogueR)
 	Progress()
