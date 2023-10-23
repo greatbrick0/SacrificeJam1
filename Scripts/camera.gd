@@ -2,7 +2,7 @@ extends Camera3D
 
 var playerRef: Player
 var bounds: Vector2
-var speed: float = 6
+@export var speed: float = 6
 @export var leadDistance: float = 2
 
 func _ready():

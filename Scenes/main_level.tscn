@@ -49,6 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 9)
 current = true
 fov = 90.0
 script = ExtResource("2_v6fr6")
+speed = 9.0
 
 [node name="Background" type="Sprite3D" parent="Camera"]
 transform = Transform3D(3.94, 0, 0, 0, 3.94, 0, 0, 0, 3.94, 0, 0, -20.8067)

@@ -9,7 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_veh8i"]
 script = ExtResource("2_jllgn")
-text = "Damn, what happened to him?"
+text = "Hey, are you alright?"
 anim = ""
 speaker = "P"
 
