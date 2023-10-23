@@ -1,10 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://dei8s2ib5kt7m"]
+[gd_scene load_steps=13 format=3 uid="uid://dei8s2ib5kt7m"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_1se37"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="1_5w3g0"]
 [ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="1_b3n7s"]
 [ext_resource type="PackedScene" uid="uid://cn5qqi6pw675g" path="res://Art/Models/PlatformA.glb" id="1_xvgpj"]
+[ext_resource type="Script" path="res://Scripts/speech.gd" id="2_8ld7g"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_05qar"]
+
+[sub_resource type="Resource" id="Resource_uf5tt"]
+script = ExtResource("2_8ld7g")
+text = "What the… Aw shit I’m back in the purple world. I knew I shouldn’t have smoked that evil wizard weed."
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_4v7du"]
+script = ExtResource("2_8ld7g")
+text = "I’m gonna have to fight my way out again. Better get a move on. Don’t want to keep the SUPREME MURDER MEISTER GOD KING waiting."
+anim = ""
+speaker = "P"
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -19,15 +32,7 @@ size = Vector3(0.2, 30, 4)
 
 [node name="RestArea1" type="Node3D"]
 script = ExtResource("1_1se37")
-anims = Array[String](["", ""])
-dialogue = Array[String](["What the… Aw shit I’m back in the purple world. I knew I shouldn’t have smoked that evil wizard weed.", "I’m gonna have to fight my way out again. Better get a move on. Don’t want to keep the SUPREME MURDER MEISTER GOD KING waiting."])
-speaking = Array[String](["P", "P"])
-animsL = Array[String]([])
-dialogueL = Array[String]([])
-speakingL = Array[String]([])
-animsR = Array[String]([])
-dialogueR = Array[String]([])
-speakingR = Array[String]([])
+Dialogue = Array[Object]([SubResource("Resource_uf5tt"), SubResource("Resource_4v7du")])
 
 [node name="Path" type="Node3D" parent="."]
 

@@ -1,10 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbqrix7bd2smh"]
+[gd_scene load_steps=13 format=3 uid="uid://bbqrix7bd2smh"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_3kgbd"]
+[ext_resource type="Script" path="res://Scripts/speech.gd" id="2_mde0k"]
 [ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="2_nx6c1"]
 [ext_resource type="PackedScene" uid="uid://cn5qqi6pw675g" path="res://Art/Models/PlatformA.glb" id="3_oobe8"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="4_b38ah"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_3as77"]
+
+[sub_resource type="Resource" id="Resource_8emxn"]
+script = ExtResource("2_mde0k")
+text = "Huh. I guess the SUPREME MURDER MEISTER GOD KING forgot to show up."
+anim = ""
+speaker = "P"
+
+[sub_resource type="Resource" id="Resource_4bt26"]
+script = ExtResource("2_mde0k")
+text = "Nice."
+anim = ""
+speaker = "P"
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -19,7 +32,7 @@ size = Vector3(0.2, 30, 4)
 
 [node name="RestArea1" type="Node3D"]
 script = ExtResource("1_3kgbd")
-dialogue = Array[String](["Huh. I guess the SUPREME MURDER MEISTER GOD KING forgot to show up. Nice"])
+Dialogue = Array[Object]([SubResource("Resource_8emxn"), SubResource("Resource_4bt26")])
 
 [node name="Path" type="Node3D" parent="."]
 

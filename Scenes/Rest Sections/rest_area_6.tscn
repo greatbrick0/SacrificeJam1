@@ -1,125 +1,123 @@
-[gd_scene load_steps=29 format=3 uid="uid://b2p18n2jk1406"]
+[gd_scene load_steps=28 format=3 uid="uid://np3qn8ydtpbv"]
 
-[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="1_i1eng"]
-[ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_ss5r8"]
-[ext_resource type="Script" path="res://Scripts/speech.gd" id="2_b517h"]
-[ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="3_gntln"]
-[ext_resource type="Texture2D" uid="uid://dgkbtqsww7800" path="res://Art/Sprites/GreenGuy.png" id="5_6lgxb"]
-[ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_nx6si"]
+[ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_jupra"]
+[ext_resource type="Script" path="res://Scripts/speech.gd" id="2_nerlm"]
+[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="3_ineux"]
+[ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="4_dqnyg"]
+[ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_djci6"]
+[ext_resource type="Texture2D" uid="uid://cu02k3amkv36g" path="res://Art/Sprites/JumpyKid.png" id="6_cqi5c"]
 
-[sub_resource type="Resource" id="Resource_uuh5k"]
-script = ExtResource("2_b517h")
-text = "Hello?"
+[sub_resource type="Resource" id="Resource_f2ka1"]
+script = ExtResource("2_nerlm")
+text = "Hey man."
 anim = ""
 speaker = "P"
 
-[sub_resource type="Resource" id="Resource_tdt76"]
-script = ExtResource("2_b517h")
-text = "Oh, hello!"
+[sub_resource type="Resource" id="Resource_fs8cb"]
+script = ExtResource("2_nerlm")
+text = "Oh… Hey… :("
 anim = ""
 speaker = "S"
 
-[sub_resource type="Resource" id="Resource_tj1x7"]
-script = ExtResource("2_b517h")
-text = "Nice to see a friendly face out here. Thought there were only monsters in the purple world."
+[sub_resource type="Resource" id="Resource_ojgwp"]
+script = ExtResource("2_nerlm")
+text = "What’s going on with you? You feeling alright?
+"
 anim = ""
 speaker = "P"
 
-[sub_resource type="Resource" id="Resource_3cg0c"]
-script = ExtResource("2_b517h")
-text = "Quite so! Though, to tell you the truth, this friendly face might not be around for much longer."
+[sub_resource type="Resource" id="Resource_oynxu"]
+script = ExtResource("2_nerlm")
+text = "Not really… :(
+"
 anim = ""
 speaker = "S"
 
-[sub_resource type="Resource" id="Resource_fo4wg"]
-script = ExtResource("2_b517h")
-text = "What do you mean?"
+[sub_resource type="Resource" id="Resource_cfwyt"]
+script = ExtResource("2_nerlm")
+text = "Well what’s wrong?"
 anim = ""
 speaker = "P"
 
-[sub_resource type="Resource" id="Resource_coyvc"]
-script = ExtResource("2_b517h")
-text = "That damned toll collector. I didn’t have enough coins so he took my sword as payment. I cannot survive out here without it"
+[sub_resource type="Resource" id="Resource_ngmtq"]
+script = ExtResource("2_nerlm")
+text = "I’ve got brittle bones :("
 anim = ""
 speaker = "S"
 
-[sub_resource type="Resource" id="Resource_jbnvc"]
-script = ExtResource("2_b517h")
-text = "Wow, dick move."
+[sub_resource type="Resource" id="Resource_imkxn"]
+script = ExtResource("2_nerlm")
+text = "Oh. Yeah I can see why that might be problematic."
 anim = ""
 speaker = "P"
 
-[sub_resource type="Resource" id="Resource_tddlc"]
-script = ExtResource("2_b517h")
-text = "Yeah…"
+[sub_resource type="Resource" id="Resource_diixc"]
+script = ExtResource("2_nerlm")
+text = "It’s so over. I’ve got brittle bones, no armor, no weapons,"
 anim = ""
 speaker = "S"
 
-[sub_resource type="Resource" id="Resource_ogw1g"]
-script = ExtResource("2_b517h")
-text = "I mean… I do have this dagger…"
+[sub_resource type="Resource" id="Resource_cqbgt"]
+script = ExtResource("2_nerlm")
+text = "I’m short, got no money, no car, no job, no-
+"
+anim = ""
+speaker = "S"
+
+[sub_resource type="Resource" id="Resource_cnhbo"]
+script = ExtResource("2_nerlm")
+text = "OKAY DAMN! So what do you want?"
 anim = ""
 speaker = "P"
 
-[sub_resource type="Resource" id="Resource_siben"]
-script = ExtResource("2_b517h")
-text = "Indeed. Do you think you could give it to me? I swear to repay the favour one day."
+[sub_resource type="Resource" id="Resource_ht3is"]
+script = ExtResource("2_nerlm")
+text = "Huh? Oh. I guess a little something to keep me STURDY would help. Something to keep me GUARDED."
 anim = ""
 speaker = "S"
 
-[sub_resource type="Resource" id="Resource_6veom"]
-script = ExtResource("2_b517h")
-text = "But then how would I protect myself?"
-anim = ""
-speaker = "P"
-
-[sub_resource type="Resource" id="Resource_4rlor"]
-script = ExtResource("2_b517h")
-text = "What about that giant sword you have on your back?"
+[sub_resource type="Resource" id="Resource_sxb4n"]
+script = ExtResource("2_nerlm")
+text = "You know, maybe something that could SHIELD me from the dangers of the world."
 anim = ""
 speaker = "S"
 
-[sub_resource type="Resource" id="Resource_aa706"]
-script = ExtResource("2_b517h")
+[sub_resource type="Resource" id="Resource_wpo8p"]
+script = ExtResource("2_nerlm")
 text = ""
 anim = ""
 speaker = "N"
 
-[sub_resource type="Resource" id="Resource_k4svx"]
-script = ExtResource("2_b517h")
-text = "Oh yeah! I forgot I had that. Here you go."
+[sub_resource type="Resource" id="Resource_2vcpe"]
+script = ExtResource("2_nerlm")
+text = "FINE, fine just take it."
 anim = ""
 speaker = "P"
 
-[sub_resource type="Resource" id="Resource_6lmjl"]
-script = ExtResource("2_b517h")
-text = "Most excellent! You will not regret making an ally of me, I guarantee it!"
+[sub_resource type="Resource" id="Resource_gm0cd"]
+script = ExtResource("2_nerlm")
+text = "Wow! Thank you so much! You’ve given me the strength to go on in this world :)"
 anim = ""
 speaker = "S"
 
-[sub_resource type="Resource" id="Resource_jipgl"]
-script = ExtResource("2_b517h")
-text = "Whatever you say. Bye."
+[sub_resource type="Resource" id="Resource_7dsgw"]
+script = ExtResource("2_nerlm")
+text = "Yeah, yeah, sure whatever, gotta go. Bye."
 anim = ""
 speaker = "P"
 
-[sub_resource type="Resource" id="Resource_1k7op"]
-script = ExtResource("2_b517h")
-text = "Nuh uh it’s mine you can’t have it."
+[sub_resource type="Resource" id="Resource_gjpoi"]
+script = ExtResource("2_nerlm")
+text = "Aw yeah man, I bet… Welp, good luck with that. Later bro.
+"
 anim = ""
 speaker = "P"
 
-[sub_resource type="Resource" id="Resource_0kodf"]
-script = ExtResource("2_b517h")
-text = "Oh… I see. Well, I wish you luck nevertheless friend."
+[sub_resource type="Resource" id="Resource_oejbu"]
+script = ExtResource("2_nerlm")
+text = "Thanks… :("
 anim = ""
 speaker = "S"
-
-[sub_resource type="Resource" id="Resource_666li"]
-script = ExtResource("2_b517h")
-text = "Alright. Have fun man."
-anim = ""
-speaker = "P"
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -129,17 +127,18 @@ size = Vector3(30, 1, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7lrr"]
 size = Vector3(0.2, 30, 4)
 
-[node name="RestArea2" type="Node3D"]
-script = ExtResource("1_ss5r8")
-Dialogue = Array[Object]([SubResource("Resource_uuh5k"), SubResource("Resource_tdt76"), SubResource("Resource_tj1x7"), SubResource("Resource_3cg0c"), SubResource("Resource_fo4wg"), SubResource("Resource_coyvc"), SubResource("Resource_jbnvc"), SubResource("Resource_tddlc"), SubResource("Resource_ogw1g"), SubResource("Resource_siben"), SubResource("Resource_6veom"), SubResource("Resource_4rlor"), SubResource("Resource_aa706")])
-DialogueL = Array[Object]([SubResource("Resource_k4svx"), SubResource("Resource_6lmjl"), SubResource("Resource_jipgl")])
-DialogueR = Array[Object]([SubResource("Resource_1k7op"), SubResource("Resource_0kodf"), SubResource("Resource_666li")])
+[node name="RestArea5" type="Node3D"]
+script = ExtResource("1_jupra")
+itemIndex = 2
+Dialogue = Array[Object]([SubResource("Resource_f2ka1"), SubResource("Resource_fs8cb"), SubResource("Resource_ojgwp"), SubResource("Resource_oynxu"), SubResource("Resource_cfwyt"), SubResource("Resource_ngmtq"), SubResource("Resource_imkxn"), SubResource("Resource_diixc"), SubResource("Resource_cqbgt"), SubResource("Resource_cnhbo"), SubResource("Resource_ht3is"), SubResource("Resource_sxb4n"), SubResource("Resource_wpo8p")])
+DialogueL = Array[Object]([SubResource("Resource_2vcpe"), SubResource("Resource_gm0cd"), SubResource("Resource_7dsgw")])
+DialogueR = Array[Object]([SubResource("Resource_gjpoi"), SubResource("Resource_oejbu")])
 
 [node name="Path" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
 transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
-material_override = ExtResource("1_i1eng")
+material_override = ExtResource("3_ineux")
 mesh = SubResource("BoxMesh_02o2l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Path"]
@@ -150,7 +149,7 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
 shape = SubResource("BoxShape3D_j6a77")
 
-[node name="Tree" parent="." instance=ExtResource("3_gntln")]
+[node name="Tree" parent="." instance=ExtResource("4_dqnyg")]
 transform = Transform3D(1.29557, -0.0265001, -0.0484784, 0.0287127, 1.59591, 0.0407783, 0.103305, -0.111227, 0.596646, -6.66692, -1.85343, -6.552)
 
 [node name="DialoguePoint" type="Area3D" parent="." groups=["TollBooth"]]
@@ -269,8 +268,8 @@ offset_right = -50.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("5_nx6si")
-text = "Give Dagger
+theme = ExtResource("5_djci6")
+text = "Give Shield
 [A]"
 
 [node name="RightButton" type="Button" parent="Dialogue/Choices"]
@@ -286,7 +285,7 @@ offset_right = 250.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("5_nx6si")
+theme = ExtResource("5_djci6")
 text = "Leave
 [D]"
 
@@ -295,8 +294,8 @@ text = "Leave
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.219688, -2)
-texture = ExtResource("5_6lgxb")
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.0119119, -2)
+texture = ExtResource("6_cqi5c")
 
 [connection signal="area_entered" from="DialoguePoint" to="." method="_on_dialogue_point_area_entered"]
 [connection signal="pressed" from="Dialogue/Choices/LeftButton" to="." method="_on_left_button_pressed"]
