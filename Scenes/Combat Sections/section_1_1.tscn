@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_1hlub"]
 [ext_resource type="Material" uid="uid://bvwewxdpfhf1t" path="res://Art/Sand.tres" id="1_cpdd0"]
 [ext_resource type="PackedScene" uid="uid://cgasv6mhrhtq4" path="res://Art/Models/rock_platform.glb" id="2_2joxs"]
-[ext_resource type="PackedScene" uid="uid://ccw0gxr2hvtb0" path="res://Scenes/enemy_2.tscn" id="2_glaom"]
+[ext_resource type="PackedScene" uid="uid://dn067m75da1ns" path="res://Scenes/enemy_3.tscn" id="4_bsl6r"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -82,7 +82,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40141, -0.077616, 0)
 
 [node name="Enemies" type="Node3D" parent="."]
 
-[node name="Enemy2-1" parent="Enemies" instance=ExtResource("2_glaom")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0885705, 4.00302, 0)
+[node name="Enemy3" parent="Enemies" instance=ExtResource("4_bsl6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85716, 0)
 
 [node name="Ladders" type="Node3D" parent="."]

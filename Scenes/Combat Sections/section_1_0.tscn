@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_aydw4"]
 [ext_resource type="Material" uid="uid://bvwewxdpfhf1t" path="res://Art/Sand.tres" id="1_o0ji5"]
-[ext_resource type="PackedScene" uid="uid://ccw0gxr2hvtb0" path="res://Scenes/enemy_2.tscn" id="2_20t4q"]
 [ext_resource type="PackedScene" uid="uid://cgasv6mhrhtq4" path="res://Art/Models/rock_platform.glb" id="2_s5vvq"]
+[ext_resource type="PackedScene" uid="uid://dn067m75da1ns" path="res://Scenes/enemy_3.tscn" id="4_h77lo"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
 
@@ -104,10 +104,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.10261, 9.65065, 0)
 
 [node name="Enemies" type="Node3D" parent="."]
 
-[node name="Enemy2-1" parent="Enemies" instance=ExtResource("2_20t4q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6421, 6.09705, 0)
+[node name="Enemy3-1" parent="Enemies" instance=ExtResource("4_h77lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4729, 6.05452, 0)
 
-[node name="Enemy2-2" parent="Enemies" instance=ExtResource("2_20t4q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8804, 8.82337, 0.0348854)
+[node name="Enemy3-2" parent="Enemies" instance=ExtResource("4_h77lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7835, 8.86139, 0)
 
 [node name="Ladders" type="Node3D" parent="."]
