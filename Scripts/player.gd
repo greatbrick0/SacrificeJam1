@@ -113,6 +113,7 @@ func TakeDamage(amount: int):
 		$Sounds/Pendant.play()
 	else:
 		health -= amount
+		velocity.y += 3
 		$Sounds/Damage.play()
 		if(health <= 0):
 			Lose()
