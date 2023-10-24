@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://13j7o5g37h7n"]
+[gd_scene load_steps=40 format=3 uid="uid://13j7o5g37h7n"]
 
 [ext_resource type="Texture2D" uid="uid://bk7f8qq4nt56f" path="res://Art/Sprites/FloorTextureBrick.png" id="1_4hcd2"]
 [ext_resource type="PackedScene" uid="uid://c4fh4ufajv8vl" path="res://Art/Models/rectangle_platform.glb" id="4_dgmeo"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bijmbs1oqyewd" path="res://Art/Sprites/Nun.png" id="9_l7q0a"]
 [ext_resource type="AudioStream" uid="uid://bxbtekv3aylw8" path="res://Sounds/Effects/Pendant.wav" id="10_qxnlr"]
 [ext_resource type="Texture2D" uid="uid://bjfg6434mf2fy" path="res://Art/Sprites/GreenGuyAttacking.png" id="13_r8rrx"]
+[ext_resource type="Texture2D" uid="uid://cu02k3amkv36g" path="res://Art/Sprites/JumpyKid.png" id="14_x8ixi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
 size = Vector3(30, 1, 4)
@@ -287,7 +288,7 @@ height = 0.6
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.789773, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Animation" id="Animation_e5q17"]
+[sub_resource type="Animation" id="Animation_lns30"]
 resource_name = "RogueStab"
 length = 0.6
 tracks/0/type = "value"
@@ -300,15 +301,27 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(17.974, 8.20655, -9.53674e-07), Vector3(7.48532, 5.65396, -9.53674e-07), Vector3(17.2941, -0.0656595, 0)]
+"values": [Vector3(17.974, 8.20655, -9.53674e-07), Vector3(7.33457, 5.53749, -1.90735e-06), Vector3(18.5857, -0.135067, -1.90735e-06)]
 }
-tracks/1/type = "method"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Boss")
+tracks/1/path = NodePath("Rogue:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Boss")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0.3),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -316,20 +329,8 @@ tracks/1/keys = {
 "method": &"Damage"
 }]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Rogue:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
-[sub_resource type="Animation" id="Animation_o7he5"]
+[sub_resource type="Animation" id="Animation_i585x"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -341,7 +342,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(13.979, 7.025, 0)]
+"values": [Vector3(17.974, 8.20655, -9.53674e-07)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -356,10 +357,71 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s72rg"]
+_data = {
+"RESET": SubResource("Animation_i585x"),
+"RogueStab": SubResource("Animation_lns30")
+}
+
+[sub_resource type="Animation" id="Animation_o7he5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kid:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(13.979, 7.025, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Kid:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_e5q17"]
+resource_name = "KidJump"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kid:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.7, 1, 1.3, 1.7),
+"transitions": PackedFloat32Array(1, 0.5, 2, 1),
+"update": 0,
+"values": [Vector3(-13.2172, -2.14088, -2), Vector3(-7.48708, 8.99998, -2), Vector3(-5.93606, 9.80838, -2), Vector3(5.77281, -2.42732, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Kid:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_34idx"]
 _data = {
-"RESET": SubResource("Animation_o7he5"),
-"RogueStab": SubResource("Animation_e5q17")
+"KidJump": SubResource("Animation_e5q17"),
+"RESET": SubResource("Animation_o7he5")
 }
 
 [node name="BossFight" type="Node3D"]
@@ -569,7 +631,7 @@ libraries = {
 stream = ExtResource("10_qxnlr")
 
 [node name="NunTimer" type="Timer" parent="NunHolder"]
-wait_time = 20.0
+wait_time = 15.0
 one_shot = true
 autostart = true
 
@@ -604,12 +666,24 @@ text = "Full Heal!"
 [node name="RogueHolder" type="Node3D" parent="."]
 
 [node name="Rogue" type="Sprite3D" parent="RogueHolder"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 13.979, 7.025, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 17.974, 8.20655, -9.53674e-07)
 visible = false
 flip_h = true
 texture = ExtResource("13_r8rrx")
 
 [node name="RogueAnim" type="AnimationPlayer" parent="RogueHolder"]
+libraries = {
+"": SubResource("AnimationLibrary_s72rg")
+}
+
+[node name="KidHolder" type="Node3D" parent="."]
+
+[node name="Kid" type="Sprite3D" parent="KidHolder"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 13.979, 7.025, 0)
+visible = false
+texture = ExtResource("14_x8ixi")
+
+[node name="KidAnim" type="AnimationPlayer" parent="KidHolder"]
 libraries = {
 "": SubResource("AnimationLibrary_34idx")
 }
