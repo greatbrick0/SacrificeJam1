@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dutuewqwkgi2c"]
+[gd_scene load_steps=7 format=3 uid="uid://dutuewqwkgi2c"]
 
 [ext_resource type="Texture2D" uid="uid://bt4mkobuyidfn" path="res://Art/Sprites/FloorTexturePurple.png" id="1_5rbjh"]
-[ext_resource type="PackedScene" path="res://Art/Models/CampFire.glb" id="2_mct8k"]
+[ext_resource type="PackedScene" uid="uid://bsg8fhkr6fi0l" path="res://Art/Models/CampFire.glb" id="2_mct8k"]
+[ext_resource type="Script" path="res://Scripts/CampFire.gd" id="3_t3d6k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_katy7"]
 albedo_texture = ExtResource("1_5rbjh")
@@ -29,3 +30,4 @@ shape = SubResource("BoxShape3D_0nk31")
 
 [node name="CampFire" parent="." instance=ExtResource("2_mct8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32377, -1, -1)
+script = ExtResource("3_t3d6k")

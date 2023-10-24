@@ -155,9 +155,9 @@ size = Vector3(30, 1, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7lrr"]
 size = Vector3(0.2, 30, 4)
 
-[sub_resource type="Animation" id="Animation_843nu"]
-resource_name = "SmallJump"
-length = 0.7
+[sub_resource type="Animation" id="Animation_s63nf"]
+resource_name = "BigJump"
+length = 1.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -165,10 +165,10 @@ tracks/0/path = NodePath("Sprite3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5),
-"transitions": PackedFloat32Array(0.5, 3, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2, 0.5, 2, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.0119119, -2), Vector3(0, 3, -2), Vector3(0, -0.0119119, -2)]
+"values": [Vector3(0, -0.0119119, -2), Vector3(-2.52154, 2.57008, -2), Vector3(-4.67015, 0.000263929, -2), Vector3(-7.78837, 3.01089, -1.8913), Vector3(-11.1888, 0.0308323, -1.8913), Vector3(-15.4065, 3.7869, -1.8913), Vector3(-18.8824, 0.0880315, -1.8913), Vector3(-24.8048, -0.07443, -1.8913)]
 }
 
 [sub_resource type="Animation" id="Animation_nbga2"]
@@ -186,9 +186,9 @@ tracks/0/keys = {
 "values": [Vector3(0, -0.0119119, -2)]
 }
 
-[sub_resource type="Animation" id="Animation_s63nf"]
-resource_name = "BigJump"
-length = 1.4
+[sub_resource type="Animation" id="Animation_843nu"]
+resource_name = "SmallJump"
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -196,10 +196,10 @@ tracks/0/path = NodePath("Sprite3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
-"transitions": PackedFloat32Array(0.5, 2, 0.5, 2, 0.5, 2, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(0.5, 3, 1),
 "update": 0,
-"values": [Vector3(0, -0.0119119, -2), Vector3(-2.52154, 2.57008, -2), Vector3(-4.67015, 0.000263929, -2), Vector3(-7.78837, 3.01089, -1.8913), Vector3(-11.1888, 0.0308323, -1.8913), Vector3(-15.4065, 3.7869, -1.8913), Vector3(-18.8824, 0.0880315, -1.8913), Vector3(-24.8048, -0.07443, -1.8913)]
+"values": [Vector3(0, -0.0119119, -2), Vector3(0, 3, -2), Vector3(0, -0.0119119, -2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kdw60"]
