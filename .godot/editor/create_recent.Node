@@ -1,10 +1,11 @@
+AnimationPlayer
+Sprite3D
+Node3D
 Label
 CPUParticles3D
 Timer
 Panel
 AudioStreamPlayer
-Node3D
-AnimationPlayer
 DirectionalLight3D
 Camera3D
 StaticBody3D
@@ -12,10 +13,8 @@ MeshInstance3D
 CollisionShape3D
 MeshInstance3D
 Area3D
-Sprite3D
 Control
 TextureRect
-Sprite3D
 Button
 RichTextLabel
 Container
@@ -25,7 +24,6 @@ BoxContainer
 VBoxContainer
 MarginContainer
 RichTextLabel
-AnimationPlayer
 Panel
 SubViewport
 Node2D
