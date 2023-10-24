@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_so8ht"]
 [ext_resource type="PackedScene" uid="uid://cn5qqi6pw675g" path="res://Art/Models/PlatformA.glb" id="2_lt2l4"]
-[ext_resource type="PackedScene" uid="uid://bxaurr605xh6h" path="res://Scenes/path_combat_purple.tscn" id="3_apygb"]
+[ext_resource type="PackedScene" path="res://Scenes/path_combat_purple.tscn" id="3_apygb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mki6f"]
 size = Vector3(3, 1, 2)
