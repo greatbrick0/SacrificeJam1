@@ -10,7 +10,9 @@ size = Vector3(3.725, 0.18, 1.04)
 [node name="Bridge" parent="." instance=ExtResource("1_6egvs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7273, 0)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="StaticBody3D" parent="."]
+collision_layer = 256
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, 0)

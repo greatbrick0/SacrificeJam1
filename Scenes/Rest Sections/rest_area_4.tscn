@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://du3hcgow023h6"]
+[gd_scene load_steps=35 format=3 uid="uid://du3hcgow023h6"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_p2ctn"]
 [ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="2_6gqb5"]
@@ -16,28 +16,28 @@ speaker = "P"
 [sub_resource type="Resource" id="Resource_k5son"]
 script = ExtResource("2_fdcl8")
 text = "YEAAAAAH! WOOOO! I LOVE JUMPING!"
-anim = ""
+anim = "SmallJump"
 speaker = "S"
 
 [sub_resource type="Resource" id="Resource_6oi1c"]
 script = ExtResource("2_fdcl8")
 text = "… Hello?
 "
-anim = ""
+anim = "SmallJump"
 speaker = "P"
 
 [sub_resource type="Resource" id="Resource_ovs61"]
 script = ExtResource("2_fdcl8")
 text = "JUMP JUMP JUMP YEAH MAN I JUST LOVE JUMPING SO MUCH AHA
 "
-anim = ""
+anim = "SmallJump"
 speaker = "S"
 
 [sub_resource type="Resource" id="Resource_cdc22"]
 script = ExtResource("2_fdcl8")
 text = "Can you move? You’re in the way.
 "
-anim = ""
+anim = "SmallJump"
 speaker = "P"
 
 [sub_resource type="Resource" id="Resource_yjft2"]
@@ -56,7 +56,7 @@ speaker = "P"
 script = ExtResource("2_fdcl8")
 text = "I bet you could jump really high with those!
 "
-anim = ""
+anim = "SmallJump"
 speaker = "S"
 
 [sub_resource type="Resource" id="Resource_pobyv"]
@@ -75,7 +75,7 @@ speaker = "P"
 [sub_resource type="Resource" id="Resource_xw5fj"]
 script = ExtResource("2_fdcl8")
 text = "So I can jump really high!"
-anim = ""
+anim = "SmallJump"
 speaker = "S"
 
 [sub_resource type="Resource" id="Resource_ftlu5"]
@@ -154,6 +154,43 @@ size = Vector3(30, 1, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7lrr"]
 size = Vector3(0.2, 30, 4)
+
+[sub_resource type="Animation" id="Animation_843nu"]
+resource_name = "SmallJump"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(0.5, 3, 1),
+"update": 0,
+"values": [Vector3(0, -0.0119119, -2), Vector3(0, 3, -2), Vector3(0, -0.0119119, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_nbga2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.0119119, -2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kdw60"]
+_data = {
+"RESET": SubResource("Animation_nbga2"),
+"SmallJump": SubResource("Animation_843nu")
+}
 
 [node name="RestArea4" type="Node3D"]
 script = ExtResource("1_p2ctn")
@@ -320,6 +357,9 @@ text = "Leave
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kdw60")
+}
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.0119119, -2)
