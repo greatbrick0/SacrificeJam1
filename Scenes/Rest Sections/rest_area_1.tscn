@@ -30,7 +30,7 @@ size = Vector3(3, 1, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7lrr"]
 size = Vector3(0.2, 30, 4)
 
-[node name="RestArea1" type="Node3D"]
+[node name="RestArea2" type="Node3D"]
 script = ExtResource("1_1se37")
 Dialogue = Array[Object]([SubResource("Resource_uf5tt"), SubResource("Resource_4v7du")])
 
