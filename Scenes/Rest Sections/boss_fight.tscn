@@ -373,7 +373,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Skele:position")
+tracks/0/path = NodePath("Kid:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -385,7 +385,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Skele:visible")
+tracks/1/path = NodePath("Kid:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -401,7 +401,7 @@ length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Skele:position")
+tracks/0/path = NodePath("Kid:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -413,7 +413,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Skele:visible")
+tracks/1/path = NodePath("Kid:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -912,14 +912,15 @@ libraries = {
 
 [node name="KidHolder" type="Node3D" parent="."]
 
-[node name="Kid" type="Sprite3D" parent="KidHolder"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -13.2172, -2.14088, -2)
-texture = ExtResource("14_x8ixi")
-
 [node name="KidAnim" type="AnimationPlayer" parent="KidHolder"]
 libraries = {
 "": SubResource("AnimationLibrary_34idx")
 }
+
+[node name="Kid" type="Sprite3D" parent="KidHolder"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 13.979, 7.025, 0)
+visible = false
+texture = ExtResource("14_x8ixi")
 
 [node name="SkeleHolder" type="Node3D" parent="."]
 
