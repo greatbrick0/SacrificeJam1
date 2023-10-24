@@ -110,3 +110,9 @@ func Win():
 		get_tree().change_scene_to_file("res://Scenes/End Screens/win_screen_1.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Scenes/End Screens/win_screen_3.tscn")
+
+func _on_stomp_area_area_entered(area):
+	if(playerRef.blocking):
+		playerRef.ParrySound()
+	else:
+		playerRef.TakeDamage(1)
