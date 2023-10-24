@@ -1,37 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbvlt71j4ljv2"]
+[gd_scene load_steps=8 format=3 uid="uid://cbvlt71j4ljv2"]
 
-[ext_resource type="Material" uid="uid://bx7jm1bdlu1fv" path="res://Art/Rock.tres" id="1_00b1s"]
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_4vche"]
+[ext_resource type="PackedScene" uid="uid://doj4y6jfalxsb" path="res://Scenes/path_combat_brick.tscn" id="1_24b3u"]
 [ext_resource type="PackedScene" uid="uid://kuv2y7prb4au" path="res://Scenes/enemy_1.tscn" id="2_8srj1"]
 [ext_resource type="PackedScene" uid="uid://c4fh4ufajv8vl" path="res://Art/Models/rectangle_platform.glb" id="2_kiyvn"]
 [ext_resource type="PackedScene" uid="uid://dn067m75da1ns" path="res://Scenes/enemy_3.tscn" id="3_uuxrd"]
 [ext_resource type="PackedScene" uid="uid://byqvcd4ynq3fy" path="res://Scenes/ladder.tscn" id="3_vanu4"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
-size = Vector3(30, 1, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mki6f"]
 size = Vector3(3, 1, 2)
 
 [node name="Section 0 1" type="Node3D"]
 
-[node name="Path" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
-transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
-material_override = ExtResource("1_00b1s")
-mesh = SubResource("BoxMesh_02o2l")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
-collision_layer = 256
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
-transform = Transform3D(1, 2.27374e-12, 0, -9.2632e-10, 1, 0, 2.32831e-10, -1.16415e-10, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_j6a77")
+[node name="PathRest" parent="." instance=ExtResource("1_24b3u")]
 
 [node name="Platforms" type="Node3D" parent="."]
 

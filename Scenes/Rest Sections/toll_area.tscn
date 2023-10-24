@@ -1,13 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccpin5551tp2g"]
+[gd_scene load_steps=5 format=3 uid="uid://ccpin5551tp2g"]
 
-[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="1_a66ia"]
 [ext_resource type="Script" path="res://Scripts/toll_area.gd" id="1_v41kw"]
+[ext_resource type="PackedScene" uid="uid://bxaurr605xh6h" path="res://Scenes/path_combat_purple.tscn" id="2_b4nn8"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="2_yocxv"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
-size = Vector3(20, 1, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_111yn"]
 size = Vector3(0.2, 30, 4)
@@ -15,21 +10,7 @@ size = Vector3(0.2, 30, 4)
 [node name="TollArea" type="Node3D"]
 script = ExtResource("1_v41kw")
 
-[node name="Path" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
-transform = Transform3D(20, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
-material_override = ExtResource("1_a66ia")
-mesh = SubResource("BoxMesh_02o2l")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
-collision_layer = 256
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
-shape = SubResource("BoxShape3D_j6a77")
+[node name="PathRest" parent="." instance=ExtResource("2_b4nn8")]
 
 [node name="Tree" parent="." instance=ExtResource("2_yocxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, -8.74295, -1.39256, -4.23551)

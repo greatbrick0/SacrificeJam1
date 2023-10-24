@@ -1,35 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://smhvileo5tuu"]
+[gd_scene load_steps=6 format=3 uid="uid://smhvileo5tuu"]
 
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_1hlub"]
-[ext_resource type="Material" uid="uid://bvwewxdpfhf1t" path="res://Art/Sand.tres" id="1_cpdd0"]
+[ext_resource type="PackedScene" uid="uid://c1yvyrlj5v5qh" path="res://Scenes/path_combat_sand.tscn" id="1_1oj3j"]
 [ext_resource type="PackedScene" uid="uid://cgasv6mhrhtq4" path="res://Art/Models/rock_platform.glb" id="2_2joxs"]
 [ext_resource type="PackedScene" uid="uid://dn067m75da1ns" path="res://Scenes/enemy_3.tscn" id="4_bsl6r"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
-size = Vector3(30, 1, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mki6f"]
 size = Vector3(3, 1, 2)
 
 [node name="Section 0 1" type="Node3D"]
 
-[node name="Path" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
-transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
-material_override = ExtResource("1_cpdd0")
-mesh = SubResource("BoxMesh_02o2l")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
-collision_layer = 256
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
-transform = Transform3D(1, 2.27374e-12, 0, -9.2632e-10, 1, 0, 2.32831e-10, -1.16415e-10, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_j6a77")
+[node name="PathRest" parent="." instance=ExtResource("1_1oj3j")]
 
 [node name="Platforms" type="Node3D" parent="."]
 
