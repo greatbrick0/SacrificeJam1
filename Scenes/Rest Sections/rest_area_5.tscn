@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dutuewqwkgi2c" path="res://Scenes/path_rest.tscn" id="3_egusq"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="4_xherl"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_dy736"]
-[ext_resource type="Texture2D" uid="uid://cysjqknvfiaki" path="res://Art/Sprites/EdgyGuy.png" id="6_5hums"]
+[ext_resource type="Texture2D" uid="uid://xnbe8ccai8lg" path="res://Art/Sprites/EdgyGuy.png" id="6_5hums"]
 
 [sub_resource type="Resource" id="Resource_fs5hn"]
 script = ExtResource("2_nhcc0")
@@ -147,6 +147,21 @@ speaker = "P"
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7lrr"]
 size = Vector3(0.2, 30, 4)
 
+[sub_resource type="Animation" id="Animation_sawra"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(17.8258, 0.117578, -2)]
+}
+
 [sub_resource type="Animation" id="Animation_gid1p"]
 resource_name = "RunIn"
 length = 0.5
@@ -161,21 +176,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(17.8258, 0.117578, -2), Vector3(0, 0.117578, -2)]
-}
-
-[sub_resource type="Animation" id="Animation_sawra"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(17.8258, 0.117578, -2)]
 }
 
 [sub_resource type="Animation" id="Animation_kmml4"]
