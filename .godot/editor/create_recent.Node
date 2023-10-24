@@ -1,14 +1,13 @@
+Node3D
+MeshInstance3D
 CollisionShape3D
 Area3D
 Sprite3D
-MeshInstance3D
 AudioStreamPlayer
 Control
 TextureRect
 AudioStreamPlayer
-MeshInstance3D
 Sprite3D
-Node3D
 Button
 Label
 RichTextLabel
