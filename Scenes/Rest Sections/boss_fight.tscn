@@ -1,11 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://13j7o5g37h7n"]
+[gd_scene load_steps=26 format=3 uid="uid://13j7o5g37h7n"]
 
 [ext_resource type="Texture2D" uid="uid://bk7f8qq4nt56f" path="res://Art/Sprites/FloorTextureBrick.png" id="1_4hcd2"]
 [ext_resource type="PackedScene" uid="uid://c4fh4ufajv8vl" path="res://Art/Models/rectangle_platform.glb" id="4_dgmeo"]
 [ext_resource type="Script" path="res://Scripts/Boss.gd" id="5_kntq1"]
 [ext_resource type="PackedScene" uid="uid://byqvcd4ynq3fy" path="res://Scenes/ladder.tscn" id="6_162km"]
 [ext_resource type="PackedScene" uid="uid://del3l6n8pieqm" path="res://Art/Models/FinalBoss.glb" id="6_ky1tn"]
+[ext_resource type="AudioStream" uid="uid://md8wqaba82wg" path="res://Sounds/Effects/BossAttack1.wav" id="6_snv1a"]
 [ext_resource type="Theme" path="res://Art/BossUITheme.tres" id="6_xwd7d"]
+[ext_resource type="AudioStream" uid="uid://binv0k8xsejon" path="res://Sounds/Effects/EnemyHit.wav" id="7_tc5x0"]
+[ext_resource type="Texture2D" uid="uid://bijmbs1oqyewd" path="res://Art/Sprites/Nun.png" id="9_l7q0a"]
+[ext_resource type="AudioStream" uid="uid://bxbtekv3aylw8" path="res://Sounds/Effects/Pendant.wav" id="10_qxnlr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
 size = Vector3(30, 1, 4)
@@ -22,14 +26,89 @@ size = Vector3(30, 1, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mki6f"]
 size = Vector3(2, 1, 2)
 
+[sub_resource type="Animation" id="Animation_yce8d"]
+resource_name = "BossFireAttack"
+length = 2.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.1, 1.3, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [0.0],
+"method": &"SpawnFireBall"
+}, {
+"args": [-3.0],
+"method": &"SpawnFireBall"
+}, {
+"args": [3.0],
+"method": &"SpawnFireBall"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ppr6j"]
+resource_name = "BossAttack"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PunchArea:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6, 1.5, 0), Vector3(6, 1.5, 0), Vector3(0.715255, 1.5, 0), Vector3(-0.407711, 1.5, 0), Vector3(-0.643728, 1.5, 0), Vector3(-0.00537872, 1.5, 0), Vector3(1.82227, 1.5, 0), Vector3(3.62121, 1.5, 0), Vector3(6, 1.5, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5a8mj"]
+resource_name = "BossStompAttack"
+length = 2.5
+
+[sub_resource type="Animation" id="Animation_01gmm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PunchArea:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6, 1.5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wfc11"]
+_data = {
+"BossAttack": SubResource("Animation_ppr6j"),
+"BossFireAttack": SubResource("Animation_yce8d"),
+"BossStompAttack": SubResource("Animation_5a8mj"),
+"RESET": SubResource("Animation_01gmm")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ve61"]
 size = Vector3(1, 30, 4)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_pp6bs"]
-height = 4.0
-radius = 2.5
+[sub_resource type="BoxShape3D" id="BoxShape3D_p327b"]
+size = Vector3(10, 2, 4)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_70qf3"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_4i6xx"]
+
+[sub_resource type="Animation" id="Animation_e6k77"]
+resource_name = "NunHeal"
+length = 10.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1tvr3"]
+_data = {
+"NunHeal": SubResource("Animation_e6k77")
+}
 
 [node name="BossFight" type="Node3D"]
 
@@ -93,32 +172,44 @@ script = ExtResource("5_kntq1")
 transform = Transform3D(0.205212, 0, -0.563816, 0, 0.6, 0, 0.563816, 0, 0.205212, 0, 0.0617695, 0)
 
 [node name="Skeleton3D" parent="Boss/FinalBoss/Armature_003" index="0"]
-bones/0/position = Vector3(0, 6.05677, -1.32779)
-bones/1/rotation = Quaternion(0.31348, 1.13201e-07, 3.73698e-08, 0.949595)
-bones/2/rotation = Quaternion(0.00458013, 1.19208e-07, 1.63798e-09, 0.99999)
-bones/3/rotation = Quaternion(-0.0040977, -3.3987e-14, -1.95392e-09, 0.999992)
-bones/4/rotation = Quaternion(4.47035e-08, -5.50671e-14, 8.88178e-15, 1)
-bones/6/rotation = Quaternion(0.812536, -0.35768, -0.258998, 0.380486)
-bones/7/rotation = Quaternion(0.564779, -0.1909, -0.561053, 0.574284)
-bones/9/rotation = Quaternion(-0.481399, 0.856827, 0.0603744, 0.174522)
-bones/10/rotation = Quaternion(-0.0893188, -0.126037, -0.655885, 0.738886)
-bones/11/rotation = Quaternion(0.812536, 0.35768, 0.258998, 0.380486)
-bones/12/rotation = Quaternion(0.564779, 0.1909, 0.561053, 0.574284)
-bones/14/rotation = Quaternion(-0.481399, -0.856827, -0.0603744, 0.174522)
-bones/15/rotation = Quaternion(-0.0893188, 0.126037, 0.655885, 0.738886)
-bones/16/position = Vector3(0, 14.4604, 4.19531)
-bones/17/position = Vector3(2.90373, 1.68735, -2.10609)
+bones/0/position = Vector3(0, 5.90901, -1.06616)
+bones/0/rotation = Quaternion(-0.000214787, 0, 0, 1)
+bones/1/rotation = Quaternion(0.316393, 1.13085e-07, 3.7717e-08, 0.948628)
+bones/2/rotation = Quaternion(0.00451111, 1.19208e-07, 1.6133e-09, 0.99999)
+bones/3/rotation = Quaternion(-0.00408394, -3.9218e-14, -1.94736e-09, 0.999992)
+bones/4/rotation = Quaternion(5.47278e-09, -0.996867, -1.70153e-07, 0.0790947)
+bones/6/rotation = Quaternion(0.807023, -0.362707, -0.263561, 0.384309)
+bones/7/rotation = Quaternion(0.578465, -0.190701, -0.570996, 0.550431)
+bones/9/rotation = Quaternion(-0.461988, 0.876284, 0.0520362, 0.126435)
+bones/10/rotation = Quaternion(-0.165302, -0.146705, -0.693598, 0.685619)
+bones/11/rotation = Quaternion(0.807023, 0.362707, 0.263561, 0.384309)
+bones/12/rotation = Quaternion(0.578465, 0.190701, 0.570996, 0.550431)
+bones/14/rotation = Quaternion(-0.460779, -0.876763, -0.0514531, 0.127759)
+bones/15/rotation = Quaternion(-0.160205, 0.139083, 0.696495, 0.685482)
+bones/16/position = Vector3(0, 14.2193, 4.45773)
+bones/17/position = Vector3(2.90373, 1.75348, -1.93829)
 bones/17/scale = Vector3(1.64256, 1, 1.97128)
-bones/18/position = Vector3(-2.90373, 1.68735, -2.10609)
+bones/18/position = Vector3(-2.90373, 1.75348, -1.93829)
 bones/18/scale = Vector3(1.64256, 1, 1.97128)
-bones/19/position = Vector3(5.52526, 7.25705, -1.81562)
+bones/19/position = Vector3(5.28601, 6.84262, -0.830894)
 bones/19/scale = Vector3(1.42908, 1.16128, 1.58984)
-bones/20/position = Vector3(-5.52526, 7.25705, -1.81562)
+bones/20/position = Vector3(-5.29795, 6.84262, -0.830894)
 bones/20/scale = Vector3(1.42908, 1.16128, 1.58984)
 
 [node name="Boss Orb" parent="Boss/FinalBoss/Armature_003/Skeleton3D" index="0"]
-transform = Transform3D(1.74195, -2.04158e-08, 3.67598e-09, 2.0601e-08, 1.66635, -0.507615, 2.43284e-09, 0.507615, 1.66635, 1.50752e-09, 7.74059, 3.17535)
+transform = Transform3D(-1.72015, 0.0921289, -0.258784, -0.164799, 0.966813, 1.43962, 0.219769, 1.44609, -0.946, -0.00900922, 7.63524, 3.34954)
 bone_idx = 5
+
+[node name="BossFire" type="AudioStreamPlayer" parent="Boss/FinalBoss"]
+stream = ExtResource("6_snv1a")
+
+[node name="BossHurt" type="AudioStreamPlayer" parent="Boss/FinalBoss"]
+stream = ExtResource("7_tc5x0")
+
+[node name="AttackPlayer" type="AnimationPlayer" parent="Boss/FinalBoss"]
+libraries = {
+"": SubResource("AnimationLibrary_wfc11")
+}
 
 [node name="DamageBound" type="Area3D" parent="Boss"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 10, 0)
@@ -127,6 +218,14 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boss/DamageBound"]
 shape = SubResource("BoxShape3D_2ve61")
+
+[node name="PunchArea" type="Area3D" parent="Boss"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boss/PunchArea"]
+shape = SubResource("BoxShape3D_p327b")
 
 [node name="BossBound" type="StaticBody3D" parent="Boss"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 10, 0)
@@ -137,12 +236,10 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_2ve61")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boss"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5.63757, 0)
-shape = SubResource("CylinderShape3D_pp6bs")
+shape = SubResource("BoxShape3D_4i6xx")
 
-[node name="ScaleRef" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66431, 0, 0)
-mesh = SubResource("CapsuleMesh_70qf3")
+[node name="SpawnPoint" type="Node3D" parent="Boss"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 10, 0)
 
 [node name="HealthBar" type="Control" parent="."]
 layout_mode = 3
@@ -179,7 +276,24 @@ theme = ExtResource("6_xwd7d")
 value = 70.0
 show_percentage = false
 
+[node name="NunHolder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Nun" type="Sprite3D" parent="NunHolder"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.231335, -2)
+texture = ExtResource("9_l7q0a")
+
+[node name="NunAnim" type="AnimationPlayer" parent="NunHolder"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_1tvr3")
+}
+
+[node name="PendantSound" type="AudioStreamPlayer" parent="NunHolder"]
+stream = ExtResource("10_qxnlr")
+
 [connection signal="animation_finished" from="Boss/FinalBoss/AnimationPlayer" to="Boss" method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="Boss/DamageBound" to="Boss" method="_on_damage_bound_area_entered"]
+[connection signal="area_entered" from="Boss/PunchArea" to="Boss" method="_on_punch_area_area_entered"]
 
 [editable path="Boss/FinalBoss"]

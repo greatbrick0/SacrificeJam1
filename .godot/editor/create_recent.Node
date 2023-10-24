@@ -1,18 +1,21 @@
+<<<<<<< Updated upstream
 Panel
+=======
+AudioStreamPlayer
+Node3D
+AnimationPlayer
+>>>>>>> Stashed changes
 DirectionalLight3D
 Camera3D
 StaticBody3D
-Node3D
 Timer
 MeshInstance3D
 CollisionShape3D
 MeshInstance3D
 Area3D
 Sprite3D
-AudioStreamPlayer
 Control
 TextureRect
-AudioStreamPlayer
 Sprite3D
 Button
 Label
@@ -24,7 +27,11 @@ BoxContainer
 VBoxContainer
 MarginContainer
 RichTextLabel
+<<<<<<< Updated upstream
 AnimationPlayer
+=======
+Panel
+>>>>>>> Stashed changes
 SubViewport
 Node2D
 Sprite2D

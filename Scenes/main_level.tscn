@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/main_level.gd" id="1_pekt1"]
 [ext_resource type="PackedScene" uid="uid://dbkjcculeg0ua" path="res://Scenes/Rest Sections/rest_area_3.tscn" id="2_ah1ly"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="2_v6fr6"]
-[ext_resource type="PackedScene" path="res://Scenes/Rest Sections/boss_fight.tscn" id="2_wdvvt"]
+[ext_resource type="PackedScene" uid="uid://13j7o5g37h7n" path="res://Scenes/Rest Sections/boss_fight.tscn" id="2_wdvvt"]
 [ext_resource type="PackedScene" uid="uid://dei8s2ib5kt7m" path="res://Scenes/Rest Sections/rest_area_1.tscn" id="4_8vdju"]
 [ext_resource type="PackedScene" uid="uid://du3hcgow023h6" path="res://Scenes/Rest Sections/rest_area_4.tscn" id="4_ixfur"]
 [ext_resource type="PackedScene" uid="uid://np3qn8ydtpbv" path="res://Scenes/Rest Sections/rest_area_6.tscn" id="4_u08m6"]

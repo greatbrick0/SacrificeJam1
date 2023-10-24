@@ -32,6 +32,7 @@ func _ready():
 	%"Player Visual".UpdateItems(donatedItems)
 
 func _process(delta):
+	Cheat()
 	holdingJump = Input.is_action_pressed("Jump")
 	input_dir = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
 	if(Input.is_action_pressed("Parry")): timeBlocking += 1.0 * delta
@@ -165,3 +166,15 @@ func _on_ladder_box_area_entered(_area):
 
 func _on_ladder_box_area_exited(_area):
 	onLadder = false
+
+func Cheat():
+	if(Input.is_action_just_pressed("1")):
+		donatedItems[0] = !donatedItems[0]
+	if(Input.is_action_just_pressed("2")):
+		donatedItems[1] = !donatedItems[1]
+	if(Input.is_action_just_pressed("3")):
+		donatedItems[2] = !donatedItems[2]
+	if(Input.is_action_just_pressed("4")):
+		donatedItems[3] = !donatedItems[3]
+	if(Input.is_action_just_pressed("5")):
+		donatedItems[4] = !donatedItems[4]

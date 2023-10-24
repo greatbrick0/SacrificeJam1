@@ -1,20 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd2y3i0be1ywb"]
+[gd_scene load_steps=5 format=3 uid="uid://c8ohpkn1x0foh"]
 
-[ext_resource type="Script" path="res://Scripts/fire_ball.gd" id="1_a121r"]
-[ext_resource type="Material" uid="uid://b7ixjtwkqo1bp" path="res://Art/BrightGreen.tres" id="2_5lnw2"]
+[ext_resource type="Script" path="res://Scripts/fire_ball.gd" id="1_wqr00"]
+[ext_resource type="Material" uid="uid://b78wwei4e4c0j" path="res://Art/BrightPurple.tres" id="2_y587m"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0ojvq"]
-radius = 0.2
+radius = 0.35
 
 [sub_resource type="SphereMesh" id="SphereMesh_ldtyb"]
-radius = 0.2
-height = 0.4
+radius = 0.35
+height = 0.7
 
-[node name="FireBall" type="Area3D"]
+[node name="BossBall" type="Area3D"]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_a121r")
-speed = 7.0
+script = ExtResource("1_wqr00")
+speed = 12.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_0ojvq")
@@ -30,24 +30,24 @@ shape = SubResource("SphereShape3D_0ojvq")
 [node name="Visuals" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals"]
-material_override = ExtResource("2_5lnw2")
+material_override = ExtResource("2_y587m")
 mesh = SubResource("SphereMesh_ldtyb")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Visuals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-material_override = ExtResource("2_5lnw2")
+material_override = ExtResource("2_y587m")
 mesh = SubResource("SphereMesh_ldtyb")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Visuals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-material_override = ExtResource("2_5lnw2")
+material_override = ExtResource("2_y587m")
 mesh = SubResource("SphereMesh_ldtyb")
 skeleton = NodePath("../..")
 
 [node name="LifeTime" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 6.0
 autostart = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
