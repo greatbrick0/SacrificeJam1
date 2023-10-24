@@ -44,8 +44,10 @@ func _process(delta):
 			$FinalBoss/AnimationPlayer.play(visualAnims[tracker])
 			$FinalBoss/AttackPlayer.play(visualAnims[tracker])
 			cooling = true
-			if(visualAnims[tracker] == "BossFireAttack" and items[3]):
-				$"../KidHolder/KidAnim".play("KidJump")
+
+func StartKidJump():
+	if(items[3]):
+		$"../KidHolder/KidAnim".play("KidJump")
 
 func TakeDamage(amount: int):
 	if(items[0]):
