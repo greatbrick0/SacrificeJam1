@@ -7,16 +7,21 @@ var aggro: bool = false
 @export var health: int = 10
 @export var gravity: float = 9
 var stunTime: float = 0
+var dist: float
 
 func _ready():
 	playerRef = get_tree().get_first_node_in_group("Player")
 	aggroRange = aggroRange * aggroRange
 
 func _process(delta):
-	if(!aggro and global_position.distance_squared_to(playerRef.global_position) <= aggroRange):
+	dist = global_position.distance_squared_to(playerRef.global_position)
+	if(!aggro and dist <= aggroRange):
 		aggro = true
 	if(stunTime > 0):
 		stunTime -= 1.0 * delta
+		$Visuals/MeleeEnemy/AnimationPlayer.stop()
+	if(!$Visuals/MeleeEnemy/AnimationPlayer.is_playing()):
+		$Visuals/MeleeEnemy/AnimationPlayer.play("Attack" if dist < 9 else "Idle")
 
 func _physics_process(delta):
 	if(!is_on_floor()):

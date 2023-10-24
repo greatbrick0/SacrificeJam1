@@ -21,6 +21,7 @@ func _process(delta):
 	elif(!aggro and global_position.distance_squared_to(playerRef.global_position) <= aggroRange):
 		aggro = true
 		$AttackCooldown.start()
+	if(!$Visuals/RangedEnemy/AnimationPlayer.is_playing()): $Visuals/RangedEnemy/AnimationPlayer.play("Idle")
 
 func _physics_process(delta):
 	if(!is_on_floor()):

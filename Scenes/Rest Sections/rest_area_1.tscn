@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dei8s2ib5kt7m"]
+[gd_scene load_steps=13 format=3 uid="uid://dei8s2ib5kt7m"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_1se37"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="1_5w3g0"]
+[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="1_b3n7s"]
 [ext_resource type="PackedScene" uid="uid://cn5qqi6pw675g" path="res://Art/Models/PlatformA.glb" id="1_xvgpj"]
 [ext_resource type="Script" path="res://Scripts/speech.gd" id="2_8ld7g"]
-[ext_resource type="PackedScene" uid="uid://dutuewqwkgi2c" path="res://Scenes/path_rest.tscn" id="3_j7yv0"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_05qar"]
 
 [sub_resource type="Resource" id="Resource_uf5tt"]
@@ -19,6 +19,11 @@ text = "I’m gonna have to fight my way out again. Better get a move on. Don’
 anim = ""
 speaker = "P"
 
+[sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
+size = Vector3(30, 1, 4)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_mki6f"]
 size = Vector3(3, 1, 2)
 
@@ -29,7 +34,20 @@ size = Vector3(0.2, 30, 4)
 script = ExtResource("1_1se37")
 Dialogue = Array[Object]([SubResource("Resource_uf5tt"), SubResource("Resource_4v7du")])
 
-[node name="PathRest" parent="." instance=ExtResource("3_j7yv0")]
+[node name="Path" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
+transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+material_override = ExtResource("1_b3n7s")
+mesh = SubResource("BoxMesh_02o2l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
+shape = SubResource("BoxShape3D_j6a77")
 
 [node name="Platforms" type="Node3D" parent="."]
 
