@@ -3,12 +3,12 @@
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="1_xq2ob"]
 [ext_resource type="Script" path="res://Scripts/WinButton1.gd" id="2_lftis"]
 [ext_resource type="AudioStream" uid="uid://bbor6colkvvg7" path="res://Sounds/Music/SacrificeSongSad.wav" id="3_n8h38"]
-[ext_resource type="PackedScene" uid="uid://svxohabm70mx" path="res://Scenes/player_visual.tscn" id="4_pv5r0"]
 [ext_resource type="PackedScene" uid="uid://bxaurr605xh6h" path="res://Scenes/path_combat_purple.tscn" id="5_xlmo2"]
 [ext_resource type="PackedScene" uid="uid://d0qq822rfkpnj" path="res://Scenes/toll_collector.tscn" id="7_5wyxp"]
 [ext_resource type="Texture2D" uid="uid://cods05l4ws3wq" path="res://Art/Sprites/SacrificeGameBackground.png" id="7_eh501"]
 [ext_resource type="PackedScene" uid="uid://2r31s6f4kyek" path="res://Art/Models/Coin.glb" id="8_u7noe"]
 [ext_resource type="PackedScene" uid="uid://b7vwa4annws7m" path="res://Scenes/melee_enemyEnding.tscn" id="9_hkyl2"]
+[ext_resource type="Texture2D" uid="uid://dywqaeowwpafo" path="res://Art/Sprites/PlayerEndingSprite.png" id="9_mplkc"]
 
 [node name="loss_screen" type="Control"]
 layout_mode = 3
@@ -72,13 +72,6 @@ script = ExtResource("2_lftis")
 stream = ExtResource("3_n8h38")
 volume_db = -12.0
 autoplay = true
-
-[node name="Player Visual" parent="." instance=ExtResource("4_pv5r0")]
-position = Vector2(139, 634)
-rotation = -1.55187
-
-[node name="SpriteShield" parent="Player Visual/Skeleton2D/Hip/Torso/BackArm/BackForearm" index="0"]
-visible = false
 
 [node name="PathRest" parent="." instance=ExtResource("5_xlmo2")]
 
@@ -157,7 +150,11 @@ transform = Transform3D(0.941858, -0.128537, -0.310453, -2.85371e-08, 0.92394, -
 [node name="MeleeEnemy2" parent="." instance=ExtResource("9_hkyl2")]
 transform = Transform3D(0.596673, 0.239414, 0.765939, -9.70637e-09, 0.954459, -0.298341, -0.802484, 0.178012, 0.5695, -6.26456, -0.953434, -0.831075)
 
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(0.00906569, -0.292541, 0, 0.292541, 0.00906569, 0, 0, 0, 0.292681, -3.37542, -0.476526, 1.00848)
+flip_h = true
+texture = ExtResource("9_mplkc")
+
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]
 
-[editable path="Player Visual"]
 [editable path="SuicideEnemy"]
