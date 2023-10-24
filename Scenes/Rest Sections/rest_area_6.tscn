@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://np3qn8ydtpbv"]
+[gd_scene load_steps=32 format=3 uid="uid://np3qn8ydtpbv"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_jupra"]
 [ext_resource type="Script" path="res://Scripts/speech.gd" id="2_nerlm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="4_dqnyg"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_djci6"]
 [ext_resource type="Texture2D" uid="uid://c27t8m5wgsadv" path="res://Art/Sprites/SkeletonSitting.png" id="6_a4a0n"]
+[ext_resource type="Texture2D" uid="uid://3mplp6otmo3s" path="res://Art/Sprites/SkeletonStanding.png" id="7_egaip"]
 
 [sub_resource type="Resource" id="Resource_f2ka1"]
 script = ExtResource("2_nerlm")
@@ -97,7 +98,7 @@ speaker = "P"
 [sub_resource type="Resource" id="Resource_gm0cd"]
 script = ExtResource("2_nerlm")
 text = "Wow! Thank you so much! You’ve given me the strength to go on in this world :)"
-anim = ""
+anim = "Stand"
 speaker = "S"
 
 [sub_resource type="Resource" id="Resource_7dsgw"]
@@ -126,6 +127,67 @@ size = Vector3(30, 1, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7lrr"]
 size = Vector3(0.2, 30, 4)
+
+[sub_resource type="Animation" id="Animation_636ay"]
+resource_name = "Stand"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("6_a4a0n"), ExtResource("7_egaip")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector3(0, 0.302046, -2), Vector3(0, 0.43034, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_muupu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_a4a0n")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.302046, -2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rod5k"]
+_data = {
+"RESET": SubResource("Animation_muupu"),
+"Stand": SubResource("Animation_636ay")
+}
 
 [node name="RestArea6" type="Node3D"]
 script = ExtResource("1_jupra")
@@ -292,6 +354,9 @@ text = "Leave
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rod5k")
+}
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.302046, -2)
