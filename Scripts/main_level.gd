@@ -64,9 +64,14 @@ func _process(_delta):
 
 func ChooseSections(count: int) -> Array:
 	var fullSet = range(count)
-	while len(fullSet) != 3:
-		fullSet.remove_at(randi_range(0, len(fullSet) -1))
-	return fullSet
+	var finalSet = []
+	var rand: int
+	while len(finalSet) != 3:
+		rand = randi_range(0, len(fullSet) -1)
+		finalSet.append(fullSet[rand])
+		fullSet.remove_at(rand)
+	print(finalSet)
+	return finalSet
 
 
 func _on_level_end_area_entered(_area):
@@ -87,6 +92,7 @@ func _on_level_end_area_entered(_area):
 		betweenLevels = true
 		MakeRestArea()
 		if(levelId == 1): $MusicManager.PlaySad()
+		if(levelId == 5): $MusicManager.PlayCombat()
 		else: $MusicManager.PlayStranger()
 		%Player.Heal(1)
 		if(!%Player.donatedItems[1]): %Player.pendantActive = true
