@@ -170,4 +170,5 @@ disabled = true
 [connection signal="area_exited" from="LadderBox" to="." method="_on_ladder_box_area_exited"]
 [connection signal="animation_finished" from="Attacks/AttackAnimator" to="." method="_on_attack_animator_animation_finished"]
 [connection signal="timeout" from="Attacks/AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="area_entered" from="Attacks/DamageArea" to="." method="_on_damage_area_area_entered"]
 [connection signal="body_entered" from="Attacks/DamageArea" to="." method="_on_damage_area_body_entered"]

@@ -104,7 +104,7 @@ func _physics_process(delta):
 		global_position.z = depthBounds.y
 	
 	#blocking
-	if(onLadder):
+	if(onLadder or attacking):
 		blocking = false
 		timeBlocking = 0
 	elif(timeBlocking > 0.1):
@@ -154,9 +154,6 @@ func StartAttack():
 	else:
 		$Attacks/AttackAnimator.play("Sword")
 
-func _on_damage_area_body_entered(body):
-	body.TakeDamage(4)
-
 func ParrySound():
 	$Sounds/Block.play()
 
@@ -178,3 +175,9 @@ func Cheat():
 		donatedItems[3] = !donatedItems[3]
 	if(Input.is_action_just_pressed("5")):
 		donatedItems[4] = !donatedItems[4]
+
+func _on_damage_area_area_entered(area):
+	area.TakeDamage(4)
+
+func _on_damage_area_body_entered(body):
+	body.TakeDamage(4)

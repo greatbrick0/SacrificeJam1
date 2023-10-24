@@ -23,8 +23,8 @@ func _ready():
 	$FinalBoss/AnimationPlayer.play("BossIdle")
 
 func _process(delta):
-	$"../HealthBar/ProgressBar".value = 100 * (health / maxHealth)
-	$"../HealthBar/ProgressBar2".value = 100 * (health / maxHealth)
+	$"../HealthBar/ProgressBar".value = health / float(maxHealth)
+	$"../HealthBar/ProgressBar2".value = health / float(maxHealth)
 	if(!$FinalBoss/AnimationPlayer.is_playing()):
 		if(cooling):
 			$FinalBoss/AnimationPlayer.play("BossIdle")
@@ -41,12 +41,18 @@ func TakeDamage(amount: int):
 
 func Damage(amount: int):
 	health -= amount
+	print(health)
+	$FinalBoss/BossHurt.play()
 	if(health <= 0):
 		$FinalBoss/AnimationPlayer.play("BossDeath")
+		$FinalBoss/AttackPlayer.stop()
+		$FinalBoss/BossDeath.play()
 
 func _on_animation_player_animation_finished(anim_name):
 	if(anim_name == "BossIdle"):
 		cooling = false
+	elif(anim_name == "BossDeath"):
+		Win()
 
 func SpawnFireBall(offset: float):
 	fireballRef = fireballObj.instantiate()
@@ -70,3 +76,15 @@ func NunHealPlayer():
 func _on_nun_timer_timeout():
 	if(items[1]):
 		$"../NunHolder/NunAnim".play("NunHeal")
+
+func Win():
+	var amountDonated: int = 0
+	for ii in items:
+		if(ii): amountDonated += 1
+	
+	if(amountDonated == 0):
+		get_tree().change_scene_to_file("res://Scenes/End Screens/win_screen_2.tscn")
+	elif(amountDonated == 5):
+		get_tree().change_scene_to_file("res://Scenes/End Screens/win_screen_1.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Scenes/End Screens/win_screen_3.tscn")
