@@ -1,36 +1,54 @@
-res://Art/BaseTheme.tres::56a4e02bd0bc2b8c0613cb455fb75fbe::1698010855::res://.godot/exported/133200997/export-fddb678b90f337e85d9575b55ce38911-BaseTheme.res
-res://Art/Purple.tres::788d789228e28c0df320906c2756b8d7::1698010855::res://.godot/exported/133200997/export-572f626f30f3ccb6cbf99ff0a41c75dc-Purple.res
-res://Art/Rock.tres::8eb22812e230352c4e1ad0917e7334b9::1698010855::res://.godot/exported/133200997/export-ed96cf43bc558d2982f720e918ac55da-Rock.res
-res://Art/Sand.tres::1c6bdf0403519b40e424ac6a17e84fbf::1698010855::res://.godot/exported/133200997/export-fba98d814accea67ef945350069342c4-Sand.res
-res://Scenes/Combat Sections/section_0_1.tscn::a5da4476dc6fcdee85853b8cb53ac284::1697989197::res://.godot/exported/133200997/export-f170f63c3bf69ae5270333e0c32b898a-section_0_1.scn
-res://Scenes/Combat Sections/section_0_2.tscn::09083f066d67259da77d0396cc0b0f27::1697994805::res://.godot/exported/133200997/export-32aa4e0210c995a08364ea292745e95f-section_0_2.scn
-res://Scenes/Combat Sections/section_0_3.tscn::54a992027e1221bc2a7d6bf1b3db985e::1697994805::res://.godot/exported/133200997/export-20d97059d81f009dfb1deb3191c33078-section_0_3.scn
-res://Scenes/Combat Sections/section_0_4.tscn::2e34b342420b1894354c6094775b1d2d::1697994805::res://.godot/exported/133200997/export-b3f0d9e5cd8651cd3b0a217fd3d5c250-section_0_4.scn
-res://Scenes/Combat Sections/section_0_5.tscn::790f10219f1ec9899c68792d28c8de19::1698001598::res://.godot/exported/133200997/export-0b7730ba3274f73b22f7f89a2007b58e-section_0_5.scn
-res://Scenes/Combat Sections/section_1_0.tscn::14713c9670130c6c5231e4a59de0b6cc::1698011738::res://.godot/exported/133200997/export-45fff96ce1e763e32bcbd0677b708db6-section_1_0.scn
-res://Scenes/Combat Sections/section_1_1.tscn::4a4fbb6371f857824c890d15b34a61b6::1698011738::res://.godot/exported/133200997/export-6eb8715c79dc2f5897d23bfb877badc7-section_1_1.scn
-res://Scenes/Combat Sections/section_1_2.tscn::f1ee5af1b39e35c4d8b53efe19375bac::1698011738::res://.godot/exported/133200997/export-fe554d8147924fb5a4299c6b4d138a61-section_1_2.scn
-res://Scenes/Combat Sections/section_1_3.tscn::dcdfa79e051f3bfc4836676feb1a35af::1698011738::res://.godot/exported/133200997/export-13f2f8903280e0dd914d88a1593a9d00-section_1_3.scn
-res://Scenes/Combat Sections/section_2_0.tscn::f1e5eff08a200e587a56aa1c5d0985cc::1698011738::res://.godot/exported/133200997/export-03b1016c3af8bfe3f51e104e924e6bcf-section_2_0.scn
-res://Scenes/Combat Sections/section_2_1.tscn::bd2c6ce980310fca332c480b5e799f20::1698011738::res://.godot/exported/133200997/export-ff6f24718f5e6db79a0a456d24d5435d-section_2_1.scn
-res://Scenes/Combat Sections/section_2_2.tscn::b830a5fe3245c367544642a739080780::1698011738::res://.godot/exported/133200997/export-c20dc536ee9c7a5faecbabe72ae84896-section_2_2.scn
-res://Scenes/Combat Sections/section_2_3.tscn::e3a41bd2e8db71ef78607ac05c9f8747::1698011738::res://.godot/exported/133200997/export-6b78963cc7dded7e272251ee8108a6c3-section_2_3.scn
-res://Scenes/End Screens/loss_screen.tscn::3d2869fb0ead620ceaf96070ce03fc05::1698010040::res://.godot/exported/133200997/export-84189c9059e2e4a089d06227007a5bad-loss_screen.scn
-res://Scenes/End Screens/win_screen_1.tscn::5702c732e9839012db7fd86525c65f21::1698010040::res://.godot/exported/133200997/export-2d7c7a3637bd063c07825c8e604d3780-win_screen_1.scn
-res://Scenes/End Screens/win_screen_2.tscn::3a1c28ee4f589a1331af2b7714fd336d::1698010040::res://.godot/exported/133200997/export-f3f784a8bb17745d23323278fbd28aa8-win_screen_2.scn
-res://Scenes/End Screens/win_screen_3.tscn::a43ea7962d7f4dbde299f29768d505a7::1698010040::res://.godot/exported/133200997/export-2a6ae24724f6d5dca9e121f8b48e8d58-win_screen_3.scn
-res://Scenes/Rest Sections/rest_area_1.tscn::aaa5bf4fabe147e046a93729d137b32f::1698009789::res://.godot/exported/133200997/export-0edda7e47bcff703b7e93cc52a90feeb-rest_area_1.scn
-res://Scenes/Rest Sections/rest_area_2.tscn::e7e0ed3019205baf0d39c9f5f71082cf::1698010040::res://.godot/exported/133200997/export-034cb49b7052d1838007fb7a5e75432b-rest_area_2.scn
-res://Scenes/Rest Sections/rest_area_3.tscn::d47f1659aad77058ab2e2c0e9052568b::1698011748::res://.godot/exported/133200997/export-ccbfa1aaac32dbb3615a387ef5f61544-rest_area_3.scn
-res://Scenes/Rest Sections/toll_area.tscn::6408821fa247a3432c6a6e6da0b35853::1698011747::res://.godot/exported/133200997/export-851d4efbe252366fe41699a89e94fee0-toll_area.scn
+res://Art/BaseTheme.tres::56a4e02bd0bc2b8c0613cb455fb75fbe::1698119009::res://.godot/exported/133200997/export-fddb678b90f337e85d9575b55ce38911-BaseTheme.res
+res://Art/Purple.tres::788d789228e28c0df320906c2756b8d7::1698119009::res://.godot/exported/133200997/export-572f626f30f3ccb6cbf99ff0a41c75dc-Purple.res
+res://Art/Rock.tres::8eb22812e230352c4e1ad0917e7334b9::1698109459::res://.godot/exported/133200997/export-ed96cf43bc558d2982f720e918ac55da-Rock.res
+res://Art/Sand.tres::1c6bdf0403519b40e424ac6a17e84fbf::1698109459::res://.godot/exported/133200997/export-fba98d814accea67ef945350069342c4-Sand.res
+res://Scenes/Combat Sections/section_0_1.tscn::ff457d63b123dad544b78bf49cbd13f1::1698137726::res://.godot/exported/133200997/export-f170f63c3bf69ae5270333e0c32b898a-section_0_1.scn
+res://Scenes/Combat Sections/section_0_2.tscn::f0c28bdbc39cf4edefea96a79ef37af7::1698112003::res://.godot/exported/133200997/export-32aa4e0210c995a08364ea292745e95f-section_0_2.scn
+res://Scenes/Combat Sections/section_0_3.tscn::144707823807536f6f114aab235e1060::1698117989::res://.godot/exported/133200997/export-20d97059d81f009dfb1deb3191c33078-section_0_3.scn
+res://Scenes/Combat Sections/section_0_4.tscn::81eb803b713f80d7645a9e14a47c81b8::1698111461::res://.godot/exported/133200997/export-b3f0d9e5cd8651cd3b0a217fd3d5c250-section_0_4.scn
+res://Scenes/Combat Sections/section_0_5.tscn::5c59aa19c379fdb22b9c74cc4d8e98ef::1698111461::res://.godot/exported/133200997/export-0b7730ba3274f73b22f7f89a2007b58e-section_0_5.scn
+res://Scenes/Combat Sections/section_1_0.tscn::baa49fe828b982259ee48e65149f2543::1698111461::res://.godot/exported/133200997/export-45fff96ce1e763e32bcbd0677b708db6-section_1_0.scn
+res://Scenes/Combat Sections/section_1_1.tscn::3f55fd5d53d26fc1f06a198a2ce8e5cc::1698111461::res://.godot/exported/133200997/export-6eb8715c79dc2f5897d23bfb877badc7-section_1_1.scn
+res://Scenes/Combat Sections/section_1_2.tscn::7c349458b41685266e6b5c1e5df414ea::1698111461::res://.godot/exported/133200997/export-fe554d8147924fb5a4299c6b4d138a61-section_1_2.scn
+res://Scenes/Combat Sections/section_1_3.tscn::614ea4977ebfb591c537f60fb4ecca10::1698111461::res://.godot/exported/133200997/export-13f2f8903280e0dd914d88a1593a9d00-section_1_3.scn
+res://Scenes/Combat Sections/section_2_0.tscn::ce6eb25b47fef50007bcd8ada7471c49::1698142901::res://.godot/exported/133200997/export-03b1016c3af8bfe3f51e104e924e6bcf-section_2_0.scn
+res://Scenes/Combat Sections/section_2_1.tscn::da147e6e7d08ac707bbcd317f989db56::1698142901::res://.godot/exported/133200997/export-ff6f24718f5e6db79a0a456d24d5435d-section_2_1.scn
+res://Scenes/Combat Sections/section_2_2.tscn::0fce7c673e77645f52f51c1527be4ee7::1698115895::res://.godot/exported/133200997/export-c20dc536ee9c7a5faecbabe72ae84896-section_2_2.scn
+res://Scenes/Combat Sections/section_2_3.tscn::f70a1dd1189159d3fa67d2652c1097b5::1698115895::res://.godot/exported/133200997/export-6b78963cc7dded7e272251ee8108a6c3-section_2_3.scn
+res://Scenes/End Screens/loss_screen.tscn::d4fe56ee67667339fdd26a5dfc7c4606::1698142344::res://.godot/exported/133200997/export-84189c9059e2e4a089d06227007a5bad-loss_screen.scn
+res://Scenes/End Screens/win_screen_1.tscn::f8fcc60bac339e29c082fda573a44fd2::1698134653::res://.godot/exported/133200997/export-2d7c7a3637bd063c07825c8e604d3780-win_screen_1.scn
+res://Scenes/End Screens/win_screen_2.tscn::22fd7a2a8f63b2df8d7186f051b6d33a::1698134653::res://.godot/exported/133200997/export-f3f784a8bb17745d23323278fbd28aa8-win_screen_2.scn
+res://Scenes/End Screens/win_screen_3.tscn::1a1c9241bd48fca2e559057e5c12b25c::1698134653::res://.godot/exported/133200997/export-2a6ae24724f6d5dca9e121f8b48e8d58-win_screen_3.scn
+res://Scenes/Rest Sections/rest_area_1.tscn::d5465774d5bcec5477292001da87635a::1698139122::res://.godot/exported/133200997/export-0edda7e47bcff703b7e93cc52a90feeb-rest_area_1.scn
+res://Scenes/Rest Sections/rest_area_2.tscn::67c944776c4d59b0044e518f9aec77cc::1698139122::res://.godot/exported/133200997/export-034cb49b7052d1838007fb7a5e75432b-rest_area_2.scn
+res://Scenes/Rest Sections/rest_area_3.tscn::3a1da4ac30fd4b4ade2acc1dc3ff6b1d::1698141326::res://.godot/exported/133200997/export-ccbfa1aaac32dbb3615a387ef5f61544-rest_area_3.scn
+res://Scenes/Rest Sections/toll_area.tscn::70a41e1a13eeebbe0af4a15617f8d59f::1698139122::res://.godot/exported/133200997/export-851d4efbe252366fe41699a89e94fee0-toll_area.scn
 res://Scenes/coin.tscn::fa9fb12d7fa333d3c4ae45c769a73c3a::1698011747::res://.godot/exported/133200997/export-cfd538a465b9799b811984d89e43d2b9-coin.scn
-res://Scenes/enemy_1.tscn::1200b041137eb817cf1e4a782ab6e85b::1698011747::res://.godot/exported/133200997/export-1ea40283ae26b853f103753d8169eb63-enemy_1.scn
-res://Scenes/enemy_2.tscn::69dabe5fcb8fdb2c6f93deb6714339b2::1697998107::res://.godot/exported/133200997/export-2ab03f72b8ca4a7a989dc3ba0e608da0-enemy_2.scn
-res://Scenes/enemy_3.tscn::82efefdfdba5a2841d4dd33203eb2e19::1697998107::res://.godot/exported/133200997/export-191355d8eed2a7e2a7c0adba4b52e75d-enemy_3.scn
-res://Scenes/ladder.tscn::fb0479374f91dc705063c189bec85f68::1697998107::res://.godot/exported/133200997/export-a93dca2c93ccf25e0894f871d688eab6-ladder.scn
-res://Scenes/main_level.tscn::fe120f372728650086f98f999e288808::1698011747::res://.godot/exported/133200997/export-37b2bb226c632007c2a980b065e052ac-main_level.scn
-res://Scenes/main_menu.tscn::82b7472f7ff4ad80d570d98830eb9fb6::1698011748::res://.godot/exported/133200997/export-502e6a9b269597544b234abf28958cd8-main_menu.scn
-res://Scenes/player.tscn::9067df1003aa632436f05d24ea25e04d::1698011747::res://.godot/exported/133200997/export-1753c997600d68ab5d20ae99fddb15c6-player.scn
-res://Scenes/player_visual.tscn::fc5f6c2939916a82577f0b8a9c20b821::1698010040::res://.godot/exported/133200997/export-70cbf2d6c1f55dbbabce51b018b363cb-player_visual.scn
-res://Scenes/Rest Sections/anti_climax.tscn::f6542b7eaa0e9a54750479a3ca487cdd::1698011748::res://.godot/exported/133200997/export-4dad64ae9d183961ad1a719a6f7eaec9-anti_climax.scn
-res://Scenes/Rest Sections/rest_area_4.tscn::2962b5fc9f66c5bd1741e5c60414c7f4::1698011748::res://.godot/exported/133200997/export-ceb1ed29ab21849027a994a5d76e8add-rest_area_4.scn
+res://Scenes/enemy_1.tscn::1200b041137eb817cf1e4a782ab6e85b::1698141326::res://.godot/exported/133200997/export-1ea40283ae26b853f103753d8169eb63-enemy_1.scn
+res://Scenes/enemy_2.tscn::69dabe5fcb8fdb2c6f93deb6714339b2::1698103953::res://.godot/exported/133200997/export-2ab03f72b8ca4a7a989dc3ba0e608da0-enemy_2.scn
+res://Scenes/enemy_3.tscn::b3862af3b7ca43c9252548eee51d0478::1698137726::res://.godot/exported/133200997/export-191355d8eed2a7e2a7c0adba4b52e75d-enemy_3.scn
+res://Scenes/ladder.tscn::4927b7dd9abd291a830ad50f010461ac::1698119089::res://.godot/exported/133200997/export-a93dca2c93ccf25e0894f871d688eab6-ladder.scn
+res://Scenes/main_level.tscn::60ef6475dcfac4af58d666eb7615e065::1698142269::res://.godot/exported/133200997/export-37b2bb226c632007c2a980b065e052ac-main_level.scn
+res://Scenes/main_menu.tscn::d821a71065939fbba7215c0a38ae33e5::1698112003::res://.godot/exported/133200997/export-502e6a9b269597544b234abf28958cd8-main_menu.scn
+res://Scenes/player.tscn::c9a1ec0f5bccfff28f6b4552a62f2161::1698142288::res://.godot/exported/133200997/export-1753c997600d68ab5d20ae99fddb15c6-player.scn
+res://Scenes/player_visual.tscn::b42481d5088def56eb17ee0f471aaf75::1698124687::res://.godot/exported/133200997/export-70cbf2d6c1f55dbbabce51b018b363cb-player_visual.scn
+res://Scenes/Rest Sections/anti_climax.tscn::012c7ed41116d53ccabbd7dbf1e35858::1698116107::res://.godot/exported/133200997/export-4dad64ae9d183961ad1a719a6f7eaec9-anti_climax.scn
+res://Scenes/Rest Sections/rest_area_4.tscn::6e1f2b3f7303f34fa9a5447b7cce6fde::1698142013::res://.godot/exported/133200997/export-ceb1ed29ab21849027a994a5d76e8add-rest_area_4.scn
+res://Art/BossUITheme.tres::408d37927c3c91ee7b4e3cff45c4e2ee::1698130755::res://.godot/exported/133200997/export-4a471eb57d101f8205f4b5f33314aa85-BossUITheme.res
+res://Art/BrightGreen.tres::e1ca8591fe6d55d86c085c77f8508f07::1698119009::res://.godot/exported/133200997/export-f50ade4c9c6ab784a43c156514407157-BrightGreen.res
+res://Art/BrightPurple.tres::d0ccd7a82d4d8b5a03bf49d9c1bfc18e::1698128538::res://.godot/exported/133200997/export-3b846f3f72e5f6e3785b67fbfa36e3d1-BrightPurple.res
+res://Art/Orange.tres::1801e853504f984b7a72fb23c49388a2::1698109459::res://.godot/exported/133200997/export-77f07e42a23d6404e343459bf98d0e54-Orange.res
+res://Scenes/Rest Sections/boss_fight.tscn::8f42da7f01b7520a57bf6772fda9e3c3::1698142270::res://.godot/exported/133200997/export-8c4d9f5742d11c2250527fb95f9d9724-boss_fight.scn
+res://Scenes/Rest Sections/rest_area_5.tscn::3f4d08195499eec5d43eecf7cddbb1b1::1698142013::res://.godot/exported/133200997/export-f9b54b8f5fc46ea9fdeb84aa9120fe3c-rest_area_5.scn
+res://Scenes/Rest Sections/rest_area_6.tscn::4a2b79cc9171b7872a5dbb564bbb01d9::1698142013::res://.godot/exported/133200997/export-50f348ab26fc20decb6ddd37ed456f05-rest_area_6.scn
+res://Scenes/boss_ball.tscn::6b9306eb3e52ecf4bcab393fb46a8b03::1698141326::res://.godot/exported/133200997/export-5797fe09185ad19d5d7948c22b05d686-boss_ball.scn
+res://Scenes/bridge.tscn::a19910e107a25b684cd78acf847ac71e::1698119089::res://.godot/exported/133200997/export-7b607cd4f360bcfe67e041cc07d93e24-bridge.scn
+res://Scenes/camp_fire.tscn::2fbb21d52ced981b63ed67c4e40bcc95::1698115114::res://.godot/exported/133200997/export-0a0e5d2ca7bb83bc747d4a1b855f7c58-camp_fire.scn
+res://Scenes/fire_ball.tscn::1b6a32be5a7a4cb05cf20ffad425be4e::1698128513::res://.godot/exported/133200997/export-b851c17aeb64e73e6a2c33b63b57d476-fire_ball.scn
+res://Scenes/melee_enemyEnding.tscn::306eddd756f508c6b1fe29325f8a113e::1698124687::res://.godot/exported/133200997/export-9cfa79f0bed987031b7df942b9ac20a8-melee_enemyEnding.scn
+res://Scenes/path_combat_brick.tscn::5c8dbd14145ff19cc9524b61e0760a0b::1698141326::res://.godot/exported/133200997/export-d5ae1a8855c92810d86cc95de129ae4e-path_combat_brick.scn
+res://Scenes/path_combat_purple.tscn::ed5f108ff41e11dbfbb7514b03907492::1698116107::res://.godot/exported/133200997/export-39956b358266031c11c6001eecf8b6c1-path_combat_purple.scn
+res://Scenes/path_combat_sand.tscn::4e794451510dd945abd10957816964d9::1698112003::res://.godot/exported/133200997/export-d4adc04a079dd5478010fe15f6aa5147-path_combat_sand.scn
+res://Scenes/path_rest.tscn::a96b344fd879cf4d428e3670f0b4aef7::1698119088::res://.godot/exported/133200997/export-cdad7042d4a00b46984c8c872ed338fb-path_rest.scn
+res://Scenes/ranged_enemy_new.tscn::572537ad6001b59e001716577691693d::1698137726::res://.godot/exported/133200997/export-4da47dfb2ef1cface20f83d6663f2e23-ranged_enemy_new.scn
+res://Scenes/toll_collector.tscn::d4b76b6f0b6f3f6795a45e3ed83e940a::1698124687::res://.godot/exported/133200997/export-59e35ce93f48972b62c82c4a8625e49a-toll_collector.scn
