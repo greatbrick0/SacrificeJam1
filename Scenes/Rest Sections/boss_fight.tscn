@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://13j7o5g37h7n"]
+[gd_scene load_steps=48 format=3 uid="uid://13j7o5g37h7n"]
 
 [ext_resource type="Texture2D" uid="uid://bk7f8qq4nt56f" path="res://Art/Sprites/FloorTextureBrick.png" id="1_4hcd2"]
 [ext_resource type="PackedScene" uid="uid://c4fh4ufajv8vl" path="res://Art/Models/rectangle_platform.glb" id="4_dgmeo"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bxbtekv3aylw8" path="res://Sounds/Effects/Pendant.wav" id="10_qxnlr"]
 [ext_resource type="Texture2D" uid="uid://bjfg6434mf2fy" path="res://Art/Sprites/GreenGuyAttacking.png" id="13_r8rrx"]
 [ext_resource type="Texture2D" uid="uid://cu02k3amkv36g" path="res://Art/Sprites/JumpyKid.png" id="14_x8ixi"]
+[ext_resource type="Texture2D" uid="uid://bf3f2avsg6sid" path="res://Art/Sprites/SkeletonAttack.png" id="15_rttlh"]
 [ext_resource type="Texture2D" uid="uid://bblglbp4y66ck" path="res://Art/Sprites/EdgyGuyAttacking.png" id="15_tw611"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
@@ -369,7 +370,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Kid:position")
+tracks/0/path = NodePath("Skele:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -381,7 +382,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Kid:visible")
+tracks/1/path = NodePath("Skele:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -397,7 +398,7 @@ length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Kid:position")
+tracks/0/path = NodePath("Skele:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -409,7 +410,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Kid:visible")
+tracks/1/path = NodePath("Skele:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -423,6 +424,57 @@ tracks/1/keys = {
 _data = {
 "KidJump": SubResource("Animation_e5q17"),
 "RESET": SubResource("Animation_o7he5")
+}
+
+[sub_resource type="Animation" id="Animation_o1hf6"]
+resource_name = "Charge"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skele:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-24.5046, 0.424966, -2), Vector3(19.3863, 0.424966, -2)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Boss")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [4],
+"method": &"Damage"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_hp88e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skele:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-24.5046, 0.424966, -2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_78h0w"]
+_data = {
+"Charge": SubResource("Animation_o1hf6"),
+"RESET": SubResource("Animation_hp88e")
 }
 
 [sub_resource type="Animation" id="Animation_nahmx"]
@@ -661,6 +713,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, 0)
 collision_layer = 32
 collision_mask = 8192
 script = ExtResource("5_kntq1")
+maxHealth = 110
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boss"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 4, 0)
@@ -857,13 +910,23 @@ libraries = {
 [node name="KidHolder" type="Node3D" parent="."]
 
 [node name="Kid" type="Sprite3D" parent="KidHolder"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 13.979, 7.025, 0)
-visible = false
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -13.2172, -2.14088, -2)
 texture = ExtResource("14_x8ixi")
 
 [node name="KidAnim" type="AnimationPlayer" parent="KidHolder"]
 libraries = {
 "": SubResource("AnimationLibrary_34idx")
+}
+
+[node name="SkeleHolder" type="Node3D" parent="."]
+
+[node name="Skele" type="Sprite3D" parent="SkeleHolder"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -24.5046, 0.424966, -2)
+texture = ExtResource("15_rttlh")
+
+[node name="SkeleAnim" type="AnimationPlayer" parent="SkeleHolder"]
+libraries = {
+"": SubResource("AnimationLibrary_78h0w")
 }
 
 [node name="EdgeHolder" type="Node3D" parent="."]

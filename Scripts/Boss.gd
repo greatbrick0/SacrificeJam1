@@ -1,6 +1,7 @@
 extends Node3D
 
 var playerRef: Player
+var playerHealth: int
 var items: Array[bool]
 var tracker: int = 0
 var cooling: bool = true
@@ -19,11 +20,18 @@ func _on_damage_bound_area_entered(area):
 func _ready():
 	health = maxHealth
 	playerRef = get_tree().get_first_node_in_group("Player")
+	playerHealth = playerRef.health
 	items = playerRef.donatedItems
 	$"../RogueHolder/Rogue".visible = items[0]
 	$FinalBoss/AnimationPlayer.play("BossIdle")
 
 func _process(delta):
+	if(playerHealth > playerRef.health):
+		print("damage")
+		if(!$"../SkeleHolder/SkeleAnim".is_playing() and items[2]):
+			$"../SkeleHolder/SkeleAnim".play("Charge")
+	playerHealth = playerRef.health
+	
 	$"../HealthBar/ProgressBar".value = health / float(maxHealth)
 	$"../HealthBar/ProgressBar2".value = health / float(maxHealth)
 	if(!$FinalBoss/AnimationPlayer.is_playing()):
