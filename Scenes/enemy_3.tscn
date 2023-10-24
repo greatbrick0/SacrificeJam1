@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn067m75da1ns"]
+[gd_scene load_steps=7 format=3 uid="uid://dn067m75da1ns"]
 
 [ext_resource type="Script" path="res://Scripts/enemy_3.gd" id="1_fd00c"]
+[ext_resource type="PackedScene" uid="uid://cxaop5af332f3" path="res://Scenes/ranged_enemy_new.tscn" id="2_6r4q5"]
 [ext_resource type="PackedScene" uid="uid://b37ah5ejnj5tp" path="res://Art/Models/RangedEnemy.glb" id="2_i4eqy"]
 [ext_resource type="AudioStream" uid="uid://binv0k8xsejon" path="res://Sounds/Effects/EnemyHit.wav" id="3_jd3lv"]
 [ext_resource type="AudioStream" uid="uid://d3sv3g5hjegma" path="res://Sounds/Effects/EnemyDeath.wav" id="4_48vtb"]
@@ -15,8 +16,12 @@ aggroRange = 32.0
 
 [node name="Visuals" type="Node3D" parent="."]
 
+[node name="RangedEnemyNew" parent="Visuals" instance=ExtResource("2_6r4q5")]
+transform = Transform3D(-2.13788e-08, 0, 0.48909, 0, 0.48909, 0, -0.48909, 0, -2.13788e-08, 0, -0.759966, 0)
+
 [node name="RangedEnemy" parent="Visuals" instance=ExtResource("2_i4eqy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_cnqsd")

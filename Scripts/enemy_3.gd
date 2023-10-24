@@ -42,7 +42,7 @@ func TakeDamage(amount: int):
 func Die():
 	$Sounds/DeathSound.play()
 	$CollisionShape3D.set_deferred("disabled", true)
-	$DamageArea/CollisionShape3D.set_deferred("disabled", true)
+	#$DamageArea/CollisionShape3D.set_deferred("disabled", true)
 	$Visuals.visible = false
 
 func _on_attack_cooldown_timeout():
