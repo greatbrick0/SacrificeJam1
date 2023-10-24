@@ -9,6 +9,7 @@ var inToll: bool = false
 var levelSections: Array[Array] = [[preload("res://Scenes/Combat Sections/section_0_1.tscn")],
 [preload("res://Scenes/Combat Sections/section_0_1.tscn")],
 [preload("res://Scenes/Combat Sections/section_1_0.tscn")],
+[preload("res://Scenes/Combat Sections/section_1_0.tscn")],
 [preload("res://Scenes/Combat Sections/section_2_0.tscn")],
 [preload("res://Scenes/Combat Sections/section_2_0.tscn")]]
 @export var sectionWidth: float = 30
