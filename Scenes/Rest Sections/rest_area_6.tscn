@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://np3qn8ydtpbv"]
+[gd_scene load_steps=31 format=3 uid="uid://np3qn8ydtpbv"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_jupra"]
 [ext_resource type="Script" path="res://Scripts/speech.gd" id="2_nerlm"]
+[ext_resource type="AudioStream" uid="uid://brhmkt2yuh43s" path="res://Sounds/Effects/Dialogue.wav" id="3_uqj2o"]
 [ext_resource type="PackedScene" uid="uid://dutuewqwkgi2c" path="res://Scenes/path_rest.tscn" id="3_vj3l4"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="4_dqnyg"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_djci6"]
@@ -190,6 +191,9 @@ itemIndex = 2
 Dialogue = Array[Object]([SubResource("Resource_f2ka1"), SubResource("Resource_fs8cb"), SubResource("Resource_ojgwp"), SubResource("Resource_oynxu"), SubResource("Resource_cfwyt"), SubResource("Resource_ngmtq"), SubResource("Resource_imkxn"), SubResource("Resource_diixc"), SubResource("Resource_cqbgt"), SubResource("Resource_cnhbo"), SubResource("Resource_ht3is"), SubResource("Resource_sxb4n"), SubResource("Resource_wpo8p")])
 DialogueL = Array[Object]([SubResource("Resource_2vcpe"), SubResource("Resource_gm0cd"), SubResource("Resource_7dsgw")])
 DialogueR = Array[Object]([SubResource("Resource_gjpoi"), SubResource("Resource_oejbu")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uqj2o")
 
 [node name="Tree" parent="." instance=ExtResource("4_dqnyg")]
 transform = Transform3D(1.29557, -0.0265001, -0.0484784, 0.0287127, 1.59591, 0.0407783, 0.103305, -0.111227, 0.596646, -6.66692, -1.85343, -6.552)

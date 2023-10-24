@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccpin5551tp2g"]
+[gd_scene load_steps=6 format=3 uid="uid://ccpin5551tp2g"]
 
 [ext_resource type="Script" path="res://Scripts/toll_area.gd" id="1_v41kw"]
 [ext_resource type="PackedScene" uid="uid://bxaurr605xh6h" path="res://Scenes/path_combat_purple.tscn" id="2_b4nn8"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="2_yocxv"]
+[ext_resource type="PackedScene" uid="uid://d0qq822rfkpnj" path="res://Scenes/toll_collector.tscn" id="4_66vxr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_111yn"]
 size = Vector3(0.2, 30, 4)
@@ -25,5 +26,8 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TollPoint"]
 shape = SubResource("BoxShape3D_111yn")
+
+[node name="SuicideEnemy" parent="." instance=ExtResource("4_66vxr")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.396552, -1.12327, -1.58672)
 
 [connection signal="area_entered" from="TollPoint" to="." method="_on_toll_point_area_entered"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://dbkjcculeg0ua"]
+[gd_scene load_steps=22 format=3 uid="uid://dbkjcculeg0ua"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_btqlt"]
 [ext_resource type="Script" path="res://Scripts/speech.gd" id="2_jllgn"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="3_7c5bb"]
 [ext_resource type="PackedScene" uid="uid://dutuewqwkgi2c" path="res://Scenes/path_rest.tscn" id="3_8qpcx"]
+[ext_resource type="AudioStream" uid="uid://brhmkt2yuh43s" path="res://Sounds/Effects/Dialogue.wav" id="3_10d5v"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="4_4n78b"]
 [ext_resource type="Texture2D" uid="uid://bijmbs1oqyewd" path="res://Art/Sprites/Nun.png" id="5_5hvso"]
 
@@ -97,6 +98,9 @@ itemIndex = 1
 Dialogue = Array[Object]([SubResource("Resource_veh8i"), SubResource("Resource_mxjtu"), SubResource("Resource_fqc6f"), SubResource("Resource_hrxdr"), SubResource("Resource_ka2v0"), SubResource("Resource_3lfrx"), SubResource("Resource_5qbw0"), SubResource("Resource_cq7ym")])
 DialogueL = Array[Object]([SubResource("Resource_q3fyk"), SubResource("Resource_2kdmb"), SubResource("Resource_8juus")])
 DialogueR = Array[Object]([SubResource("Resource_hbd0n"), SubResource("Resource_d6gmy")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_10d5v")
 
 [node name="PathRest" parent="." instance=ExtResource("3_8qpcx")]
 

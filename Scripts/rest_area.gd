@@ -34,8 +34,10 @@ func Progress():
 		canContinue = false
 		$Timer.start()
 		Speak()
+		$AudioStreamPlayer.play()
 
 func _on_dialogue_point_area_entered(area):
+	$AudioStreamPlayer.play()
 	$DialoguePoint/CollisionShape3D.set_deferred("disabled", true)
 	$Dialogue.visible = true
 	get_tree().get_first_node_in_group("Player").inCutscene = true
