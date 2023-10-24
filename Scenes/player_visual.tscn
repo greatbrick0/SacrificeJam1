@@ -305,7 +305,7 @@ tracks/17/keys = {
 
 [sub_resource type="Animation" id="Animation_ddy6g"]
 resource_name = "Block"
-length = 0.5
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -313,7 +313,7 @@ tracks/0/path = NodePath("Skeleton2D/Hip/Torso:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-6, -784), Vector2(-31.5511, -648.022)]
@@ -349,7 +349,7 @@ tracks/3/path = NodePath("Skeleton2D/Hip/Torso/BackArm:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -1.25476]
@@ -373,7 +373,7 @@ tracks/5/path = NodePath("Skeleton2D/Hip/Torso/BackArm/BackForearm:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -0.518873]
@@ -493,7 +493,7 @@ tracks/15/path = NodePath("Skeleton2D/Hip/Torso/FrontArm:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 0.401553]
@@ -517,7 +517,7 @@ tracks/17/path = NodePath("Skeleton2D/Hip/Torso/FrontArm/FrontForearm:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -0.52483]
@@ -1508,6 +1508,7 @@ rest = Transform2D(1, 0, 0, 1, 450, 30)
 
 [node name="FrontForearm" type="Bone2D" parent="Skeleton2D/Hip/Torso/FrontArm"]
 position = Vector2(96, 372)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 96, 372)
 
 [node name="SpriteDagger" type="Sprite2D" parent="Skeleton2D/Hip/Torso/FrontArm/FrontForearm"]
