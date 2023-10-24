@@ -16,7 +16,7 @@ size = Vector3(3, 1, 2)
 [node name="Platforms" type="Node3D" parent="."]
 
 [node name="Platform1" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.60205, 1.88548, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.60205, 1.64662, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -27,7 +27,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(0.154661, 0, 0, 0, 0.0488592, 0, 0, 0, 0.0910962, 0.0188813, -0.403839, -0.0495659)
 
 [node name="Platform2" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.74159, 5.16075, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.74159, 4.92189, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -38,7 +38,7 @@ shape = SubResource("BoxShape3D_mki6f")
 transform = Transform3D(0.154661, 0, 0, 0, 0.0488592, 0, 0, 0, 0.0910962, 0.0188813, -0.403839, -0.0495659)
 
 [node name="Platform3" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.561539, 3.76096, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.561539, 3.5221, 0)
 collision_layer = 256
 collision_mask = 0
 
@@ -70,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.56586, 2.73829, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.28247, -0.617712, 0.1636)
 
 [node name="bridge" parent="Ladders" instance=ExtResource("5_ctsvu")]
-transform = Transform3D(0.870356, -0.492424, 0, 0.492424, 0.870356, 0, 0, 0, 1, -3.59276, 3.17415, 0)
+transform = Transform3D(0.870356, -0.492424, 0, 0.492424, 0.870356, 0, 0, 0, 1, -3.59276, 2.93529, 0)
 
 [node name="bridge2" parent="Ladders" instance=ExtResource("5_ctsvu")]
-transform = Transform3D(0.913545, -0.406737, 0, 0.406737, 0.913545, 0, 0, 0, 1, 2.45966, 4.72239, 0)
+transform = Transform3D(0.913545, -0.406737, 0, 0.406737, 0.913545, 0, 0, 0, 1, 2.45966, 4.48353, 0)

@@ -36,13 +36,19 @@ func _ready():
 	levelSections[2].append(load("res://Scenes/Combat Sections/section_0_1.tscn"))
 	levelSections[2].append(load("res://Scenes/Combat Sections/section_0_4.tscn"))
 	
-	levelSections[3].append(load("res://Scenes/Combat Sections/section_2_1.tscn"))
-	levelSections[3].append(load("res://Scenes/Combat Sections/section_2_2.tscn"))
-	levelSections[3].append(load("res://Scenes/Combat Sections/section_2_3.tscn"))
+	levelSections[3].append(load("res://Scenes/Combat Sections/section_1_1.tscn"))
+	levelSections[3].append(load("res://Scenes/Combat Sections/section_1_2.tscn"))
+	levelSections[3].append(load("res://Scenes/Combat Sections/section_1_3.tscn"))
+	levelSections[3].append(load("res://Scenes/Combat Sections/section_0_1.tscn"))
+	levelSections[3].append(load("res://Scenes/Combat Sections/section_0_4.tscn"))
 	
 	levelSections[4].append(load("res://Scenes/Combat Sections/section_2_1.tscn"))
 	levelSections[4].append(load("res://Scenes/Combat Sections/section_2_2.tscn"))
 	levelSections[4].append(load("res://Scenes/Combat Sections/section_2_3.tscn"))
+	
+	levelSections[5].append(load("res://Scenes/Combat Sections/section_2_1.tscn"))
+	levelSections[5].append(load("res://Scenes/Combat Sections/section_2_2.tscn"))
+	levelSections[5].append(load("res://Scenes/Combat Sections/section_2_3.tscn"))
 	
 
 func _process(_delta):
