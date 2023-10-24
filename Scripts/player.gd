@@ -32,7 +32,6 @@ func _ready():
 	%"Player Visual".UpdateItems(donatedItems)
 
 func _process(delta):
-	Cheat()
 	holdingJump = Input.is_action_pressed("Jump")
 	input_dir = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
 	if(Input.is_action_pressed("Parry")): timeBlocking += 1.0 * delta

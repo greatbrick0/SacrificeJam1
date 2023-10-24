@@ -22,7 +22,7 @@ func _process(delta):
 				_on_left_button_pressed()
 			elif(Input.is_action_just_pressed("MoveRight")):
 				_on_right_button_pressed()
-		elif(Input.is_action_just_pressed("Jump") and canContinue):
+		elif(Input.is_action_pressed("Jump") and canContinue):
 			Progress()
 
 func Progress():
