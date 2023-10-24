@@ -1,16 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://bep7ee62g6egk"]
 
 [ext_resource type="PackedScene" uid="uid://bulmv2xsyh4tc" path="res://Scenes/coin.tscn" id="1_pm5hg"]
-[ext_resource type="PackedScene" uid="uid://bxaurr605xh6h" path="res://Scenes/path_combat_purple.tscn" id="1_q13rk"]
 [ext_resource type="PackedScene" uid="uid://cn5qqi6pw675g" path="res://Art/Models/PlatformA.glb" id="2_dkjd4"]
 [ext_resource type="PackedScene" uid="uid://kuv2y7prb4au" path="res://Scenes/enemy_1.tscn" id="2_yfulo"]
+[ext_resource type="PackedScene" uid="uid://bxaurr605xh6h" path="res://Scenes/path_combat_purple.tscn" id="4_dyiik"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ynmv"]
 size = Vector3(3, 1, 2)
 
 [node name="Section 0 0" type="Node3D"]
-
-[node name="PathRest" parent="." instance=ExtResource("1_q13rk")]
 
 [node name="Platforms" type="Node3D" parent="."]
 
@@ -81,3 +79,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06371, 0.0135136, -1.04516)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25196, 0.00594044, 0.542754)
 
 [node name="Ladders" type="Node3D" parent="."]
+
+[node name="PathRest" parent="." instance=ExtResource("4_dyiik")]

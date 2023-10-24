@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://hppjy1dcb6yb"]
+[gd_scene load_steps=7 format=3 uid="uid://hppjy1dcb6yb"]
 
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="1_m15jv"]
 [ext_resource type="Script" path="res://Scripts/WinButton1.gd" id="2_1fdy1"]
 [ext_resource type="AudioStream" uid="uid://dkrmej4e810xh" path="res://Sounds/Music/SacrificeSongVictory.wav" id="3_0ff1x"]
+[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="4_sxacc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lb2so"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5dx6a"]
+size = Vector3(30, 1, 4)
 
 [node name="win_screen_2" type="Control"]
 layout_mode = 3
@@ -68,5 +74,20 @@ script = ExtResource("2_1fdy1")
 stream = ExtResource("3_0ff1x")
 volume_db = -12.0
 autoplay = true
+
+[node name="Path" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
+transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+material_override = ExtResource("4_sxacc")
+mesh = SubResource("BoxMesh_lb2so")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
+shape = SubResource("BoxShape3D_5dx6a")
 
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]
