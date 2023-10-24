@@ -99,10 +99,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.818769, 8.18566, 0)
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="Enemy1-1" parent="Enemies" instance=ExtResource("2_5tq6w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.64454, 0, 0.706036)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3417, 0, 0.424188)
 
 [node name="Enemy1-2" parent="Enemies" instance=ExtResource("2_5tq6w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89018, 0, -1.04951)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.04319, 0, 0.303163)
 
 [node name="Enemy3-1" parent="Enemies" instance=ExtResource("3_x2syf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.19879, 5.98887, -0.987124)
