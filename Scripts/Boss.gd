@@ -23,6 +23,8 @@ func _ready():
 	$FinalBoss/AnimationPlayer.play("BossIdle")
 
 func _process(delta):
+	$"../HealthBar/ProgressBar".value = 100 * (health / maxHealth)
+	$"../HealthBar/ProgressBar2".value = 100 * (health / maxHealth)
 	if(!$FinalBoss/AnimationPlayer.is_playing()):
 		if(cooling):
 			$FinalBoss/AnimationPlayer.play("BossIdle")
@@ -64,3 +66,7 @@ func _on_punch_area_area_entered(area):
 
 func NunHealPlayer():
 	playerRef.Heal(5)
+
+func _on_nun_timer_timeout():
+	if(items[1]):
+		$"../NunHolder/NunAnim".play("NunHeal")

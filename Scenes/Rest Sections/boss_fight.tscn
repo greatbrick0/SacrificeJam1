@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://13j7o5g37h7n"]
+[gd_scene load_steps=30 format=3 uid="uid://13j7o5g37h7n"]
 
 [ext_resource type="Texture2D" uid="uid://bk7f8qq4nt56f" path="res://Art/Sprites/FloorTextureBrick.png" id="1_4hcd2"]
 [ext_resource type="PackedScene" uid="uid://c4fh4ufajv8vl" path="res://Art/Models/rectangle_platform.glb" id="4_dgmeo"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://byqvcd4ynq3fy" path="res://Scenes/ladder.tscn" id="6_162km"]
 [ext_resource type="PackedScene" uid="uid://del3l6n8pieqm" path="res://Art/Models/FinalBoss.glb" id="6_ky1tn"]
 [ext_resource type="AudioStream" uid="uid://md8wqaba82wg" path="res://Sounds/Effects/BossAttack1.wav" id="6_snv1a"]
-[ext_resource type="Theme" path="res://Art/BossUITheme.tres" id="6_xwd7d"]
+[ext_resource type="Theme" uid="uid://bddicqj1qjq40" path="res://Art/BossUITheme.tres" id="6_xwd7d"]
 [ext_resource type="AudioStream" uid="uid://binv0k8xsejon" path="res://Sounds/Effects/EnemyHit.wav" id="7_tc5x0"]
 [ext_resource type="Texture2D" uid="uid://bijmbs1oqyewd" path="res://Art/Sprites/Nun.png" id="9_l7q0a"]
 [ext_resource type="AudioStream" uid="uid://bxbtekv3aylw8" path="res://Sounds/Effects/Pendant.wav" id="10_qxnlr"]
@@ -103,12 +103,137 @@ size = Vector3(10, 2, 4)
 
 [sub_resource type="Animation" id="Animation_e6k77"]
 resource_name = "NunHeal"
-length = 10.0
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NunHolder/Nun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -2.46802, -2), Vector3(0, 0.231335, -2), Vector3(0, 0.231335, -2), Vector3(0, -2.46802, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NunHolder/PendantSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NunHolder/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NunHolder/CPUParticles3D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Boss")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"NunHealPlayer"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_orek8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NunHolder/Nun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -2.468, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NunHolder/PendantSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NunHolder/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NunHolder/CPUParticles3D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1tvr3"]
 _data = {
-"NunHeal": SubResource("Animation_e6k77")
+"NunHeal": SubResource("Animation_e6k77"),
+"RESET": SubResource("Animation_orek8")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toy87"]
+albedo_color = Color(0, 1, 0.439216, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_s4235"]
+radius = 0.3
+height = 0.6
+
+[sub_resource type="Curve" id="Curve_ox2lc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.789773, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="BossFight" type="Node3D"]
 
@@ -280,7 +405,7 @@ show_percentage = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
 [node name="Nun" type="Sprite3D" parent="NunHolder"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.231335, -2)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -2.468, -2)
 texture = ExtResource("9_l7q0a")
 
 [node name="NunAnim" type="AnimationPlayer" parent="NunHolder"]
@@ -292,8 +417,42 @@ libraries = {
 [node name="PendantSound" type="AudioStreamPlayer" parent="NunHolder"]
 stream = ExtResource("10_qxnlr")
 
+[node name="NunTimer" type="Timer" parent="NunHolder"]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="NunHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.18427)
+material_override = SubResource("StandardMaterial3D_toy87")
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 0.5
+fract_delta = false
+mesh = SubResource("SphereMesh_s4235")
+direction = Vector3(0, 3, -1)
+gravity = Vector3(0, -5, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 4.0
+scale_amount_curve = SubResource("Curve_ox2lc")
+
+[node name="Label" type="Label" parent="NunHolder"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+offset_top = -166.0
+offset_right = 202.0
+offset_bottom = -121.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Full Heal!"
+
 [connection signal="animation_finished" from="Boss/FinalBoss/AnimationPlayer" to="Boss" method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="Boss/DamageBound" to="Boss" method="_on_damage_bound_area_entered"]
 [connection signal="area_entered" from="Boss/PunchArea" to="Boss" method="_on_punch_area_area_entered"]
+[connection signal="timeout" from="NunHolder/NunTimer" to="Boss" method="_on_nun_timer_timeout"]
 
 [editable path="Boss/FinalBoss"]
