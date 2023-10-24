@@ -1,12 +1,12 @@
-[gd_scene load_steps=35 format=3 uid="uid://du3hcgow023h6"]
+[gd_scene load_steps=37 format=3 uid="uid://du3hcgow023h6"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_p2ctn"]
+[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="2_6gqb5"]
 [ext_resource type="Script" path="res://Scripts/speech.gd" id="2_fdcl8"]
-[ext_resource type="AudioStream" uid="uid://brhmkt2yuh43s" path="res://Sounds/Effects/Dialogue.wav" id="3_ghswh"]
+[ext_resource type="AudioStream" uid="uid://brhmkt2yuh43s" path="res://Sounds/Effects/Dialogue.wav" id="3_c5286"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="3_ljmp6"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="4_vq87b"]
 [ext_resource type="Texture2D" uid="uid://cu02k3amkv36g" path="res://Art/Sprites/JumpyKid.png" id="5_cbn5h"]
-[ext_resource type="PackedScene" uid="uid://dutuewqwkgi2c" path="res://Scenes/path_rest.tscn" id="6_40wb6"]
 
 [sub_resource type="Resource" id="Resource_yj5cx"]
 script = ExtResource("2_fdcl8")
@@ -148,6 +148,11 @@ text = "Fine…"
 anim = ""
 speaker = "S"
 
+[sub_resource type="BoxMesh" id="BoxMesh_02o2l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
+size = Vector3(30, 1, 4)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7lrr"]
 size = Vector3(0.2, 30, 4)
 
@@ -213,7 +218,22 @@ DialogueL = Array[Object]([SubResource("Resource_7icve"), SubResource("Resource_
 DialogueR = Array[Object]([SubResource("Resource_guk2n"), SubResource("Resource_185c3"), SubResource("Resource_o8d1s"), SubResource("Resource_kgu0l")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ghswh")
+stream = ExtResource("3_c5286")
+
+[node name="Path" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
+transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
+material_override = ExtResource("2_6gqb5")
+mesh = SubResource("BoxMesh_02o2l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
+shape = SubResource("BoxShape3D_j6a77")
 
 [node name="Tree" parent="." instance=ExtResource("3_ljmp6")]
 transform = Transform3D(1.29557, -0.0265001, -0.0484784, 0.0287127, 1.59591, 0.0407783, 0.103305, -0.111227, 0.596646, -6.66692, -1.85343, -6.552)
@@ -365,8 +385,6 @@ libraries = {
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.0119119, -2)
 texture = ExtResource("5_cbn5h")
-
-[node name="PathRest" parent="." instance=ExtResource("6_40wb6")]
 
 [connection signal="area_entered" from="DialoguePoint" to="." method="_on_dialogue_point_area_entered"]
 [connection signal="pressed" from="Dialogue/Choices/LeftButton" to="." method="_on_left_button_pressed"]
