@@ -36,6 +36,8 @@ func _process(delta):
 			$FinalBoss/AnimationPlayer.play(visualAnims[tracker])
 			$FinalBoss/AttackPlayer.play(visualAnims[tracker])
 			cooling = true
+			if(visualAnims[tracker] == "BossFireAttack" and items[3]):
+				$"../KidHolder/KidAnim".play("KidJump")
 
 func TakeDamage(amount: int):
 	if(items[0]):
@@ -62,7 +64,10 @@ func SpawnFireBall(offset: float):
 	get_parent().add_child(fireballRef)
 	fireballRef.global_position = $SpawnPoint.global_position
 	fireballRef.playerRef = playerRef
-	playerDirection = -($SpawnPoint.global_position - (playerRef.global_position + Vector3(0, offset, 0))).normalized()
+	if(items[3]):
+		playerDirection = -($SpawnPoint.global_position - ($"../KidHolder/Kid".global_position + Vector3(0, offset, 0))).normalized()
+	else:
+		playerDirection = -($SpawnPoint.global_position - (playerRef.global_position + Vector3(0, offset, 0))).normalized()
 	fireballRef.direction = Vector3(playerDirection.x, playerDirection.y, 0)
 	$FinalBoss/BossFire.play()
 
