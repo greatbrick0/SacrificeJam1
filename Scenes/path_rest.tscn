@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dutuewqwkgi2c"]
+[gd_scene load_steps=6 format=3 uid="uid://dutuewqwkgi2c"]
 
 [ext_resource type="Texture2D" uid="uid://bt4mkobuyidfn" path="res://Art/Sprites/FloorTexturePurple.png" id="1_5rbjh"]
+[ext_resource type="PackedScene" uid="uid://bsg8fhkr6fi0l" path="res://Art/Models/CampFire.glb" id="2_mct8k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_katy7"]
 albedo_texture = ExtResource("1_5rbjh")
@@ -25,3 +26,6 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_0nk31")
+
+[node name="CampFire" parent="." instance=ExtResource("2_mct8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32377, -1, -1)
