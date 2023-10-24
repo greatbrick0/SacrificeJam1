@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="3_ineux"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="4_dqnyg"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_djci6"]
-[ext_resource type="Texture2D" uid="uid://cu02k3amkv36g" path="res://Art/Sprites/JumpyKid.png" id="6_cqi5c"]
+[ext_resource type="Texture2D" uid="uid://c27t8m5wgsadv" path="res://Art/Sprites/SkeletonSitting.png" id="6_a4a0n"]
 
 [sub_resource type="Resource" id="Resource_f2ka1"]
 script = ExtResource("2_nerlm")
@@ -127,7 +127,7 @@ size = Vector3(30, 1, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7lrr"]
 size = Vector3(0.2, 30, 4)
 
-[node name="RestArea5" type="Node3D"]
+[node name="RestArea6" type="Node3D"]
 script = ExtResource("1_jupra")
 itemIndex = 2
 Dialogue = Array[Object]([SubResource("Resource_f2ka1"), SubResource("Resource_fs8cb"), SubResource("Resource_ojgwp"), SubResource("Resource_oynxu"), SubResource("Resource_cfwyt"), SubResource("Resource_ngmtq"), SubResource("Resource_imkxn"), SubResource("Resource_diixc"), SubResource("Resource_cqbgt"), SubResource("Resource_cnhbo"), SubResource("Resource_ht3is"), SubResource("Resource_sxb4n"), SubResource("Resource_wpo8p")])
@@ -294,8 +294,8 @@ text = "Leave
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.0119119, -2)
-texture = ExtResource("6_cqi5c")
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.302046, -2)
+texture = ExtResource("6_a4a0n")
 
 [connection signal="area_entered" from="DialoguePoint" to="." method="_on_dialogue_point_area_entered"]
 [connection signal="pressed" from="Dialogue/Choices/LeftButton" to="." method="_on_left_button_pressed"]
