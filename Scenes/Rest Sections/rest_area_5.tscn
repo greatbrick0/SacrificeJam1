@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://duqx71yimpjrv"]
+[gd_scene load_steps=35 format=3 uid="uid://duqx71yimpjrv"]
 
 [ext_resource type="Script" path="res://Scripts/rest_area.gd" id="1_lk1kr"]
 [ext_resource type="Script" path="res://Scripts/speech.gd" id="2_nhcc0"]
@@ -6,18 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://dutuewqwkgi2c" path="res://Scenes/path_rest.tscn" id="3_egusq"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="4_xherl"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_dy736"]
-[ext_resource type="Texture2D" uid="uid://xnbe8ccai8lg" path="res://Art/Sprites/EdgyGuy.png" id="6_5hums"]
+[ext_resource type="Texture2D" uid="uid://cysjqknvfiaki" path="res://Art/Sprites/EdgyGuy.png" id="6_5hums"]
 
-[sub_resource type="Resource" id="Resource_ngf60"]
+[sub_resource type="Resource" id="Resource_fs5hn"]
 script = ExtResource("2_nhcc0")
-text = "Run Up"
-anim = ""
-speaker = "N"
+text = "..."
+anim = "N"
+speaker = "S"
 
 [sub_resource type="Resource" id="Resource_s6sbi"]
 script = ExtResource("2_nhcc0")
 text = "What the- what are you doing?"
-anim = ""
+anim = "RunIn"
 speaker = "P"
 
 [sub_resource type="Resource" id="Resource_hgb27"]
@@ -110,14 +110,8 @@ speaker = "S"
 [sub_resource type="Resource" id="Resource_7dsgw"]
 script = ExtResource("2_nhcc0")
 text = "Wait, that's the wrong way- Oh. I see. Oopsies."
-anim = ""
+anim = "RunOut"
 speaker = "P"
-
-[sub_resource type="Resource" id="Resource_2ja84"]
-script = ExtResource("2_nhcc0")
-text = "Pick up rock"
-anim = ""
-speaker = "N"
 
 [sub_resource type="Resource" id="Resource_p053d"]
 script = ExtResource("2_nhcc0")
@@ -140,8 +134,8 @@ speaker = "S"
 
 [sub_resource type="Resource" id="Resource_y2gru"]
 script = ExtResource("2_nhcc0")
-text = "Run Awway"
-anim = ""
+text = "Run Away"
+anim = "RunOut"
 speaker = "N"
 
 [sub_resource type="Resource" id="Resource_fwd5c"]
@@ -153,11 +147,65 @@ speaker = "P"
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7lrr"]
 size = Vector3(0.2, 30, 4)
 
+[sub_resource type="Animation" id="Animation_gid1p"]
+resource_name = "RunIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(17.8258, 0.117578, -2), Vector3(0, 0.117578, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_sawra"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(17.8258, 0.117578, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_kmml4"]
+resource_name = "RunOut"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.117578, -2), Vector3(-20.4193, 0.117578, -2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8c8u5"]
+_data = {
+"RESET": SubResource("Animation_sawra"),
+"RunIn": SubResource("Animation_gid1p"),
+"RunOut": SubResource("Animation_kmml4")
+}
+
 [node name="RestArea5" type="Node3D"]
 script = ExtResource("1_lk1kr")
 itemIndex = 4
-Dialogue = Array[Object]([SubResource("Resource_ngf60"), SubResource("Resource_s6sbi"), SubResource("Resource_hgb27"), SubResource("Resource_48mul"), SubResource("Resource_ph8kl"), SubResource("Resource_cwpn2"), SubResource("Resource_o07uu"), SubResource("Resource_ihkeq"), SubResource("Resource_r2e82"), SubResource("Resource_g8go8"), SubResource("Resource_4fpfx"), SubResource("Resource_prsko"), SubResource("Resource_ellmy"), SubResource("Resource_0wvgh")])
-DialogueL = Array[Object]([SubResource("Resource_2vcpe"), SubResource("Resource_gm0cd"), SubResource("Resource_7dsgw"), SubResource("Resource_2ja84"), SubResource("Resource_p053d")])
+Dialogue = Array[Object]([SubResource("Resource_fs5hn"), SubResource("Resource_s6sbi"), SubResource("Resource_hgb27"), SubResource("Resource_48mul"), SubResource("Resource_ph8kl"), SubResource("Resource_cwpn2"), SubResource("Resource_o07uu"), SubResource("Resource_ihkeq"), SubResource("Resource_r2e82"), SubResource("Resource_g8go8"), SubResource("Resource_4fpfx"), SubResource("Resource_prsko"), SubResource("Resource_ellmy"), SubResource("Resource_0wvgh")])
+DialogueL = Array[Object]([SubResource("Resource_2vcpe"), SubResource("Resource_gm0cd"), SubResource("Resource_7dsgw"), SubResource("Resource_p053d")])
 DialogueR = Array[Object]([SubResource("Resource_gjpoi"), SubResource("Resource_oejbu"), SubResource("Resource_y2gru"), SubResource("Resource_fwd5c")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -308,9 +356,12 @@ text = "Leave
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8c8u5")
+}
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.117578, -2)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 17.8258, 0.117578, -2)
 texture = ExtResource("6_5hums")
 
 [connection signal="area_entered" from="DialoguePoint" to="." method="_on_dialogue_point_area_entered"]
