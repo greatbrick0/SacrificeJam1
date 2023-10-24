@@ -3,6 +3,7 @@ class_name Player
 
 @export var depthBounds: Vector2 = Vector2(-1.5, 1.5)
 @export var speed: Vector2 = Vector2(4, 2)
+@export var ladderSpeed: float = 3
 var speedMult: float = 1
 @export var smallJumpHeight: float = 4.5
 @export var bigJumpHeight: float = 10
@@ -13,6 +14,7 @@ var speedMult: float = 1
 @export var inCutscene: bool = false
 var input_dir: Vector2
 var holdingJump: bool
+var onLadder: bool = false
 var alreadyJumped: bool
 var timeBlocking: float = 0
 
@@ -69,14 +71,20 @@ func _physics_process(delta):
 		return
 	
 	#jumping
-	if(is_on_floor()):
-		alreadyJumped = false
-		if(holdingJump):
-			alreadyJumped = true
-			velocity.y = smallJumpHeight if donatedItems[3] else bigJumpHeight
-			$Sounds/Jump.play()
+	if(!onLadder):
+		if(is_on_floor()):
+			alreadyJumped = false
+			if(holdingJump):
+				alreadyJumped = true
+				velocity.y = smallJumpHeight if donatedItems[3] else bigJumpHeight
+				$Sounds/Jump.play()
+		else:
+			velocity.y -= gravity * delta * (airBrakeMult if (velocity.y > 0 and !holdingJump and alreadyJumped) else 1)
 	else:
-		velocity.y -= gravity * delta * (airBrakeMult if (velocity.y > 0 and !holdingJump and alreadyJumped) else 1)
+		if(holdingJump):
+			velocity.y = ladderSpeed
+		else:
+			velocity.y = -ladderSpeed
 	
 	#moving
 	if(input_dir.x != 0):
@@ -95,7 +103,10 @@ func _physics_process(delta):
 		global_position.z = depthBounds.y
 	
 	#blocking
-	if(timeBlocking > 0.1):
+	if(onLadder):
+		blocking = false
+		timeBlocking = 0
+	elif(timeBlocking > 0.1):
 		if(donatedItems[2]):
 			blocking = timeBlocking < 0.5
 		else:
@@ -147,3 +158,10 @@ func _on_damage_area_body_entered(body):
 
 func ParrySound():
 	$Sounds/Block.play()
+
+
+func _on_ladder_box_area_entered(_area):
+	onLadder = true
+
+func _on_ladder_box_area_exited(_area):
+	onLadder = false
