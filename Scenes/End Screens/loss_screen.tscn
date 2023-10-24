@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8p16tu7y4pd0"]
+[gd_scene load_steps=10 format=3 uid="uid://b8p16tu7y4pd0"]
 
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="1_xq2ob"]
 [ext_resource type="Script" path="res://Scripts/WinButton1.gd" id="2_lftis"]
 [ext_resource type="AudioStream" uid="uid://bbor6colkvvg7" path="res://Sounds/Music/SacrificeSongSad.wav" id="3_n8h38"]
+[ext_resource type="PackedScene" uid="uid://svxohabm70mx" path="res://Scenes/player_visual.tscn" id="4_pv5r0"]
+[ext_resource type="PackedScene" uid="uid://bxaurr605xh6h" path="res://Scenes/path_combat_purple.tscn" id="5_xlmo2"]
+[ext_resource type="PackedScene" uid="uid://d0qq822rfkpnj" path="res://Scenes/toll_collector.tscn" id="7_5wyxp"]
+[ext_resource type="Texture2D" uid="uid://cods05l4ws3wq" path="res://Art/Sprites/SacrificeGameBackground.png" id="7_eh501"]
+[ext_resource type="PackedScene" uid="uid://2r31s6f4kyek" path="res://Art/Models/Coin.glb" id="8_u7noe"]
+[ext_resource type="PackedScene" uid="uid://b7vwa4annws7m" path="res://Scenes/melee_enemyEnding.tscn" id="9_hkyl2"]
 
 [node name="loss_screen" type="Control"]
 layout_mode = 3
@@ -67,4 +73,91 @@ stream = ExtResource("3_n8h38")
 volume_db = -12.0
 autoplay = true
 
+[node name="Player Visual" parent="." instance=ExtResource("4_pv5r0")]
+position = Vector2(139, 634)
+rotation = -1.55187
+
+[node name="SpriteShield" parent="Player Visual/Skeleton2D/Hip/Torso/BackArm/BackForearm" index="0"]
+visible = false
+
+[node name="PathRest" parent="." instance=ExtResource("5_xlmo2")]
+
+[node name="MainLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.984808, -0.111619, 0.133022, 0, 0.766044, 0.642788, -0.173648, -0.633022, 0.754407, 0, 0, 0)
+sky_mode = 1
+
+[node name="Camera" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4946, 5.55579)
+current = true
+fov = 90.0
+
+[node name="Background" type="Sprite3D" parent="Camera"]
+transform = Transform3D(3.94, 0, 0, 0, 3.94, 0, 0, 0, 3.94, 0, 0, -20.8067)
+texture = ExtResource("7_eh501")
+
+[node name="SuicideEnemy" parent="." instance=ExtResource("7_5wyxp")]
+transform = Transform3D(0.135802, 0, 0.990736, 0, 1, 0, -0.990736, 0, 0.135802, 4.01449, -1, 0.363897)
+
+[node name="Skeleton3D" parent="SuicideEnemy/Armature_002" index="0"]
+bones/0/position = Vector3(0, 0.251311, 0)
+bones/1/rotation = Quaternion(0, 0.989389, 0, 0.14529)
+bones/3/position = Vector3(0, 0.436175, 9.09129e-15)
+bones/3/rotation = Quaternion(0.989389, 0, 0, 0.14529)
+bones/5/rotation = Quaternion(0, -0.989389, 0, 0.14529)
+
+[node name="Inner_2" parent="SuicideEnemy/Armature_002/Skeleton3D" index="0"]
+transform = Transform3D(-0.957782, 0, 0.287497, 0, 1, 0, -0.287497, 0, -0.957782, 0, -1.27958, 0)
+
+[node name="Outer_2" parent="SuicideEnemy/Armature_002/Skeleton3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, -0.957782, -0.287497, 0, 0.287497, -0.957782, 0, 2.15374, -0.440126)
+
+[node name="Core_2" parent="SuicideEnemy/Armature_002/Skeleton3D" index="2"]
+transform = Transform3D(-0.957782, 0, -0.287497, 0, 1, 0, 0.287497, 0, -0.957782, 0, -1.27958, 0)
+
+[node name="Coin3" parent="." instance=ExtResource("8_u7noe")]
+transform = Transform3D(0.999918, 0, 0.0128453, 0, 1, 0, -0.0128453, 0, 0.999918, 5.99437, 0.508094, 0.52322)
+
+[node name="Coin2" parent="Coin3" instance=ExtResource("8_u7noe")]
+transform = Transform3D(0.999917, 0, -0.0128453, 0, 1, 0, 0.0128453, 0, 0.999917, 0.0949292, -0.0947896, 0.079365)
+
+[node name="Coin" parent="Coin3" instance=ExtResource("8_u7noe")]
+transform = Transform3D(0.999917, 0, -0.0128453, 0, 1, 0, 0.0128453, 0, 0.999917, 0.0759373, -0.185829, 0.0338218)
+
+[node name="Coin4" parent="Coin3" instance=ExtResource("8_u7noe")]
+transform = Transform3D(0.999917, 0, -0.0128453, 0, 1, 0, 0.0128453, 0, 0.999917, 0.0613265, 0.293696, 0.0346266)
+
+[node name="Coin5" parent="Coin3" instance=ExtResource("8_u7noe")]
+transform = Transform3D(0.999917, 0, -0.0128453, 0, 1, 0, 0.0128453, 0, 0.999917, 0.00466156, 0.177674, 0.0355717)
+
+[node name="Coin6" parent="Coin3" instance=ExtResource("8_u7noe")]
+transform = Transform3D(0.999917, 0, -0.0128453, 0, 1, 0, 0.0128453, 0, 0.999917, -0.0296683, 0.0866349, 0.155278)
+
+[node name="Coin7" parent="Coin3" instance=ExtResource("8_u7noe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.608492, 0)
+
+[node name="Coin8" parent="Coin3" instance=ExtResource("8_u7noe")]
+transform = Transform3D(0.999917, 0, -0.0128453, 0, 1, 0, 0.0128453, 0, 0.999917, 0.0949292, 0.513702, 0.079365)
+
+[node name="Coin9" parent="Coin3" instance=ExtResource("8_u7noe")]
+transform = Transform3D(0.999917, 0, -0.0128453, 0, 1, 0, 0.0128453, 0, 0.999917, 0.0759373, 0.422663, 0.0338218)
+
+[node name="Coin10" parent="Coin3" instance=ExtResource("8_u7noe")]
+transform = Transform3D(0.999917, 0, -0.0128453, 0, 1, 0, 0.0128453, 0, 0.999917, 0.0613265, 0.902188, 0.0346266)
+
+[node name="Coin11" parent="Coin3" instance=ExtResource("8_u7noe")]
+transform = Transform3D(0.999917, 0, -0.0128453, 0, 1, 0, 0.0128453, 0, 0.999917, 0.00466156, 0.786166, 0.0355717)
+
+[node name="Coin12" parent="Coin3" instance=ExtResource("8_u7noe")]
+transform = Transform3D(0.999917, 0, -0.0128453, 0, 1, 0, 0.0128453, 0, 0.999917, -0.0296683, 0.695127, 0.155278)
+
+[node name="MeleeEnemy" parent="." instance=ExtResource("9_hkyl2")]
+transform = Transform3D(0.941858, -0.128537, -0.310453, -2.85371e-08, 0.92394, -0.382538, 0.336011, 0.360297, 0.87022, -2.37651, -0.953434, -1.49174)
+
+[node name="MeleeEnemy2" parent="." instance=ExtResource("9_hkyl2")]
+transform = Transform3D(0.596673, 0.239414, 0.765939, -9.70637e-09, 0.954459, -0.298341, -0.802484, 0.178012, 0.5695, -6.26456, -0.953434, -0.831075)
+
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]
+
+[editable path="Player Visual"]
+[editable path="SuicideEnemy"]

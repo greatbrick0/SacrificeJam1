@@ -1504,11 +1504,11 @@ rest = Transform2D(1, 0, 0, 1, -6, -784)
 
 [node name="FrontArm" type="Bone2D" parent="Skeleton2D/Hip/Torso"]
 position = Vector2(450, 30)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 450, 30)
 
 [node name="FrontForearm" type="Bone2D" parent="Skeleton2D/Hip/Torso/FrontArm"]
 position = Vector2(96, 372)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 96, 372)
 
 [node name="SpriteDagger" type="Sprite2D" parent="Skeleton2D/Hip/Torso/FrontArm/FrontForearm"]
@@ -1554,6 +1554,7 @@ editor_settings/show_bone_gizmo = false
 
 [node name="FrontCalf" type="Bone2D" parent="Skeleton2D/Hip/FrontLeg"]
 position = Vector2(81, 468)
+scale = Vector2(0.999997, 0.999997)
 rest = Transform2D(1, 0, 0, 1, 81, 468)
 editor_settings/show_bone_gizmo = false
 
