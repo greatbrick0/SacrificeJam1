@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://hppjy1dcb6yb"]
+[gd_scene load_steps=16 format=3 uid="uid://hppjy1dcb6yb"]
 
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="1_m15jv"]
 [ext_resource type="Script" path="res://Scripts/WinButton1.gd" id="2_1fdy1"]
@@ -6,6 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://cjkrpiwrummyc" path="res://Art/Sprites/EarthSky.png" id="4_4qlsy"]
 [ext_resource type="PackedScene" uid="uid://dnicv7eoe46m2" path="res://Art/Models/EarthTree.glb" id="4_31qjs"]
 [ext_resource type="PackedScene" uid="uid://dexiq3a385gpm" path="res://Scenes/camp_fire.tscn" id="6_e5l84"]
+[ext_resource type="Texture2D" uid="uid://dgkbtqsww7800" path="res://Art/Sprites/GreenGuy.png" id="7_egr3v"]
+[ext_resource type="Texture2D" uid="uid://xnbe8ccai8lg" path="res://Art/Sprites/EdgyGuy.png" id="8_elxg4"]
+[ext_resource type="Texture2D" uid="uid://cu02k3amkv36g" path="res://Art/Sprites/JumpyKid.png" id="9_13p7p"]
+[ext_resource type="Texture2D" uid="uid://3mplp6otmo3s" path="res://Art/Sprites/SkeletonStanding.png" id="10_ugsye"]
+[ext_resource type="Texture2D" uid="uid://bijmbs1oqyewd" path="res://Art/Sprites/Nun.png" id="11_tly1q"]
+[ext_resource type="Texture2D" uid="uid://dywqaeowwpafo" path="res://Art/Sprites/PlayerEndingSprite.png" id="12_3p1x4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbuqx"]
 albedo_color = Color(0, 0.521569, 0.00784314, 1)
@@ -29,7 +35,7 @@ offset_left = 147.0
 offset_top = 39.0
 offset_right = 187.0
 offset_bottom = 79.0
-scale = Vector2(21.44, 8.96)
+scale = Vector2(21.3944, 7.32)
 
 [node name="EscapedText" type="Label" parent="."]
 layout_mode = 1
@@ -51,11 +57,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -354.5
-offset_top = 160.0
-offset_right = 354.5
-offset_bottom = 377.0
+offset_left = -300.0
+offset_top = 131.0
+offset_right = 409.0
+offset_bottom = 348.0
 grow_horizontal = 2
+scale = Vector2(0.839999, 0.839999)
 theme_override_font_sizes/font_size = 20
 text = "You defeated the SUPREME MURDER MEISTER GOD KING and
 made it back to the real world.
@@ -74,9 +81,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -101.0
-offset_top = -148.0
+offset_top = -97.0
 offset_right = 97.56
-offset_bottom = -93.345
+offset_bottom = -42.345
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_m15jv")
@@ -105,7 +112,7 @@ shape = SubResource("BoxShape3D_5dx6a")
 
 [node name="Camera" type="Camera3D" parent="Path"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4946, 5.55579)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.625863, 2.58513, 5.31542)
 current = true
 fov = 90.0
 
@@ -122,5 +129,32 @@ sky_mode = 1
 
 [node name="CampFire" parent="." instance=ExtResource("6_e5l84")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4268, -1, -0.670445)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 2.5367, 0.210357, -1.51749)
+texture = ExtResource("7_egr3v")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 4.86343, 0.0630008, -1.48523)
+texture = ExtResource("8_elxg4")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 1.63507, -0.0119119, -1.41309)
+texture = ExtResource("9_13p7p")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 1.06867, 0.484054, -1.74129)
+flip_h = true
+texture = ExtResource("10_ugsye")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.97645, 0.169739, -1.40236)
+flip_h = true
+texture = ExtResource("11_tly1q")
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(0.292681, 0, 0, 0, 0.292681, 0, 0, 0, 0.292681, 0.345335, 0.168766, -1.122)
+flip_h = true
+texture = ExtResource("12_3p1x4")
 
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]

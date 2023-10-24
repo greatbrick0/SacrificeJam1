@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xnbe8ccai8lg"
-path.s3tc="res://.godot/imported/EdgyGuy.png-cf984ff5427afba4889c254b5bf626f2.s3tc.ctex"
+uid="uid://db4182cwhuuhc"
+path.s3tc="res://.godot/imported/Ending3Sky.png-b54c5d816e720837d591ae9c938a7292.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/Sprites/EdgyGuy.png"
-dest_files=["res://.godot/imported/EdgyGuy.png-cf984ff5427afba4889c254b5bf626f2.s3tc.ctex"]
+source_file="res://Art/Sprites/Ending3Sky.png"
+dest_files=["res://.godot/imported/Ending3Sky.png-b54c5d816e720837d591ae9c938a7292.s3tc.ctex"]
 
 [params]
 

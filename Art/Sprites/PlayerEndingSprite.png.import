@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xnbe8ccai8lg"
-path.s3tc="res://.godot/imported/EdgyGuy.png-cf984ff5427afba4889c254b5bf626f2.s3tc.ctex"
+uid="uid://dywqaeowwpafo"
+path.s3tc="res://.godot/imported/PlayerEndingSprite.png-26a1541d3583ed213d6c89edf09271ea.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/Sprites/EdgyGuy.png"
-dest_files=["res://.godot/imported/EdgyGuy.png-cf984ff5427afba4889c254b5bf626f2.s3tc.ctex"]
+source_file="res://Art/Sprites/PlayerEndingSprite.png"
+dest_files=["res://.godot/imported/PlayerEndingSprite.png-26a1541d3583ed213d6c89edf09271ea.s3tc.ctex"]
 
 [params]
 

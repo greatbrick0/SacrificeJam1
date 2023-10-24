@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dutuewqwkgi2c" path="res://Scenes/path_rest.tscn" id="3_egusq"]
 [ext_resource type="PackedScene" uid="uid://eep5xdbde5p4" path="res://Art/Models/Tree.glb" id="4_xherl"]
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="5_dy736"]
-[ext_resource type="Texture2D" uid="uid://cu02k3amkv36g" path="res://Art/Sprites/JumpyKid.png" id="6_rg8q2"]
+[ext_resource type="Texture2D" uid="uid://xnbe8ccai8lg" path="res://Art/Sprites/EdgyGuy.png" id="6_5hums"]
 
 [sub_resource type="Resource" id="Resource_ngf60"]
 script = ExtResource("2_nhcc0")
@@ -306,8 +306,8 @@ text = "Leave
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.0119119, -2)
-texture = ExtResource("6_rg8q2")
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.117578, -2)
+texture = ExtResource("6_5hums")
 
 [connection signal="area_entered" from="DialoguePoint" to="." method="_on_dialogue_point_area_entered"]
 [connection signal="pressed" from="Dialogue/Choices/LeftButton" to="." method="_on_left_button_pressed"]
