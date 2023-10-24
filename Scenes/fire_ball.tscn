@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd2y3i0be1ywb"]
+[gd_scene load_steps=5 format=3 uid="uid://cd2y3i0be1ywb"]
 
 [ext_resource type="Material" uid="uid://d0yaq06o04y5i" path="res://Art/Orange.tres" id="1_3nmk0"]
+[ext_resource type="Script" path="res://Scripts/fire_ball.gd" id="1_a121r"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0ojvq"]
 radius = 0.3
@@ -10,6 +11,9 @@ radius = 0.3
 height = 0.6
 
 [node name="FireBall" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_a121r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_0ojvq")
@@ -40,3 +44,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 material_override = ExtResource("1_3nmk0")
 mesh = SubResource("SphereMesh_ldtyb")
 skeleton = NodePath("../..")
+
+[node name="LifeTime" type="Timer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="LifeTime" to="." method="_on_life_time_timeout"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dn067m75da1ns"]
 
-[ext_resource type="Script" path="res://Scenes/enemy_3.gd" id="1_y2psh"]
+[ext_resource type="Script" path="res://Scripts/enemy_3.gd" id="1_fd00c"]
 [ext_resource type="PackedScene" uid="uid://b37ah5ejnj5tp" path="res://Art/Models/RangedEnemy.glb" id="2_i4eqy"]
 [ext_resource type="AudioStream" uid="uid://binv0k8xsejon" path="res://Sounds/Effects/EnemyHit.wav" id="3_jd3lv"]
 [ext_resource type="AudioStream" uid="uid://d3sv3g5hjegma" path="res://Sounds/Effects/EnemyDeath.wav" id="4_48vtb"]
@@ -10,7 +10,7 @@
 [node name="Enemy3" type="CharacterBody3D"]
 collision_layer = 33
 collision_mask = 8448
-script = ExtResource("1_y2psh")
+script = ExtResource("1_fd00c")
 
 [node name="Visuals" type="Node3D" parent="."]
 
@@ -27,3 +27,9 @@ stream = ExtResource("3_jd3lv")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("4_48vtb")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
