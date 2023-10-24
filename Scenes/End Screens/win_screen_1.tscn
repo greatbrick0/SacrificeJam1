@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://hppjy1dcb6yb"]
+[gd_scene load_steps=10 format=3 uid="uid://hppjy1dcb6yb"]
 
 [ext_resource type="Theme" uid="uid://bv8rbbpyb8qig" path="res://Art/BaseTheme.tres" id="1_m15jv"]
 [ext_resource type="Script" path="res://Scripts/WinButton1.gd" id="2_1fdy1"]
 [ext_resource type="AudioStream" uid="uid://dkrmej4e810xh" path="res://Sounds/Music/SacrificeSongVictory.wav" id="3_0ff1x"]
-[ext_resource type="Material" uid="uid://idfondkli3u7" path="res://Art/Purple.tres" id="4_sxacc"]
+[ext_resource type="Texture2D" uid="uid://cjkrpiwrummyc" path="res://Art/Sprites/EarthSky.png" id="4_4qlsy"]
+[ext_resource type="PackedScene" uid="uid://dnicv7eoe46m2" path="res://Art/Models/EarthTree.glb" id="4_31qjs"]
+[ext_resource type="PackedScene" uid="uid://dexiq3a385gpm" path="res://Scenes/camp_fire.tscn" id="6_e5l84"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbuqx"]
+albedo_color = Color(0, 0.521569, 0.00784314, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lb2so"]
 
@@ -17,6 +22,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 39.0
+offset_right = 187.0
+offset_bottom = 79.0
+scale = Vector2(21.44, 8.96)
 
 [node name="EscapedText" type="Label" parent="."]
 layout_mode = 1
@@ -79,7 +92,7 @@ autoplay = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path"]
 transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 4, 0, -6, 0)
-material_override = ExtResource("4_sxacc")
+material_override = SubResource("StandardMaterial3D_xbuqx")
 mesh = SubResource("BoxMesh_lb2so")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Path"]
@@ -89,5 +102,25 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path/StaticBody3D"]
 shape = SubResource("BoxShape3D_5dx6a")
+
+[node name="Camera" type="Camera3D" parent="Path"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4946, 5.55579)
+current = true
+fov = 90.0
+
+[node name="Background" type="Sprite3D" parent="Path/Camera"]
+transform = Transform3D(3.94, 0, 0, 0, 3.94, 0, 0, 0, 3.94, 0, 0, -20.8067)
+texture = ExtResource("4_4qlsy")
+
+[node name="EarthTree" parent="." instance=ExtResource("4_31qjs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05198, -1, -1.61064)
+
+[node name="MainLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.631326, -0.498493, 0.594081, -5.17511e-09, 0.766044, 0.642788, -0.775518, -0.405809, 0.483624, 0, 2.36892, 7.61131)
+sky_mode = 1
+
+[node name="CampFire" parent="." instance=ExtResource("6_e5l84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4268, -1, -0.670445)
 
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]
