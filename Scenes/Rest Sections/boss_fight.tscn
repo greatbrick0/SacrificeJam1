@@ -431,7 +431,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_o1hf6"]
 resource_name = "Charge"
-length = 2.0
+length = 1.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -439,10 +439,10 @@ tracks/0/path = NodePath("Skele:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.6, 2),
+"times": PackedFloat32Array(0, 1.2, 1.6),
 "transitions": PackedFloat32Array(2, 3, 1),
 "update": 0,
-"values": [Vector3(-30, 0.425, -2), Vector3(5.2, 0.425, -2), Vector3(25, 0.425, -2)]
+"values": [Vector3(-21.0977, 0.425, -2), Vector3(5.2, 0.425, -2), Vector3(18.9163, 0.425, -2)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -451,7 +451,7 @@ tracks/1/path = NodePath("../Boss")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.6),
+"times": PackedFloat32Array(1.2),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [4],
