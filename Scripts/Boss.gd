@@ -20,6 +20,7 @@ func _ready():
 	health = maxHealth
 	playerRef = get_tree().get_first_node_in_group("Player")
 	items = playerRef.donatedItems
+	$"../RogueHolder/Rogue".visible = items[0]
 	$FinalBoss/AnimationPlayer.play("BossIdle")
 
 func _process(delta):
@@ -37,6 +38,8 @@ func _process(delta):
 			cooling = true
 
 func TakeDamage(amount: int):
+	if(items[0]):
+		$"../RogueHolder/RogueAnim".play("RogueStab")
 	Damage(amount)
 
 func Damage(amount: int):
