@@ -43,6 +43,9 @@ func TakeDamage(amount: int):
 	if(items[0]):
 		$"../RogueHolder/RogueAnim".play("RogueStab")
 	Damage(amount)
+	if(health < 24 and !$"../EdgeHolder/EdgeAnim".is_playing()):
+		$"../EdgeHolder/EdgeAnim".play("AlphaStrike")
+		$CollisionShape3D.set_deferred("disabled", true)
 
 func Damage(amount: int):
 	health -= amount

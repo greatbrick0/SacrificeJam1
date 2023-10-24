@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://13j7o5g37h7n"]
+[gd_scene load_steps=44 format=3 uid="uid://13j7o5g37h7n"]
 
 [ext_resource type="Texture2D" uid="uid://bk7f8qq4nt56f" path="res://Art/Sprites/FloorTextureBrick.png" id="1_4hcd2"]
 [ext_resource type="PackedScene" uid="uid://c4fh4ufajv8vl" path="res://Art/Models/rectangle_platform.glb" id="4_dgmeo"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bxbtekv3aylw8" path="res://Sounds/Effects/Pendant.wav" id="10_qxnlr"]
 [ext_resource type="Texture2D" uid="uid://bjfg6434mf2fy" path="res://Art/Sprites/GreenGuyAttacking.png" id="13_r8rrx"]
 [ext_resource type="Texture2D" uid="uid://cu02k3amkv36g" path="res://Art/Sprites/JumpyKid.png" id="14_x8ixi"]
+[ext_resource type="Texture2D" uid="uid://bblglbp4y66ck" path="res://Art/Sprites/EdgyGuyAttacking.png" id="15_tw611"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j6a77"]
 size = Vector3(30, 1, 4)
@@ -424,6 +425,183 @@ _data = {
 "RESET": SubResource("Animation_o7he5")
 }
 
+[sub_resource type="Animation" id="Animation_nahmx"]
+resource_name = "AlphaStrike"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Edge1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Edge2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Edge3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Edge1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(-3, 1),
+"update": 0,
+"values": [Vector3(1.62461, 0, 1.8), Vector3(9.50986, 3.58757, 1.8)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Edge2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, -3, 1),
+"update": 0,
+"values": [Vector3(10.97, 0.03056, 1.8), Vector3(10.97, 0.03056, 1.8), Vector3(1.12402, 2.1118, 1.8)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Edge3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.6, 2.4, 3.5, 4),
+"transitions": PackedFloat32Array(1, -3, 1, 2, 1),
+"update": 0,
+"values": [Vector3(1.03803, 4.32065, 1.8), Vector3(1.03803, 4.32065, 1.8), Vector3(8.83038, 3.98255, 1.8), Vector3(8.83038, 3.98255, 1.8), Vector3(8.83038, -0.0768733, 1.8)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Boss")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [8],
+"method": &"Damage"
+}, {
+"args": [8],
+"method": &"Damage"
+}, {
+"args": [8],
+"method": &"Damage"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_2t5xi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Edge1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Edge2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Edge3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Edge1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.62461, 0, 1.8)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Edge2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(10.97, 0.03056, 1.8)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Edge3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.03803, 4.32065, 1.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h02t3"]
+_data = {
+"AlphaStrike": SubResource("Animation_nahmx"),
+"RESET": SubResource("Animation_2t5xi")
+}
+
 [node name="BossFight" type="Node3D"]
 
 [node name="Path" type="Node3D" parent="."]
@@ -686,6 +864,29 @@ texture = ExtResource("14_x8ixi")
 [node name="KidAnim" type="AnimationPlayer" parent="KidHolder"]
 libraries = {
 "": SubResource("AnimationLibrary_34idx")
+}
+
+[node name="EdgeHolder" type="Node3D" parent="."]
+
+[node name="Edge1" type="Sprite3D" parent="EdgeHolder"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 1.62461, 0, 1.8)
+visible = false
+texture = ExtResource("15_tw611")
+
+[node name="Edge2" type="Sprite3D" parent="EdgeHolder"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 10.97, 0.03056, 1.8)
+visible = false
+flip_h = true
+texture = ExtResource("15_tw611")
+
+[node name="Edge3" type="Sprite3D" parent="EdgeHolder"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 1.03803, 4.32065, 1.8)
+visible = false
+texture = ExtResource("15_tw611")
+
+[node name="EdgeAnim" type="AnimationPlayer" parent="EdgeHolder"]
+libraries = {
+"": SubResource("AnimationLibrary_h02t3")
 }
 
 [connection signal="animation_finished" from="Boss/FinalBoss/AnimationPlayer" to="Boss" method="_on_animation_player_animation_finished"]
