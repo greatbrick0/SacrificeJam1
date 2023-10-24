@@ -9,6 +9,7 @@ var inToll: bool = false
 var levelSections: Array[Array] = [[preload("res://Scenes/Combat Sections/section_0_1.tscn")],
 [preload("res://Scenes/Combat Sections/section_0_1.tscn")],
 [preload("res://Scenes/Combat Sections/section_1_0.tscn")],
+[preload("res://Scenes/Combat Sections/section_2_0.tscn")],
 [preload("res://Scenes/Combat Sections/section_2_0.tscn")]]
 @export var sectionWidth: float = 30
 @export var betweenSections: Array[PackedScene]
@@ -37,6 +38,10 @@ func _ready():
 	levelSections[3].append(load("res://Scenes/Combat Sections/section_2_1.tscn"))
 	levelSections[3].append(load("res://Scenes/Combat Sections/section_2_2.tscn"))
 	levelSections[3].append(load("res://Scenes/Combat Sections/section_2_3.tscn"))
+	
+	levelSections[4].append(load("res://Scenes/Combat Sections/section_2_1.tscn"))
+	levelSections[4].append(load("res://Scenes/Combat Sections/section_2_2.tscn"))
+	levelSections[4].append(load("res://Scenes/Combat Sections/section_2_3.tscn"))
 	
 
 func _process(_delta):
